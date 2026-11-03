@@ -17,7 +17,7 @@
 
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Google Translateの標準枠を隠して自作ボタンに統合 */
+    /* Google Translateの標準バナーやフレームを完全に非表示化 */
     .goog-te-banner-frame { display: none !important; }
     body { top: 0px !important; }
     #google_translate_element { display: none; }
@@ -26,150 +26,34 @@
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
   
-  <!-- 非表示のGoogle翻訳コア -->
+  <!-- 非表示のGoogle翻訳コアエンジン -->
   <div id="google_translate_element"></div>
 
   <div class="max-w-4xl mx-auto px-4 py-6">
     
-    <!-- Top Bar: Language Buttons -->
-    <div class="flex justify-between items-center py-2 border-b border-slate-800 text-xs mb-4">
-      <span class="text-slate-400 font-semibold">🌐 Language / 語言 / Idioma:</span>
-      <div class="flex gap-2">
-        <button onclick="changeLanguage('en')" class="bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold px-3 py-1.5 rounded border border-slate-700 shadow transition">
-          🇺🇸 English
-        </button>
-        <button onclick="changeLanguage('zh-TW')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold px-3 py-1.5 rounded border border-slate-700 shadow transition">
-          繁體中文
-        </button>
-        <button onclick="changeLanguage('es')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold px-3 py-1.5 rounded border border-slate-700 shadow transition">
-          🇪🇸 Español
-        </button>
-      </div>
+    <!-- Top Bar: Language Dropdown -->
+    <div class="flex justify-between items-center py-2.5 px-4 bg-slate-800/80 rounded-lg border border-slate-700/80 text-xs mb-6 shadow-md">
+      <span class="text-slate-300 font-bold flex items-center gap-1.5">
+        🌐 Select Language / 語言選択:
+      </span>
+      <select onchange="changeLanguage(this.value)" class="bg-slate-900 text-amber-400 font-bold border border-slate-700 rounded-md px-3 py-1.5 cursor-pointer focus:outline-none focus:border-amber-500 transition">
+        <option value="en">🇺🇸 English</option>
+        <option value="zh-TW">🇭🇰 🇹🇼 繁體中文 (Traditional Chinese)</option>
+        <option value="zh-CN">🇨🇳 簡体中文 (Simplified Chinese)</option>
+        <option value="es">🇪🇸 Español (Spanish)</option>
+        <option value="fr">🇫🇷 Français (French)</option>
+        <option value="de">🇩🇪 Deutsch (German)</option>
+        <option value="ko">🇰🇷 한국어 (Korean)</option>
+        <option value="th">🇹🇭 ไทย (Thai)</option>
+      </select>
     </div>
 
     <!-- Header -->
-    <header class="text-center py-4">
+    <header class="text-center py-4 border-b border-slate-800">
       <h1 class="text-4xl font-extrabold text-amber-400 tracking-tight">Japan TCG Direct</h1>
       <p class="text-slate-400 text-sm mt-2">Bypass overseas reseller markups. Access Japan's primary secondary market directly.</p>
     </header>
 
     <!-- Main Banner / Primary CTA -->
     <div class="my-6 bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-xl">
-      <div class="inline-block bg-amber-500/10 text-amber-400 text-xs font-bold px-3 py-1 rounded-full mb-3 border border-amber-500/20">
-        DIRECT PROXY SOURCING
-      </div>
-      <h2 class="text-2xl font-bold text-slate-100 mb-3">🔥 Why Buy Direct from Japanese Auctions?</h2>
-      <p class="text-slate-300 text-sm leading-relaxed mb-6">
-        Japanese exclusive promo cards and campaign items are frequently marked up 200% to 300% on Western marketplaces by international resellers. Sourcing directly from Japanese sellers via proxy gives you true local market pricing.
-      </p>
-      
-      <!-- Primary Action Button -->
-      <a href="#" target="_blank" rel="noopener" class="block w-full text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-4 rounded-xl text-lg transition duration-200 shadow-lg transform active:scale-95 border-b-4 border-amber-600">
-        Explore Japanese TCG Marketplaces on Buyee →
-      </a>
-      <p class="text-xs text-slate-400 text-center mt-3">
-        💡 <strong>Pro Tip:</strong> Switch currency display to <strong>USD ($)</strong> by clicking <strong>🌐 English</strong> at the top right of Buyee's site.
-      </p>
-    </div>
-
-    <!-- 3 Reasons Grid -->
-    <div class="grid md:grid-cols-3 gap-4 my-8">
-      <div class="bg-slate-800/60 p-5 rounded-lg border border-slate-800">
-        <div class="text-amber-400 text-lg font-bold mb-2">01. Pristine Condition</div>
-        <p class="text-slate-400 text-xs leading-relaxed">Japanese collectors are renowned for strict handling. Ungraded cards often arrive in Near-Mint to Mint condition.</p>
-      </div>
-      <div class="bg-slate-800/60 p-5 rounded-lg border border-slate-800">
-        <div class="text-amber-400 text-lg font-bold mb-2">02. Real Domestic Pricing</div>
-        <p class="text-slate-400 text-xs leading-relaxed">Cut out middleman margins. Pay exact domestic auction prices with transparent proxy consolidation fees.</p>
-      </div>
-      <div class="bg-slate-800/60 p-5 rounded-lg border border-slate-800">
-        <div class="text-amber-400 text-lg font-bold mb-2">03. Exclusive Promos</div>
-        <p class="text-slate-400 text-xs leading-relaxed">Access Japanese event-exclusive promos, gym tournament prizes, and magazine inserts unavailable elsewhere.</p>
-      </div>
-    </div>
-
-    <!-- Japanese Search Keywords Section -->
-    <div class="my-8 bg-slate-800/40 p-6 rounded-xl border border-slate-800">
-      <h3 class="text-xl font-bold text-slate-100 mb-2">🔍 Essential Japanese Search Terms</h3>
-      <p class="text-xs text-slate-400 mb-4">Click the buttons to copy raw Japanese queries for exact market matches:</p>
-      
-      <div class="grid md:grid-cols-2 gap-3">
-        <!-- Keyword Item 1 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">非売品</div>
-            <div class="text-xs text-slate-400">Not for sale / Exclusive promo</div>
-          </div>
-          <button onclick="copyTerm('非売品')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Keyword Item 2 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">プロモパック</div>
-            <div class="text-xs text-slate-400">Sealed promo pack</div>
-          </div>
-          <button onclick="copyTerm('プロモパック')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Keyword Item 3 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">引退品</div>
-            <div class="text-xs text-slate-400">Bulk collection sales</div>
-          </div>
-          <button onclick="copyTerm('引退品')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Keyword Item 4 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">極美品</div>
-            <div class="text-xs text-slate-400">Gem Mint condition</div>
-          </div>
-          <button onclick="copyTerm('極美品')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="text-center text-xs text-slate-500 mt-12 pt-6 border-t border-slate-800">
-      <p>&copy; 2026 Japan TCG Direct. Independent proxy sourcing portal for international buyers.</p>
-    </footer>
-
-  </div>
-
-  <!-- Google Translate Engine & Scripts -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,zh-TW,es',
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-
-    function changeLanguage(langCode) {
-      const select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = langCode;
-        select.dispatchEvent(new Event('change'));
-      }
-    }
-
-    function copyTerm(text) {
-      navigator.clipboard.writeText(text);
-      alert('Copied to clipboard: ' + text);
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-</html>
+      <div class="inline-block bg-amber-500/10 text-amber-400 text
