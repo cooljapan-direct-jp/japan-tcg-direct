@@ -19,7 +19,13 @@
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .price-card { border-radius: 12px; overflow: hidden; }
+    .price-card { border-radius: 12px; overflow: hidden; background-color: #f8f9fa; }
+    .price-card img {
+      height: 140px;
+      object-fit: contain;
+      width: 100%;
+      padding: 5px;
+    }
     .vs-badge { font-size: 1.1rem; font-weight: 800; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: -15px auto; z-index: 10; position: relative; }
     .extra-small { font-size: 0.75rem; }
     .max-width-800 { max-width: 800px; }
@@ -67,24 +73,24 @@
     *This site contains affiliate links to Buyee. We may earn a commission if you make a purchase through our links at no extra cost to you.
   </div>
 
-  <!-- 2. HERO SECTION (毎週ここを上書き更新) -->
+  <!-- 2. HERO SECTION (今週の注目アイテム：ミュウ) -->
   <section class="py-4 bg-white border-bottom">
     <div class="container text-center max-width-800">
-      <span class="badge bg-success mb-2">Direct Marketplace Bridge</span>
-      <h1 class="fw-bold fs-3 mb-1">Discover Authentic Japanese TCG Markets</h1>
-      <p class="text-muted small mb-4">Bridging global collectors directly with local Japanese auctions and storefronts. Transparent pricing and safe international fulfillment.</p>
+      <span class="badge bg-success mb-2">Featured Weekly Arbitrage</span>
+      <h1 class="fw-bold fs-3 mb-1">Mew (30th CELEBRATION R/RGB)</h1>
+      <p class="text-muted small mb-4">Direct comparison between global market averages and live Japanese domestic auction listings.</p>
 
       <!-- COMPARISON / HIGHLIGHT BOX -->
       <div class="row g-3 justify-content-center align-items-center mx-auto">
         
-        <!-- GLOBAL MARKET AVERAGE (海外市場参考) -->
+        <!-- GLOBAL MARKET AVERAGE -->
         <div class="col-6 col-md-5">
           <div class="card price-card border-secondary border-2 shadow-sm h-100">
             <div class="bg-secondary text-white py-1 fw-bold extra-small">Global Market Average</div>
-            <img src="images/overseas-item.jpg" class="card-img-top object-fit-cover" width="300" height="130" alt="Global Average Rate" loading="lazy" onerror="this.src='https://via.placeholder.com/300x130?text=Global+Average'">
+            <img src="images/overseas-item.jpg" alt="Global Average Rate" loading="lazy" onerror="this.src='https://via.placeholder.com/300x130?text=Global+%245,800'">
             <div class="card-body p-2">
               <div class="text-muted extra-small">Typical Overseas Price</div>
-              <div class="fs-4 fw-bold text-secondary text-decoration-line-through">$320.00</div>
+              <div class="fs-4 fw-bold text-secondary text-decoration-line-through">$5,800.00</div>
             </div>
           </div>
         </div>
@@ -92,23 +98,23 @@
         <!-- VS BADGE -->
         <div class="col-12 d-md-none"><div class="vs-badge bg-dark text-white shadow">VS</div></div>
 
-        <!-- JAPAN LOCAL MARKET (日本現地市場) -->
+        <!-- JAPAN LOCAL MARKET (Buyee出品リンク連動) -->
         <div class="col-6 col-md-5">
           <div class="card price-card border-success border-2 shadow-sm h-100">
-            <div class="bg-success text-white py-1 fw-bold extra-small">Japan Local Market</div>
-            <img src="images/japan-item.jpg" class="card-img-top object-fit-cover" width="300" height="130" alt="Japan Local Listing" loading="lazy" onerror="this.src='https://via.placeholder.com/300x130?text=Japan+Local+Listing'">
+            <div class="bg-success text-white py-1 fw-bold extra-small">Japan Local Auction</div>
+            <img src="20261104.jpg" alt="Mew Card Japan Listing" loading="lazy">
             <div class="card-body p-2">
-              <div class="text-success extra-small fw-bold">Actual Japan Price</div>
-              <div class="fs-3 fw-bold text-success">$115.00</div>
+              <div class="text-success extra-small fw-bold">Japan Price (50% OFF)</div>
+              <div class="fs-3 fw-bold text-success">$2,900.00</div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- MAIN CTA BUTTON -->
+      <!-- MAIN CTA BUTTON (Buyee個別出品リンクへ直飛び) -->
       <div class="mt-4 col-md-10 mx-auto">
-        <a href="YOUR_INDOLEADS_DEEPLINK_URL" target="_blank" rel="noopener" class="btn btn-warning btn-lg fw-bold w-100 shadow-sm py-3 fs-5">
-          🔥 Browse Live Japanese Market Listings ($ USD) →
+        <a href="https://buyee.jp/item/jdirectitems/auction/j1250872718?conversionType=jdirectitems_auction_DirectSearch" target="_blank" rel="noopener" class="btn btn-warning btn-lg fw-bold w-100 shadow-sm py-3 fs-5">
+          🔥 View This Live Auction on Buyee ($2,900) →
         </a>
         <div class="form-text text-muted extra-small mt-1">Official Buyee Partner Link • Secure Global Delivery</div>
       </div>
@@ -200,6 +206,18 @@
         <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
           <div class="accordion-body extra-small text-muted">
             You can browse live listings from Japanese domestic auctions and marketplaces through official proxy partners like Buyee. They handle bidding, inspection, and international shipping to your doorstep in USD.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faqBuyeeFee">
+            What are the fees for using Buyee?
+          </button>
+        </h2>
+        <div id="faqBuyeeFee" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body extra-small text-muted">
+            Buyee charges a simple service fee per order (typically around 300 JPY to 500 JPY), along with optional inspection or packaging plans. International shipping fees and payment processing fees apply separately depending on your chosen carrier and payment method. There are no hidden charges from our guide site.
           </div>
         </div>
       </div>
