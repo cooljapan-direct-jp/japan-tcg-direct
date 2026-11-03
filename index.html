@@ -31,7 +31,7 @@
   <header class="bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center">
     <div class="fw-bold fs-6">JAPAN TCG DIRECT</div>
     <div class="d-flex align-items-center gap-2">
-      <small class="text-secondary d-none d-sm-inline">Currency: USD (\$) supported on Buyee</small>
+      <small class="text-secondary d-none d-sm-inline">Prices automatically shown in USD for overseas visitors</small>
       <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)">
         <option value="en">English</option>
         <option value="zh-TW">繁體中文</option>
@@ -55,7 +55,7 @@
     <div class="container text-center max-width-800">
       <span class="badge bg-danger mb-2">Smart Sourcing for Global Collectors</span>
       <h1 class="fw-bold fs-3 mb-1">Buy Direct from Japan at Real Market Price</h1>
-      <p class="text-muted small mb-4">Stop overpaying reseller premiums. Compare global rates with actual Japanese listings.</p>
+      <p class="text-muted small mb-4">Stop overpaying reseller premiums. Compare global rates with actual Japanese listings in USD (\$).</p>
 
       <!-- COMPARISON BOX -->
       <div class="row g-3 justify-content-center align-items-center mx-auto">
@@ -91,14 +91,14 @@
       <!-- MAIN CTA BUTTON -->
       <div class="mt-4 col-md-10 mx-auto">
         <a href="YOUR_INDOLEADS_DEEPLINK_URL" target="_blank" rel="noopener" class="btn btn-warning btn-lg fw-bold w-100 shadow-sm py-3 fs-5">
-          🔥 Search Local Deals on Buyee →
+          🔥 Search Local Deals on Buyee (\$ USD) →
         </a>
         <div class="form-text text-muted extra-small mt-1">Official Buyee Partner Link • Safe International Shipping</div>
       </div>
     </div>
   </section>
 
-  <!-- 3. TITLE DIRECT SEARCH (カテゴリID固定 ＆ 即決 vs オークション / lang=en適用) -->
+  <!-- 3. TITLE DIRECT SEARCH -->
   <section class="py-4 container max-width-800">
     <div class="text-center mb-3">
       <h2 class="fw-bold fs-5">Direct Category Search on Buyee</h2>
@@ -145,7 +145,7 @@
   <section class="bg-white py-4 border-top">
     <div class="container text-center max-width-800">
       <h3 class="fw-bold fs-5 mb-2">How to Buy from Japan via Buyee</h3>
-      <p class="text-muted extra-small mb-3">Buyee is an official proxy buying partner for Yahoo! Japan Auctions. They buy, inspect, and ship items globally to your door.</p>
+      <p class="text-muted extra-small mb-3">Buyee is an official proxy buying partner for Yahoo! Japan Auctions. They buy, inspect, and ship items globally to your door with automatic currency conversion.</p>
       
       <div class="row g-2 mb-3">
         <div class="col-4">
@@ -170,7 +170,7 @@
     </div>
   </section>
 
-  <!-- 5. FAQ (審査通過用必須テキスト) -->
+  <!-- 5. FAQ (審査通過用必須テキスト ＆ 免責条項) -->
   <section class="py-4 container max-width-800">
     <h3 class="fw-bold fs-5 text-center mb-3">Frequently Asked Questions</h3>
     <div class="accordion" id="faqAccordion">
@@ -180,4 +180,59 @@
             Is Buyee an official purchasing service?
           </button>
         </h2>
-        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body extra-small text-muted">
+            Yes. Buyee is an official purchasing agent partner for Yahoo! Japan Auctions and Mercari, providing secure international shipping.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            What is the Authenticated (isAppraisal=1) feature?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body extra-small text-muted">
+            Listings with the authentication filter are verified by expert appraisal teams in Japan before international dispatch. However, final verification and purchasing decisions remain the buyer's sole responsibility. We do not assume any liability for the appraisal results or the condition of the items.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FOOTER & POLICY MODALS -->
+  <footer class="bg-dark text-secondary py-3 mt-auto extra-small">
+    <div class="container text-center max-width-800">
+      <p class="mb-1 text-white-50">© Japan TCG Direct. All rights reserved.</p>
+      <div class="d-flex justify-content-center gap-3 mb-2">
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#aboutModal">About Us</a>
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DIALOGS -->
+  <div class="modal fade" id="aboutModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-start">
+        <div class="modal-header"><h5 class="modal-title fs-6">About Us</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body extra-small text-muted">Japan TCG Direct provides market price comparisons and category-specific sourcing guides for international TCG collectors.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="privacyModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-start">
+        <div class="modal-header"><h5 class="modal-title fs-6">Privacy Policy & Affiliate Disclosure</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body extra-small text-muted">This site utilizes Google Analytics for traffic analysis and contains affiliate monetization links to Buyee. We assume no liability for purchases made on external platforms.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="contactModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-start">
+        <div class="
