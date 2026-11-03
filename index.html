@@ -3,215 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan TCG Direct - Authentic Japanese Trading Cards Direct Sourcing</title>
+  <title>Japan TCG Direct - Real Local Market Price Guide</title>
+  <meta name="description" content="Direct price comparison guide for international TCG collectors buying from Japan via Buyee.">
   
   <!-- Google Analytics 4 (GA4) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GK30E6LBQDN"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
-    gtag('config', 'GK30E6LBQDN');
+    gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .goog-te-banner-frame { display: none !important; }
-    body { top: 0px !important; }
-    #google_translate_element { display: none; }
-    .skiptranslate { display: none !important; }
+    .price-card { border-radius: 12px; overflow: hidden; }
+    .vs-badge { font-size: 1.1rem; font-weight: 800; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: -15px auto; z-index: 10; position: relative; }
+    .extra-small { font-size: 0.75rem; }
+    .max-width-800 { max-width: 800px; }
   </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen font-sans">
-  
-  <div id="google_translate_element"></div>
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
 
-  <div class="max-w-4xl mx-auto px-4 py-6">
-    
-    <!-- Top Bar: Language Dropdown -->
-    <div class="flex justify-between items-center py-2.5 px-4 bg-slate-800/80 rounded-lg border border-slate-700/80 text-xs mb-6 shadow-md">
-      <span class="text-slate-300 font-bold flex items-center gap-1.5">
-        🌐 Select Language / 語言選択:
-      </span>
-      <select onchange="changeLanguage(this.value)" class="bg-slate-900 text-amber-400 font-bold border border-slate-700 rounded-md px-3 py-1.5 cursor-pointer focus:outline-none focus:border-amber-500 transition">
-        <option value="en">🇺🇸 English</option>
-        <option value="zh-TW">🇭🇰 🇹🇼 繁體中文 (Traditional Chinese)</option>
-        <option value="zh-CN">🇨🇳 簡体中文 (Simplified Chinese)</option>
-        <option value="es">🇪🇸 Español (Spanish)</option>
-        <option value="fr">🇫🇷 Français (French)</option>
-        <option value="de">🇩🇪 Deutsch (German)</option>
-        <option value="ko">🇰🇷 한국어 (Korean)</option>
-        <option value="th">🇹🇭 ไทย (Thai)</option>
+  <!-- 1. HEADER & LANGUAGE -->
+  <header class="bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center">
+    <div class="fw-bold fs-6">JAPAN TCG DIRECT</div>
+    <div class="d-flex align-items-center gap-2">
+      <small class="text-secondary d-none d-sm-inline">Currency: USD (\$) supported</small>
+      <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)">
+        <option value="en">English</option>
+        <option value="zh-TW">繁體中文</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="ko">한국語</option>
+        <option value="th">ไทย</option>
       </select>
     </div>
+  </header>
 
-    <!-- Header -->
-    <header class="text-center py-4 border-b border-slate-800">
-      <h1 class="text-4xl font-extrabold text-amber-400 tracking-tight">Japan TCG Direct</h1>
-      <p class="text-slate-400 text-sm mt-2">Bypass overseas reseller markups. Access Japan's primary secondary market directly.</p>
-    </header>
-
-    <!-- Main Banner / Primary CTA -->
-    <div class="my-6 bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-xl">
-      <div class="inline-block bg-amber-500/10 text-amber-400 text-xs font-bold px-3 py-1 rounded-full mb-3 border border-amber-500/20">
-        DIRECT PROXY SOURCING
-      </div>
-      <h2 class="text-2xl font-bold text-slate-100 mb-3">🔥 Why Buy Direct from Japanese Auctions?</h2>
-      <p class="text-slate-300 text-sm leading-relaxed mb-6">
-        Japanese exclusive promo cards and campaign items are frequently marked up 200% to 300% on Western marketplaces by international resellers. Sourcing directly from Japanese sellers via proxy gives you true local market pricing.
-      </p>
-      
-      <!-- Primary Action Button -->
-      <a href="#" target="_blank" rel="noopener" class="block w-full text-center bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold py-4 rounded-xl text-lg transition duration-200 shadow-lg transform active:scale-95 border-b-4 border-amber-600">
-        Explore Japanese TCG Marketplaces on Buyee →
-      </a>
-      <p class="text-xs text-slate-400 text-center mt-3">
-        💡 <strong>Pro Tip:</strong> You can instantly switch the price display to <strong>USD ($)</strong> using the top-right 🌐 menu—no account required.
-      </p>
-    </div>
-
-    <!-- 3 Reasons Grid -->
-    <div class="grid md:grid-cols-3 gap-4 my-8">
-      <div class="bg-slate-800/60 p-5 rounded-lg border border-slate-800">
-        <div class="text-amber-400 text-lg font-bold mb-2">01. Pristine Condition</div>
-        <p class="text-slate-400 text-xs leading-relaxed">Japanese collectors are renowned for strict handling. Ungraded cards often arrive in Near-Mint to Mint condition.</p>
-      </div>
-      <div class="bg-slate-800/60 p-5 rounded-lg border border-slate-800">
-        <div class="text-amber-400 text-lg font-bold mb-2">02. Real Domestic Pricing</div>
-        <p class="text-slate-400 text-xs leading-relaxed">Cut out middleman margins. Pay exact domestic auction prices with transparent proxy consolidation fees.</p>
-      </div>
-      <div class="bg-slate-800/60 p-5 rounded-lg border border-slate-800">
-        <div class="text-amber-400 text-lg font-bold mb-2">03. Exclusive Promos</div>
-        <p class="text-slate-400 text-xs leading-relaxed">Access Japanese event-exclusive promos, gym tournament prizes, and magazine inserts unavailable elsewhere.</p>
-      </div>
-    </div>
-
-    <!-- Japanese Search Keywords Section (Expanded 8 Items) -->
-    <div class="my-8 bg-slate-800/40 p-6 rounded-xl border border-slate-800">
-      <h3 class="text-xl font-bold text-slate-100 mb-2">🔍 Essential Japanese Search Terms</h3>
-      <p class="text-xs text-slate-400 mb-4">Click the buttons to copy raw Japanese queries for exact market matches on Buyee:</p>
-      
-      <div class="grid md:grid-cols-2 gap-3">
-        <!-- Item 1 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">非売品</div>
-            <div class="text-xs text-slate-400">Not for sale / Campaign exclusive</div>
-          </div>
-          <button onclick="copyTerm('非売品')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">プロモパック</div>
-            <div class="text-xs text-slate-400">Sealed promo pack</div>
-          </div>
-          <button onclick="copyTerm('プロモパック')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">引退品</div>
-            <div class="text-xs text-slate-400">Collector quit bulk sale (High value)</div>
-          </div>
-          <button onclick="copyTerm('引退品')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">極美品</div>
-            <div class="text-xs text-slate-400">Gem Mint / Flawless condition</div>
-          </div>
-          <button onclick="copyTerm('極美品')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">会場限定</div>
-            <div class="text-xs text-slate-400">Tournament / Event venue limited</div>
-          </div>
-          <button onclick="copyTerm('会場限定')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">未開封</div>
-            <div class="text-xs text-slate-400">Factory sealed box / sleeve / pack</div>
-          </div>
-          <button onclick="copyTerm('未開封')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Item 7 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">まとめ売り</div>
-            <div class="text-xs text-slate-400">Bulk wholesale bundle</div>
-          </div>
-          <button onclick="copyTerm('まとめ売り')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-
-        <!-- Item 8 -->
-        <div class="flex items-center justify-between bg-slate-800 p-3 rounded-lg border border-slate-700">
-          <div>
-            <div class="font-mono text-amber-300 text-sm font-bold">コレクション品</div>
-            <div class="text-xs text-slate-400">High collection grade item</div>
-          </div>
-          <button onclick="copyTerm('コレクション品')" class="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/40 text-xs px-4 py-2 rounded-lg font-bold transition active:scale-95">
-            Copy Text
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="text-center text-xs text-slate-500 mt-12 pt-6 border-t border-slate-800">
-      <p>&copy; 2026 Japan TCG Direct. Independent proxy sourcing portal for international buyers.</p>
-    </footer>
-
+  <!-- FTC AFFILIATE DISCLOSURE (ステマ・FTC規制対策常時表示) -->
+  <div class="bg-warning-subtle text-dark text-center py-1 extra-small border-bottom">
+    *This site contains affiliate links. We may earn a commission on purchases made through Buyee at no extra cost to you.
   </div>
 
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,zh-TW,zh-CN,es,fr,de,ko,th',
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
+  <!-- 2. HERO & PRICE SHOCK (毎週ここを上書き更新) -->
+  <section class="py-4 bg-white border-bottom">
+    <div class="container text-center max-width-800">
+      <span class="badge bg-danger mb-2">Smart Sourcing for Global Collectors</span>
+      <h1 class="fw-bold fs-3 mb-1">Buy Direct from Japan at Real Market Price</h1>
+      <p class="text-muted small mb-4">Compare overseas reseller pricing with real-time Japanese Yahoo! Auction listings.</p>
 
-    function changeLanguage(langCode) {
-      const select = document.querySelector('.goog-te-combo');
-      if (select) {
-        select.value = langCode;
-        select.dispatchEvent(new Event('change'));
-      }
-    }
+      <!-- COMPARISON BOX -->
+      <div class="row g-3 justify-content-center align-items-center mx-auto">
+        
+        <!-- 【赤】OVERSEAS 上書きエリア -->
+        <div class="col-6 col-md-5">
+          <div class="card price-card border-danger border-2 shadow-sm h-100">
+            <div class="bg-danger text-white py-1 fw-bold extra-small">Overseas Reseller Price</div>
+            <img src="images/red_item.jpg" class="card-img-top object-fit-cover" height="130" alt="Overseas Price">
+            <div class="card-body p-2">
+              <div class="text-muted extra-small">Estimated Global Rate</div>
+              <div class="fs-4 fw-bold text-danger text-decoration-line-through">\$320.00</div>
+            </div>
+          </div>
+        </div>
 
-    function copyTerm(text) {
-      navigator.clipboard.writeText(text);
-      alert('Copied to clipboard: ' + text);
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
-</html>
+        <!-- VS BADGE -->
+        <div class="col-12 d-md-none"><div class="vs-badge bg-dark text-white shadow">VS</div></div>
+
+        <!-- 【緑】JAPAN (ヤフオク/Buyee) 上書きエリア -->
+        <div class="col-6 col-md-5">
+          <div class="card price-card border-success border-2 shadow-sm h-100">
+            <div class="bg-success text-white py-1 fw-bold extra-small">Japan Local Auction</div>
+            <img src="images/green_item.jpg" class="card-img-top object-fit-cover" height="130" alt="Japan Price">
+            <div class="card-body p-2">
+              <div class="text-success extra-small fw-bold">Actual Japan Market</div>
+              <div class="fs-3 fw-bold text-success">\$115.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN CTA BUTTON -->
+      <div class="mt-4 col-md-10 mx-auto">
+        <a href="YOUR_INDOLEADS_DEEPLINK_HERO" target="_blank" rel="noopener" class="btn btn-warning btn-lg fw-bold w-100 shadow-sm py-3 fs-5">
+          🔥 Search Local Deals on Buyee →
+        </a>
+        <div class="form-text text-muted extra-small mt-1">Official Buyee Partner Link • Safe International Shipping</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. TITLE DIRECT SEARCH (即決高額順 vs 人気順 2パターン導線) -->
+  <section class="py-4 container max-width-800">
+    <div class="text-center mb-3">
+      <h2 class="fw-bold fs-5">Direct Search by Title on Buyee</h2>
+      <p class="text-muted extra-small">Choose 💎 Instant Buy (Highest Price) or 🔥 Popular Auctions (Most Bids)!</p>
+    </div>
+
+    <div class="row g-2">
+      <!-- ⚡ Pokémon -->
+      <div class="col-12">
+        <div class="p-2 border rounded bg-white shadow-sm d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
+          <div class="fw-bold fs-6">⚡ Pokémon <span class="text-muted extra-small d-inline d-sm-block">(ポケモン)</span></div>
+          <div class="d-flex gap-1 w-100 w-sm-auto">
+            <a href="YOUR_INDOLEADS_DEEPLINK_POKEMON_BUYNOW" target="_blank" rel="noopener" class="btn btn-sm btn-outline-success extra-small fw-bold flex-fill
