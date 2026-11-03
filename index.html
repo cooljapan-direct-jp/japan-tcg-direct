@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Japan TCG Direct - Real Local Market Price Guide</title>
-  <meta name="description" content="Direct price comparison guide for international TCG collectors buying from Japan via Buyee.">
+  <title>Japan TCG Direct - Real Local Market Price Sourcing</title>
+  <meta name="description" content="Compare Japanese local auction prices with overseas reseller rates. Direct sourcing from Japan via official Buyee partner.">
   
   <!-- Google Analytics 4 (GA4) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -22,15 +22,16 @@
     .vs-badge { font-size: 1.1rem; font-weight: 800; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin: -15px auto; z-index: 10; position: relative; }
     .extra-small { font-size: 0.75rem; }
     .max-width-800 { max-width: 800px; }
+    .affiliate-notice { background-color: #f8f9fa; border-bottom: 1px solid #e9ecef; font-size: 0.7rem; color: #6c757d; }
   </style>
 </head>
 <body class="bg-light text-dark d-flex flex-column min-vh-100">
 
-  <!-- 1. HEADER & LANGUAGE -->
+  <!-- 1. HEADER & LANGUAGE SELECTOR -->
   <header class="bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center">
     <div class="fw-bold fs-6">JAPAN TCG DIRECT</div>
     <div class="d-flex align-items-center gap-2">
-      <small class="text-secondary d-none d-sm-inline">Currency: USD (\$) supported</small>
+      <small class="text-secondary d-none d-sm-inline">Currency: USD ($) supported on Buyee</small>
       <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)">
         <option value="en">English</option>
         <option value="zh-TW">繁體中文</option>
@@ -44,9 +45,9 @@
     </div>
   </header>
 
-  <!-- FTC AFFILIATE DISCLOSURE (ステマ・FTC規制対策常時表示) -->
-  <div class="bg-warning-subtle text-dark text-center py-1 extra-small border-bottom">
-    *This site contains affiliate links. We may earn a commission on purchases made through Buyee at no extra cost to you.
+  <!-- FTC / AFFILIATE DISCLOSURE BANNER (ステマ・FTC規制対策) -->
+  <div class="affiliate-notice py-1 text-center px-2">
+    *This site contains affiliate links to Buyee. We may earn a commission if you make a purchase through our links at no extra cost to you.
   </div>
 
   <!-- 2. HERO & PRICE SHOCK (毎週ここを上書き更新) -->
@@ -54,19 +55,19 @@
     <div class="container text-center max-width-800">
       <span class="badge bg-danger mb-2">Smart Sourcing for Global Collectors</span>
       <h1 class="fw-bold fs-3 mb-1">Buy Direct from Japan at Real Market Price</h1>
-      <p class="text-muted small mb-4">Compare overseas reseller pricing with real-time Japanese Yahoo! Auction listings.</p>
+      <p class="text-muted small mb-4">Stop overpaying reseller premiums. Compare global rates with actual Japanese listings.</p>
 
       <!-- COMPARISON BOX -->
       <div class="row g-3 justify-content-center align-items-center mx-auto">
         
-        <!-- 【赤】OVERSEAS 上書きエリア -->
+        <!-- 【赤】OVERSEAS (海外相場) 上書きエリア -->
         <div class="col-6 col-md-5">
           <div class="card price-card border-danger border-2 shadow-sm h-100">
             <div class="bg-danger text-white py-1 fw-bold extra-small">Overseas Reseller Price</div>
-            <img src="images/red_item.jpg" class="card-img-top object-fit-cover" height="130" alt="Overseas Price">
+            <img src="images/overseas-item.jpg" class="card-img-top object-fit-cover" height="130" alt="Overseas Price" onerror="this.src='https://via.placeholder.com/300x200?text=Overseas+Rate'">
             <div class="card-body p-2">
               <div class="text-muted extra-small">Estimated Global Rate</div>
-              <div class="fs-4 fw-bold text-danger text-decoration-line-through">\$320.00</div>
+              <div class="fs-4 fw-bold text-danger text-decoration-line-through">$320.00</div>
             </div>
           </div>
         </div>
@@ -74,14 +75,14 @@
         <!-- VS BADGE -->
         <div class="col-12 d-md-none"><div class="vs-badge bg-dark text-white shadow">VS</div></div>
 
-        <!-- 【緑】JAPAN (ヤフオク/Buyee) 上書きエリア -->
+        <!-- 【緑】JAPAN (日本現地相場) 上書きエリア -->
         <div class="col-6 col-md-5">
           <div class="card price-card border-success border-2 shadow-sm h-100">
             <div class="bg-success text-white py-1 fw-bold extra-small">Japan Local Auction</div>
-            <img src="images/green_item.jpg" class="card-img-top object-fit-cover" height="130" alt="Japan Price">
+            <img src="images/japan-item.jpg" class="card-img-top object-fit-cover" height="130" alt="Japan Price" onerror="this.src='https://via.placeholder.com/300x200?text=Japan+Local+Listing'">
             <div class="card-body p-2">
               <div class="text-success extra-small fw-bold">Actual Japan Market</div>
-              <div class="fs-3 fw-bold text-success">\$115.00</div>
+              <div class="fs-3 fw-bold text-success">$115.00</div>
             </div>
           </div>
         </div>
@@ -89,7 +90,7 @@
 
       <!-- MAIN CTA BUTTON -->
       <div class="mt-4 col-md-10 mx-auto">
-        <a href="YOUR_INDOLEADS_DEEPLINK_HERO" target="_blank" rel="noopener" class="btn btn-warning btn-lg fw-bold w-100 shadow-sm py-3 fs-5">
+        <a href="YOUR_INDOLEADS_DEEPLINK_URL" target="_blank" rel="noopener" class="btn btn-warning btn-lg fw-bold w-100 shadow-sm py-3 fs-5">
           🔥 Search Local Deals on Buyee →
         </a>
         <div class="form-text text-muted extra-small mt-1">Official Buyee Partner Link • Safe International Shipping</div>
@@ -97,17 +98,167 @@
     </div>
   </section>
 
-  <!-- 3. TITLE DIRECT SEARCH (即決高額順 vs 人気順 2パターン導線) -->
+  <!-- 3. TITLE DIRECT SEARCH (カテゴリID固定 ＆ 即決 vs オークション 2パターン導線) -->
   <section class="py-4 container max-width-800">
     <div class="text-center mb-3">
-      <h2 class="fw-bold fs-5">Direct Search by Title on Buyee</h2>
-      <p class="text-muted extra-small">Choose 💎 Instant Buy (Highest Price) or 🔥 Popular Auctions (Most Bids)!</p>
+      <h2 class="fw-bold fs-5">Direct Category Search on Buyee</h2>
+      <p class="text-muted extra-small">Select ⚡ Buy It Now for instant purchase, or 🔨 Auction to place live bids!</p>
     </div>
 
     <div class="row g-2">
-      <!-- ⚡ Pokémon -->
-      <div class="col-12">
-        <div class="p-2 border rounded bg-white shadow-sm d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-2">
-          <div class="fw-bold fs-6">⚡ Pokémon <span class="text-muted extra-small d-inline d-sm-block">(ポケモン)</span></div>
-          <div class="d-flex gap-1 w-100 w-sm-auto">
-            <a href="YOUR_INDOLEADS_DEEPLINK_POKEMON_BUYNOW" target="_blank" rel="noopener" class="btn btn-sm btn-outline-success extra-small fw-bold flex-fill
+      <!-- Pokémon (カテゴリID: 2084241343) -->
+      <div class="col-12 col-md-6">
+        <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
+          <div class="fw-bold fs-6">⚡ Pokémon <span class="text-muted extra-small d-block">(ポケモンカード)</span></div>
+          <div class="d-flex gap-1">
+            <a href="https://buyee.jp/item/search/category/2084241343?sort=cbids&order=d&buynow=1&isAppraisal=1&translationType=98" target="_blank" rel="noopener" class="btn btn-sm btn-outline-success extra-small fw-bold">⚡ Buy It Now</a>
+            <a href="https://buyee.jp/item/search/category/2084241343?sort=bids&order=a&isAppraisal=1" target="_blank" rel="noopener" class="btn btn-sm btn-outline-dark extra-small fw-bold">🔨 Auction</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ONE PIECE (カテゴリID: 2084236680) -->
+      <div class="col-12 col-md-6">
+        <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
+          <div class="fw-bold fs-6">🏴‍☠️ ONE PIECE <span class="text-muted extra-small d-block">(ワンピースカード)</span></div>
+          <div class="d-flex gap-1">
+            <a href="https://buyee.jp/item/search/category/2084236680?sort=cbids&order=d&buynow=1&isAppraisal=1&translationType=98" target="_blank" rel="noopener" class="btn btn-sm btn-outline-success extra-small fw-bold">⚡ Buy It Now</a>
+            <a href="https://buyee.jp/item/search/category/2084236680?sort=bids&order=a&isAppraisal=1" target="_blank" rel="noopener" class="btn btn-sm btn-outline-dark extra-small fw-bold">🔨 Auction</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dragon Ball (カテゴリID: 2084064426) -->
+      <div class="col-12 col-md-6">
+        <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
+          <div class="fw-bold fs-6">🐉 Dragon Ball <span class="text-muted extra-small d-block">(ドラゴンボール)</span></div>
+          <div class="d-flex gap-1">
+            <a href="https://buyee.jp/item/search/category/2084064426?sort=cbids&order=d&buynow=1&isAppraisal=1" target="_blank" rel="noopener" class="btn btn-sm btn-outline-success extra-small fw-bold">⚡ Buy It Now</a>
+            <a href="https://buyee.jp/item/search/category/2084064426?sort=bids&order=a&isAppraisal=1&page=1" target="_blank" rel="noopener" class="btn btn-sm btn-outline-dark extra-small fw-bold">🔨 Auction</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Yu-Gi-Oh! (カテゴリID: 2084005372) -->
+      <div class="col-12 col-md-6">
+        <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
+          <div class="fw-bold fs-6">🃏 Yu-Gi-Oh! <span class="text-muted extra-small d-block">(遊戯王)</span></div>
+          <div class="d-flex gap-1">
+            <a href="https://buyee.jp/item/search/category/2084005372?sort=cbids&order=d&buynow=1&isAppraisal=1" target="_blank" rel="noopener" class="btn btn-sm btn-outline-success extra-small fw-bold">⚡ Buy It Now</a>
+            <a href="https://buyee.jp/item/search/category/2084005372?sort=bids&order=a&isAppraisal=1" target="_blank" rel="noopener" class="btn btn-sm btn-outline-dark extra-small fw-bold">🔨 Auction</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BUYEE SERVICE GUIDE -->
+  <section class="bg-white py-4 border-top">
+    <div class="container text-center max-width-800">
+      <h3 class="fw-bold fs-5 mb-2">How to Buy from Japan via Buyee</h3>
+      <p class="text-muted extra-small mb-3">Buyee is an official proxy buying partner for Yahoo! Japan Auctions. They buy, inspect, and ship items globally to your door.</p>
+      
+      <div class="row g-2 mb-3">
+        <div class="col-4">
+          <div class="p-2 border rounded bg-light">
+            <div class="fs-6">🔍</div>
+            <strong class="d-block extra-small">1. Find & Bid</strong>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-2 border rounded bg-light">
+            <div class="fs-6">📦</div>
+            <strong class="d-block extra-small">2. Buyee Warehouse</strong>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="p-2 border rounded bg-light">
+            <div class="fs-6">✈️</div>
+            <strong class="d-block extra-small">3. Global Delivery</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FAQ (審査通過用必須テキスト) -->
+  <section class="py-4 container max-width-800">
+    <h3 class="fw-bold fs-5 text-center mb-3">Frequently Asked Questions</h3>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            Is Buyee an official purchasing service?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body extra-small text-muted">
+            Yes. Buyee is an official purchasing agent partner for Yahoo! Japan Auctions and Mercari, providing secure payment and international shipping.
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            What is the Authenticated (isAppraisal=1) feature?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body extra-small text-muted">
+            Listings with the authentication filter are verified by expert appraisal teams in Japan before international dispatch, ensuring 100% item authenticity.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. FOOTER & POLICY MODALS (審査必須要件) -->
+  <footer class="bg-dark text-secondary py-3 mt-auto extra-small">
+    <div class="container text-center max-width-800">
+      <p class="mb-1 text-white-50">© Japan TCG Direct. All rights reserved.</p>
+      <div class="d-flex justify-content-center gap-3 mb-2">
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#aboutModal">About Us</a>
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL DIALOGS -->
+  <div class="modal fade" id="aboutModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-start">
+        <div class="modal-header"><h5 class="modal-title fs-6">About Us</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body extra-small text-muted">Japan TCG Direct provides market price comparisons and category-specific sourcing guides for international TCG collectors.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="privacyModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-start">
+        <div class="modal-header"><h5 class="modal-title fs-6">Privacy Policy & Affiliate Disclosure</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body extra-small text-muted">This site utilizes Google Analytics for traffic analysis and contains affiliate monetization links to Buyee.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="contactModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-start">
+        <div class="modal-header"><h5 class="modal-title fs-6">Contact</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body extra-small text-muted">Inquiries: <code>cooljapan.direct.jp@gmail.com</code></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      if (typeof gtag === 'function') {
+        gtag('event', 'change_language', { 'language': lang });
+      }
+    }
+  </script>
+</body>
+</html>
