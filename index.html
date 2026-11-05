@@ -5,24 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>JapanMania | Market Comparisons & Proxy Guide</title>
-  <meta name="description" content="Compare Japanese TCG auction listings with overseas market prices, including estimated fees and shipping, and learn how to buy from Japan via the Buyee proxy service.">
+  <meta name="description" content="Compare Japanese TCG auction listings with overseas market prices and learn how to buy from Japan via the Buyee proxy service.">
 
-  <!-- 独自ドメイン -->
   <link rel="canonical" href="https://japanmania.store/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="JapanMania | Market Comparisons & Proxy Guide">
-  <meta property="og:description" content="Price comparisons for Pokémon, ONE PIECE and Dragon Ball TCG listings in Japan, with estimated total costs.">
+  <meta property="og:description" content="Price comparisons for Pokémon, ONE PIECE and Dragon Ball TCG listings in Japan, with a buying guide for overseas collectors.">
   <meta property="og:url" content="https://japanmania.store/">
 
-<!-- Google Analytics 4 (GA4) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-K30E6LBQDN"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-K30E6LBQDN');
-</script>
+  <!-- Google Analytics 4 + Consent Mode v2 -->
+  <!-- EEA・英国・スイスは初期状態で分析Cookieを拒否、それ以外の地域は許可 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],
+      wait_for_update: 500
+    });
+    gtag('consent', 'default', {
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+      analytics_storage: 'granted'
+    });
+    try {
+      var jmConsent = localStorage.getItem('jm_consent');
+      if (jmConsent === 'granted' || jmConsent === 'denied') {
+        gtag('consent', 'update', { analytics_storage: jmConsent });
+      }
+    } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', 'G-K30E6LBQDN');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K30E6LBQDN"></script>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
@@ -33,7 +49,7 @@ gtag('config', 'G-K30E6LBQDN');
     .max-width-800 { max-width: 800px; }
     .affiliate-notice { background-color: #f8f9fa; border-bottom: 1px solid #e9ecef; font-size: 0.7rem; color: #6c757d; }
     .site-notice { background-color: #fff8e1; border-bottom: 1px solid #ffe08a; font-size: 0.75rem; color: #5d4700; }
-    .estimated-total { background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; }
+    .cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; background: #212529; color: #fff; z-index: 1080; border-top: 3px solid #dc3545; }
   </style>
 
   <script type="application/ld+json">
@@ -51,8 +67,9 @@ gtag('config', 'G-K30E6LBQDN');
   <header class="bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center">
     <div class="fw-bold fs-6">JapanMania</div>
     <div class="d-flex align-items-center gap-2">
-      <small class="text-secondary d-none d-sm-inline">Market Comparisons & Proxy Guide</small>
-      <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)">
+      <a href="buyee-flow.html" class="text-white text-decoration-none small fw-bold border border-secondary rounded px-2 py-1" data-i18n="f_guide">Buying Guide</a>
+      <small class="text-secondary d-none d-md-inline" data-i18n="tagline">Market Comparisons & Proxy Guide</small>
+      <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)" aria-label="Language">
         <option value="en">English</option>
         <option value="zh-TW">繁體中文</option>
         <option value="zh-CN">简体中文</option>
@@ -65,29 +82,28 @@ gtag('config', 'G-K30E6LBQDN');
     </div>
   </header>
 
-  <div class="affiliate-notice py-1 text-center px-2">
+  <div class="affiliate-notice py-1 text-center px-2" data-i18n="aff">
     *This site contains affiliate links. We may earn a commission if you make a purchase via Buyee, at no extra cost to you.
   </div>
 
-  <!-- Site-wide notice -->
-  <div class="site-notice py-2 px-3 text-center">
+  <div class="site-notice py-2 px-3 text-center" data-i18n="notice">
     Labels such as "Appraised" or "Authenticated" are set by the seller or by Buyee's system. This site does not guarantee authenticity or condition. Please check the listing on Buyee and make your own decision before you buy.
   </div>
 
   <!-- Featured comparison -->
   <section class="py-4 bg-white border-bottom">
     <div class="container text-center max-width-800">
-      <span class="badge bg-success mb-2 text-uppercase">Featured Price Comparison</span>
+      <span class="badge bg-success mb-2 text-uppercase" data-i18n="feat_badge">Featured Price Comparison</span>
       <h1 class="fw-bold fs-3 mb-1">Mew (30th CELEBRATION R/RGB)</h1>
-      <p class="text-muted small mb-4">Overseas market average vs. a live Japanese domestic auction listing. Prices checked on Nov 4, 2026.</p>
+      <p class="text-muted small mb-4" data-i18n="feat_sub">Overseas market average vs. a live Japanese domestic auction listing. Prices checked on Nov 4, 2026.</p>
 
       <div class="row g-3 justify-content-center align-items-stretch mx-auto">
         <div class="col-6 col-md-5">
           <div class="card price-card border-secondary border-2 shadow-sm h-100">
-            <div class="bg-secondary text-white py-1 fw-bold extra-small">Overseas Market Average</div>
+            <div class="bg-secondary text-white py-1 fw-bold extra-small" data-i18n="ov_head">Overseas Market Average</div>
             <img src="images/overseas-item.jpg" alt="Mew 30th Celebration card, overseas market reference" loading="lazy">
             <div class="card-body p-2 d-flex flex-column justify-content-center">
-              <div class="text-muted extra-small">Average of recent overseas sales</div>
+              <div class="text-muted extra-small" data-i18n="ov_note">Average of recent overseas sales</div>
               <div class="fs-4 fw-bold text-dark">$5,800</div>
             </div>
           </div>
@@ -97,54 +113,49 @@ gtag('config', 'G-K30E6LBQDN');
 
         <div class="col-6 col-md-5">
           <div class="card price-card border-danger border-2 shadow-sm h-100">
-            <div class="bg-danger text-white py-1 fw-bold extra-small">Japan Live Auction</div>
+            <div class="bg-danger text-white py-1 fw-bold extra-small" data-i18n="jp_head">Japan Live Auction</div>
             <img src="20261104.jpg" alt="Mew 30th Celebration card (reference image)" loading="lazy">
-            <div class="text-muted" style="font-size:0.6rem;">Reference image. See the listing on Buyee for actual item photos.</div>
+            <div class="text-muted" style="font-size:0.6rem;" data-i18n="ref_img">Reference image. See the listing on Buyee for actual item photos.</div>
             <div class="card-body p-2 d-flex flex-column justify-content-center">
-              <div class="text-danger extra-small fw-bold">Current bid (may rise)</div>
+              <div class="text-danger extra-small fw-bold" data-i18n="cur_bid">Current bid (may rise)</div>
               <div class="fs-3 fw-bold text-danger">$2,900</div>
-              <div class="estimated-total p-2 mt-2">
-                <div class="fw-bold text-success" style="font-size: 0.85rem;">Est. from ~$2,925*</div>
-                <div class="text-success mt-1" style="font-size: 0.65rem; line-height: 1.2;">
-                  *Current bid + estimated Buyee service fee & EMS shipping. Excludes import duties/taxes, insurance and payment fees, which vary by country and method.
-                </div>
-              </div>
+              <div class="text-muted mt-1" style="font-size:0.65rem;" data-i18n="excl">Fees, shipping and import taxes not included.</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="mt-4 col-md-10 mx-auto">
-        <a href="https://buyee.jp/item/jdirectitems/auction/j1250872718?conversionType=jdirectitems_auction_DirectSearch" target="_blank" rel="noopener sponsored" class="btn btn-danger btn-lg fw-bold w-100 shadow-sm py-3 fs-5">
+        <a href="https://buyee.jp/item/jdirectitems/auction/j1250872718?conversionType=jdirectitems_auction_DirectSearch" target="_blank" rel="noopener sponsored" class="btn btn-danger btn-lg fw-bold w-100 shadow-sm py-3 fs-5" data-i18n="cta">
           View This Auction on Buyee →
         </a>
-        <div class="form-text text-muted extra-small mt-2">Bidding, inspection and international delivery are handled by Buyee.</div>
+        <div class="form-text text-muted extra-small mt-2" data-i18n="cta_note">Bidding, inspection and international delivery are handled by Buyee.</div>
       </div>
     </div>
   </section>
 
   <!-- How we compare -->
   <section class="py-4 container max-width-800">
-    <h2 class="fw-bold fs-5 text-center mb-3">How We Compare Prices</h2>
+    <h2 class="fw-bold fs-5 text-center mb-3" data-i18n="how_h">How We Compare Prices</h2>
     <div class="bg-white border rounded p-3 small text-muted">
-      <p class="mb-2"><strong class="text-dark">Overseas average:</strong> based on recent completed sales of the same card outside Japan. Graded and ungraded copies are compared separately where possible.</p>
-      <p class="mb-2"><strong class="text-dark">Japan price:</strong> the current bid or Buy It Now price on the Japanese listing, converted to USD at the rate on the day we checked. Auction prices usually rise before the auction ends.</p>
-      <p class="mb-0"><strong class="text-dark">Estimated total:</strong> adds typical proxy service fees and international shipping. Import duties and taxes depend on your country and are not included, so always check the final amount at checkout.</p>
+      <p class="mb-2"><strong class="text-dark" data-i18n="how_ov_l">Overseas average:</strong> <span data-i18n="how_ov">based on recent completed sales of the same card outside Japan. Graded and ungraded copies are compared separately where possible.</span></p>
+      <p class="mb-2"><strong class="text-dark" data-i18n="how_jp_l">Japan price:</strong> <span data-i18n="how_jp">the current bid or Buy It Now price on the Japanese listing, converted to USD at the rate on the day we checked. Auction prices usually rise before the auction ends.</span></p>
+      <p class="mb-0"><strong class="text-dark" data-i18n="how_fee_l">Fees and shipping:</strong> <span data-i18n="how_fee">not included in the prices above. Proxy service fees, international shipping and import duties depend on your country and shipping method, so always check the final amount at checkout.</span></p>
     </div>
   </section>
 
   <!-- Categories -->
   <section class="py-4 container max-width-800 border-top">
     <div class="text-center mb-3">
-      <h2 class="fw-bold fs-5">Browse Japanese TCG Categories on Buyee</h2>
+      <h2 class="fw-bold fs-5" data-i18n="cat_h">Browse Japanese TCG Categories on Buyee</h2>
     </div>
     <div class="row g-2">
       <div class="col-12 col-md-6">
         <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
           <div class="fw-bold fs-6">Pokémon <span class="text-muted extra-small d-block fw-normal">(ポケモン)</span></div>
           <div class="d-flex gap-1">
-            <a href="https://buyee.jp/item/search/category/2084241343?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;">Buy It Now</a>
-            <a href="https://buyee.jp/item/search/category/2084241343?sort=bids&order=a&isAppraisal=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;">Auctions</a>
+            <a href="https://buyee.jp/item/search/category/2084241343?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="buynow">Buy It Now</a>
+            <a href="https://buyee.jp/item/search/category/2084241343?sort=bids&order=a&isAppraisal=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="auctions">Auctions</a>
           </div>
         </div>
       </div>
@@ -152,8 +163,8 @@ gtag('config', 'G-K30E6LBQDN');
         <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
           <div class="fw-bold fs-6">ONE PIECE <span class="text-muted extra-small d-block fw-normal">(ワンピース)</span></div>
           <div class="d-flex gap-1">
-            <a href="https://buyee.jp/item/search/category/2084236680?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;">Buy It Now</a>
-            <a href="https://buyee.jp/item/search/category/2084236680?sort=bids&order=a&isAppraisal=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;">Auctions</a>
+            <a href="https://buyee.jp/item/search/category/2084236680?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="buynow">Buy It Now</a>
+            <a href="https://buyee.jp/item/search/category/2084236680?sort=bids&order=a&isAppraisal=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="auctions">Auctions</a>
           </div>
         </div>
       </div>
@@ -161,8 +172,8 @@ gtag('config', 'G-K30E6LBQDN');
         <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
           <div class="fw-bold fs-6">Dragon Ball <span class="text-muted extra-small d-block fw-normal">(ドラゴンボール)</span></div>
           <div class="d-flex gap-1">
-            <a href="https://buyee.jp/item/search/category/2084064426?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;">Buy It Now</a>
-            <a href="https://buyee.jp/item/search/category/2084064426?sort=bids&order=a&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;">Auctions</a>
+            <a href="https://buyee.jp/item/search/category/2084064426?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="buynow">Buy It Now</a>
+            <a href="https://buyee.jp/item/search/category/2084064426?sort=bids&order=a&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="auctions">Auctions</a>
           </div>
         </div>
       </div>
@@ -172,56 +183,51 @@ gtag('config', 'G-K30E6LBQDN');
   <!-- Proxy guide -->
   <section class="bg-white py-4 border-top">
     <div class="container text-center max-width-800">
-      <h2 class="fw-bold fs-5 mb-2">How Proxy Shopping Works</h2>
-      <p class="text-muted extra-small mb-3">Many Japanese sellers don't ship overseas. A proxy service buys the item for you in Japan, receives it at its warehouse, and ships it to your country.</p>
+      <h2 class="fw-bold fs-5 mb-2" data-i18n="guide_h">How Proxy Shopping Works</h2>
+      <p class="text-muted extra-small mb-3" data-i18n="guide_p">Many Japanese sellers don't ship overseas. A proxy service buys the item for you in Japan, receives it at its warehouse, and ships it to your country.</p>
       <div class="row g-2 mb-3">
-        <div class="col-4"><div class="p-3 border rounded bg-light h-100"><div class="fs-4 mb-1">🔍</div><strong class="d-block extra-small">1. Find & Bid</strong></div></div>
-        <div class="col-4"><div class="p-3 border rounded bg-light h-100"><div class="fs-4 mb-1">📦</div><strong class="d-block extra-small">2. Arrives at Warehouse</strong></div></div>
-        <div class="col-4"><div class="p-3 border rounded bg-light h-100"><div class="fs-4 mb-1">✈️</div><strong class="d-block extra-small">3. International Delivery</strong></div></div>
+        <div class="col-4"><div class="p-3 border rounded bg-light h-100"><div class="fs-4 mb-1">🔍</div><strong class="d-block extra-small" data-i18n="s1">1. Find & Bid</strong></div></div>
+        <div class="col-4"><div class="p-3 border rounded bg-light h-100"><div class="fs-4 mb-1">📦</div><strong class="d-block extra-small" data-i18n="s2">2. Arrives at Warehouse</strong></div></div>
+        <div class="col-4"><div class="p-3 border rounded bg-light h-100"><div class="fs-4 mb-1">✈️</div><strong class="d-block extra-small" data-i18n="s3">3. International Delivery</strong></div></div>
       </div>
+      <a href="buyee-flow.html" class="btn btn-outline-dark btn-sm fw-bold" data-i18n="guide_link">See the full step-by-step Buyee guide →</a>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="py-4 container max-width-800 border-top">
-    <h2 class="fw-bold fs-5 text-center mb-3">Frequently Asked Questions</h2>
+    <h2 class="fw-bold fs-5 text-center mb-3" data-i18n="faq_h">Frequently Asked Questions</h2>
     <div class="accordion" id="faqAccordion">
       <div class="accordion-item">
-        <h3 class="accordion-header"><button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">How can I buy Japanese TCG cards from overseas?</button></h3>
-        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body extra-small text-muted">
-          Use a proxy shopping service such as Buyee. It bids or buys on Japanese marketplaces for you and ships the item to your address. This site does not sell items itself.
-        </div></div>
+        <h3 class="accordion-header"><button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" data-i18n="q1">How can I buy Japanese TCG cards from overseas?</button></h3>
+        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body extra-small text-muted" data-i18n="a1">Use a proxy shopping service such as Buyee. It bids or buys on Japanese marketplaces for you and ships the item to your address. This site does not sell items itself.</div></div>
       </div>
       <div class="accordion-item">
-        <h3 class="accordion-header"><button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">What fees should I expect?</button></h3>
-        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body extra-small text-muted">
-          Typically: the item price, a proxy service fee, domestic shipping in Japan, international shipping, payment fees, and import duties or taxes in your country. Fees change over time, so check Buyee's official fee page before you bid. This site charges you nothing.
-        </div></div>
+        <h3 class="accordion-header"><button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" data-i18n="q2">What fees should I expect?</button></h3>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body extra-small text-muted" data-i18n="a2">Typically: the item price, a proxy service fee, domestic shipping in Japan, international shipping, payment fees, and import duties or taxes in your country. Fees change over time, so check Buyee's official fee page before you bid. This site charges you nothing.</div></div>
       </div>
       <div class="accordion-item">
-        <h3 class="accordion-header"><button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">What does "Appraised" or "Authenticated" mean on a listing?</button></h3>
-        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body extra-small text-muted">
-          This label is set by the seller on the Japanese listing, and it is a self-declaration. This site does not check or guarantee the authenticity or condition of any item. Please review the photos and description on the Buyee listing and make your own decision before you buy.
-        </div></div>
+        <h3 class="accordion-header"><button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" data-i18n="q3">What does "Appraised" or "Authenticated" mean on a listing?</button></h3>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body extra-small text-muted" data-i18n="a3">This label is set by the seller on the Japanese listing, and it is a self-declaration. This site does not check or guarantee the authenticity or condition of any item. Please review the photos and description on the Buyee listing and make your own decision before you buy.</div></div>
       </div>
       <div class="accordion-item">
-        <h3 class="accordion-header"><button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Which payment and shipping options are available?</button></h3>
-        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body extra-small text-muted">
-          Buyee supports major credit cards and other payment methods, and offers several international carriers. Available options depend on your country, so check them on Buyee's site.
-        </div></div>
+        <h3 class="accordion-header"><button class="accordion-button collapsed extra-small fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" data-i18n="q4">Which payment and shipping options are available?</button></h3>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body extra-small text-muted" data-i18n="a4">Buyee supports major credit cards and other payment methods, and offers several international carriers. Available options depend on your country, so check them on Buyee's site.</div></div>
       </div>
     </div>
   </section>
 
   <footer class="bg-dark text-secondary py-4 mt-auto extra-small">
     <div class="container text-center max-width-800">
-      <div class="d-flex justify-content-center gap-3 mb-3">
-        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#aboutModal">About Us</a>
-        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
-        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#contactModal">Contact</a>
+      <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+        <a href="buyee-flow.html" class="text-secondary text-decoration-none" data-i18n="f_guide">Buying Guide</a>
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#aboutModal" data-i18n="f_about">About Us</a>
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal" data-i18n="f_privacy">Privacy Policy</a>
+        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#contactModal" data-i18n="f_contact">Contact</a>
+        <a href="#" id="cookieSettings" class="text-secondary text-decoration-none" data-i18n="f_cookie">Cookie Settings</a>
       </div>
       <p class="mb-2 text-white-50">© 2026 JapanMania. All rights reserved.</p>
-      <p class="text-muted" style="font-size: 0.65rem; max-width: 600px; margin: 0 auto;">
+      <p class="text-muted" style="font-size: 0.65rem; max-width: 600px; margin: 0 auto;" data-i18n="f_disc">
         This site is an independent information and price comparison guide. We are not affiliated with or endorsed by Buyee or any marketplace, and we do not sell, inspect or ship products. All transactions are handled by the proxy service you choose. Labels such as "Appraised" or "Authenticated" are set by sellers or by third-party systems; this site does not guarantee authenticity or condition.
       </p>
     </div>
@@ -229,8 +235,8 @@ gtag('config', 'G-K30E6LBQDN');
 
   <div class="modal fade" id="aboutModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered"><div class="modal-content text-start">
-      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold">About Us</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body extra-small text-muted">
+      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold" data-i18n="about_t">About Us</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-body extra-small text-muted" data-i18n="about_b">
         JapanMania is run by an independent developer in Japan. We compare prices of Japanese trading cards with overseas markets and explain how collectors abroad can buy them through proxy services.
       </div>
     </div></div>
@@ -238,44 +244,450 @@ gtag('config', 'G-K30E6LBQDN');
 
   <div class="modal fade" id="privacyModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content text-start">
-      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold">Privacy Policy & Affiliate Disclosure</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold" data-i18n="priv_t">Privacy Policy & Affiliate Disclosure</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
       <div class="modal-body extra-small text-muted">
-        <p><strong>Information we collect:</strong> If you contact us, we receive the email address and message you send. We use it only to reply.</p>
-        <p><strong>Analytics:</strong> We may use analytics tools that use cookies to understand how visitors use this site. This data is aggregated and is not used to identify you.</p>
-        <p><strong>Affiliate links:</strong> Some links to Buyee are affiliate links. If you make a purchase after clicking one, we may earn a commission at no extra cost to you. The affiliate program may use cookies to track referrals.</p>
-        <p><strong>Third-party sites:</strong> Purchases are made on external sites that have their own privacy policies. We are not responsible for their practices.</p>
-        <p class="mb-0"><strong>Contact:</strong> For privacy questions, use the Contact form on this site.</p>
+        <p><strong data-i18n="p_info_l">Information we collect:</strong> <span data-i18n="p_info">If you contact us, we receive the email address and message you send. We use it only to reply.</span></p>
+        <p><strong data-i18n="p_an_l">Analytics:</strong> <span data-i18n="p_an">We use Google Analytics, which uses cookies, to understand how visitors use this site. The data is aggregated and is not used to identify you. Visitors in the EEA, the UK and Switzerland are asked for consent first, and analytics cookies are only set if you accept. You can change your choice at any time via "Cookie Settings" at the bottom of the page.</span></p>
+        <p><strong data-i18n="p_aff_l">Affiliate links:</strong> <span data-i18n="p_aff">Some links to Buyee are affiliate links. If you make a purchase after clicking one, we may earn a commission at no extra cost to you. The affiliate program may use cookies to track referrals.</span></p>
+        <p><strong data-i18n="p_3p_l">Third-party sites:</strong> <span data-i18n="p_3p">Purchases are made on external sites that have their own privacy policies. We are not responsible for their practices.</span></p>
+        <p class="mb-0"><strong data-i18n="p_ct_l">Contact:</strong> <span data-i18n="p_ct">For privacy questions, use the Contact form on this site.</span></p>
       </div>
     </div></div>
   </div>
 
   <div class="modal fade" id="contactModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered"><div class="modal-content text-start">
-      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold">Contact Us</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold" data-i18n="contact_t">Contact Us</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
       <div class="modal-body extra-small text-muted">
-        <!-- 要差し替え: Formspreeで作ったフォームIDを入れる -->
         <form action="https://formspree.io/f/mbggqjga" method="POST">
           <div class="mb-2">
-            <label class="form-label text-dark fw-bold">Your Email</label>
+            <label class="form-label text-dark fw-bold" data-i18n="c_email">Your Email</label>
             <input type="email" name="email" class="form-control form-control-sm" required placeholder="name@example.com">
           </div>
           <div class="mb-2">
-            <label class="form-label text-dark fw-bold">Message</label>
-            <textarea name="message" class="form-control form-control-sm" rows="3" required placeholder="Type your message..."></textarea>
+            <label class="form-label text-dark fw-bold" data-i18n="c_msg">Message</label>
+            <textarea name="message" class="form-control form-control-sm" rows="3" required placeholder="Type your message..." data-i18n-ph="c_ph"></textarea>
           </div>
-          <button type="submit" class="btn btn-dark btn-sm w-100 fw-bold mt-2">Send Message</button>
+          <button type="submit" class="btn btn-dark btn-sm w-100 fw-bold mt-2" data-i18n="c_send">Send Message</button>
         </form>
       </div>
     </div></div>
   </div>
 
+  <!-- Cookie consent banner (EU visitors) -->
+  <div id="cookieBanner" class="cookie-banner shadow-lg" role="dialog" aria-live="polite" hidden>
+    <div class="container max-width-800 d-flex flex-column flex-sm-row align-items-sm-center gap-2 py-3">
+      <div class="small flex-grow-1" data-i18n="cb_text">We use analytics cookies to understand how visitors use this site. You can accept or reject them.</div>
+      <div class="d-flex gap-2 flex-shrink-0">
+        <button type="button" id="cbReject" class="btn btn-outline-light btn-sm fw-bold px-3" data-i18n="cb_reject">Reject</button>
+        <button type="button" id="cbAccept" class="btn btn-light btn-sm fw-bold px-3" data-i18n="cb_accept">Accept</button>
+      </div>
+    </div>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Translations (English is taken from the HTML itself) -->
   <script>
-    function changeLanguage(lang) {
-      if (typeof gtag === 'function') {
-        gtag('event', 'change_language', { 'language': lang });
-      }
+  const I18N = {
+    "zh-TW": {
+      f_guide:"購買指南",
+      title:"JapanMania | 市場比價與代購指南",
+      desc:"比較日本TCG拍賣商品與海外市場價格，並了解如何透過Buyee代購服務從日本購買。",
+      tagline:"市場比價與代購指南",
+      aff:"*本站含有聯盟行銷連結。若您透過Buyee購買，我們可能會獲得佣金，您無需支付額外費用。",
+      notice:"「已鑑定」「已認證」等標籤由賣家或Buyee系統設定。本站不保證商品的真偽或狀態。購買前請在Buyee確認商品頁面並自行判斷。",
+      feat_badge:"精選比價",
+      feat_sub:"海外市場平均價格 vs. 日本國內進行中的拍賣。價格確認日期：2026年11月4日。",
+      ov_head:"海外市場平均", ov_note:"近期海外成交平均價",
+      jp_head:"日本進行中拍賣",
+      ref_img:"參考圖片。實際商品照片請見Buyee商品頁面。",
+      cur_bid:"目前出價（可能上漲）",
+      excl:"不含手續費、運費及進口稅。",
+      cta:"在Buyee查看此拍賣 →",
+      cta_note:"出價、檢查及國際配送由Buyee負責。",
+      how_h:"我們如何比價",
+      how_ov_l:"海外平均：", how_ov:"根據日本以外地區同款卡片的近期成交紀錄。盡可能將評級卡與未評級卡分開比較。",
+      how_jp_l:"日本價格：", how_jp:"日本商品頁面上的目前出價或直購價，依確認當日匯率換算為美元。拍賣價格通常會在結標前上漲。",
+      how_fee_l:"手續費與運費：", how_fee:"未包含在上述價格中。代購手續費、國際運費及進口關稅依您的國家與配送方式而異，請務必在結帳時確認最終金額。",
+      cat_h:"在Buyee瀏覽日本TCG分類",
+      buynow:"直購", auctions:"拍賣",
+      guide_h:"代購如何運作",
+      guide_p:"許多日本賣家不寄送海外。代購服務會替您在日本購買商品，送到倉庫後再寄送到您的國家。",
+      s1:"1. 搜尋與出價", s2:"2. 抵達倉庫", s3:"3. 國際配送",
+      guide_link:"查看完整的Buyee購買步驟 →",
+      faq_h:"常見問題",
+      q1:"如何從海外購買日本TCG卡片？",
+      a1:"使用Buyee等代購服務。它會替您在日本的網站出價或購買，並將商品寄送到您的地址。本站本身不販售商品。",
+      q2:"需要支付哪些費用？",
+      a2:"一般包括：商品價格、代購手續費、日本國內運費、國際運費、付款手續費，以及您所在國家的進口關稅或稅金。費用會隨時間變動，出價前請查看Buyee官方費用頁面。本站不向您收取任何費用。",
+      q3:"商品頁面上的「已鑑定」或「已認證」是什麼意思？",
+      a3:"此標籤由日本商品頁面的賣家設定，屬於自行聲明。本站不檢查也不保證任何商品的真偽或狀態。購買前請查看Buyee商品頁面上的照片與說明並自行判斷。",
+      q4:"有哪些付款與配送方式？",
+      a4:"Buyee支援主要信用卡及其他付款方式，並提供多家國際物流業者。可用選項依國家而異，請在Buyee網站上確認。",
+      f_about:"關於我們", f_privacy:"隱私權政策", f_contact:"聯絡我們", f_cookie:"Cookie設定",
+      f_disc:"本站為獨立的資訊與比價指南。我們與Buyee或任何購物平台無關，也未獲其背書，且不販售、檢查或寄送商品。所有交易均由您選擇的代購服務處理。「已鑑定」「已認證」等標籤由賣家或第三方系統設定，本站不保證真偽或狀態。",
+      about_t:"關於我們",
+      about_b:"JapanMania由日本的一位獨立開發者經營。我們比較日本集換式卡牌與海外市場的價格，並說明海外收藏家如何透過代購服務購買。",
+      priv_t:"隱私權政策與聯盟行銷聲明",
+      p_info_l:"我們收集的資訊：", p_info:"若您聯絡我們，我們會收到您寄送的電子郵件地址與訊息，僅用於回覆。",
+      p_an_l:"分析：", p_an:"我們使用會設定Cookie的Google Analytics來了解訪客如何使用本站。資料為彙總資料，不會用於識別您的身分。來自歐洲經濟區、英國及瑞士的訪客會先被詢問是否同意，只有在您接受後才會設定分析Cookie。您可隨時透過頁面底部的「Cookie設定」變更選擇。",
+      p_aff_l:"聯盟行銷連結：", p_aff:"部分前往Buyee的連結為聯盟行銷連結。若您點擊後購買，我們可能會獲得佣金，您無需支付額外費用。聯盟計畫可能使用Cookie追蹤推薦來源。",
+      p_3p_l:"第三方網站：", p_3p:"購買是在擁有各自隱私權政策的外部網站上進行。我們不對其做法負責。",
+      p_ct_l:"聯絡方式：", p_ct:"如有隱私權相關問題，請使用本站的聯絡表單。",
+      contact_t:"聯絡我們", c_email:"您的電子郵件", c_msg:"訊息", c_ph:"請輸入訊息...", c_send:"送出訊息",
+      cb_text:"我們使用分析用Cookie來了解訪客如何使用本站。您可以選擇接受或拒絕。", cb_accept:"接受", cb_reject:"拒絕"
+    },
+    "zh-CN": {
+      f_guide:"购买指南",
+      title:"JapanMania | 市场比价与代购指南",
+      desc:"比较日本TCG拍卖商品与海外市场价格，并了解如何通过Buyee代购服务从日本购买。",
+      tagline:"市场比价与代购指南",
+      aff:"*本站包含联盟推广链接。如果您通过Buyee购买，我们可能会获得佣金，您无需支付额外费用。",
+      notice:"“已鉴定”“已认证”等标签由卖家或Buyee系统设置。本站不保证商品的真伪或品相。购买前请在Buyee确认商品页面并自行判断。",
+      feat_badge:"精选比价",
+      feat_sub:"海外市场均价 vs. 日本国内正在进行的拍卖。价格确认日期：2026年11月4日。",
+      ov_head:"海外市场均价", ov_note:"近期海外成交均价",
+      jp_head:"日本进行中拍卖",
+      ref_img:"参考图片。实际商品照片请查看Buyee商品页面。",
+      cur_bid:"当前出价（可能上涨）",
+      excl:"不含手续费、运费及进口税。",
+      cta:"在Buyee查看此拍卖 →",
+      cta_note:"出价、检查及国际配送由Buyee负责。",
+      how_h:"我们如何比价",
+      how_ov_l:"海外均价：", how_ov:"基于日本以外地区同款卡牌的近期成交记录。尽可能将评级卡与未评级卡分开比较。",
+      how_jp_l:"日本价格：", how_jp:"日本商品页面上的当前出价或一口价，按确认当日汇率换算为美元。拍卖价格通常会在结束前上涨。",
+      how_fee_l:"手续费与运费：", how_fee:"未包含在上述价格中。代购手续费、国际运费及进口关税因您所在国家和配送方式而异，请务必在结算时确认最终金额。",
+      cat_h:"在Buyee浏览日本TCG分类",
+      buynow:"一口价", auctions:"拍卖",
+      guide_h:"代购如何运作",
+      guide_p:"许多日本卖家不发货到海外。代购服务会替您在日本购买商品，送到其仓库后再寄送到您的国家。",
+      s1:"1. 搜索与出价", s2:"2. 到达仓库", s3:"3. 国际配送",
+      guide_link:"查看完整的Buyee购买步骤 →",
+      faq_h:"常见问题",
+      q1:"如何从海外购买日本TCG卡牌？",
+      a1:"使用Buyee等代购服务。它会替您在日本的平台出价或购买，并将商品寄送到您的地址。本站本身不销售商品。",
+      q2:"需要支付哪些费用？",
+      a2:"通常包括：商品价格、代购服务费、日本国内运费、国际运费、支付手续费，以及您所在国家的进口关税或税费。费用会随时间变化，出价前请查看Buyee官方费用页面。本站不向您收取任何费用。",
+      q3:"商品页面上的“已鉴定”或“已认证”是什么意思？",
+      a3:"该标签由日本商品页面的卖家设置，属于自我声明。本站不检查也不保证任何商品的真伪或品相。购买前请查看Buyee商品页面上的照片和说明并自行判断。",
+      q4:"有哪些支付和配送方式？",
+      a4:"Buyee支持主流信用卡及其他支付方式，并提供多家国际物流商。可用选项因国家而异，请在Buyee网站上确认。",
+      f_about:"关于我们", f_privacy:"隐私政策", f_contact:"联系我们", f_cookie:"Cookie设置",
+      f_disc:"本站是独立的信息与比价指南。我们与Buyee或任何购物平台无关联，也未获其认可，且不销售、检查或寄送商品。所有交易均由您选择的代购服务处理。“已鉴定”“已认证”等标签由卖家或第三方系统设置，本站不保证真伪或品相。",
+      about_t:"关于我们",
+      about_b:"JapanMania由日本的一位独立开发者运营。我们比较日本集换式卡牌与海外市场的价格，并介绍海外收藏者如何通过代购服务购买。",
+      priv_t:"隐私政策与联盟推广声明",
+      p_info_l:"我们收集的信息：", p_info:"如果您联系我们，我们会收到您发送的电子邮箱地址和消息，仅用于回复。",
+      p_an_l:"数据分析：", p_an:"我们使用会设置Cookie的Google Analytics来了解访客如何使用本站。数据为汇总数据，不会用于识别您的身份。来自欧洲经济区、英国和瑞士的访客会先被征求同意，只有在您接受后才会设置分析Cookie。您可随时通过页面底部的“Cookie设置”更改选择。",
+      p_aff_l:"联盟推广链接：", p_aff:"部分指向Buyee的链接为联盟推广链接。如果您点击后购买，我们可能会获得佣金，您无需支付额外费用。联盟计划可能使用Cookie追踪推荐来源。",
+      p_3p_l:"第三方网站：", p_3p:"购买在拥有各自隐私政策的外部网站上进行。我们不对其做法负责。",
+      p_ct_l:"联系方式：", p_ct:"如有隐私相关问题，请使用本站的联系表单。",
+      contact_t:"联系我们", c_email:"您的邮箱", c_msg:"消息", c_ph:"请输入消息...", c_send:"发送消息",
+      cb_text:"我们使用分析Cookie来了解访客如何使用本站。您可以选择接受或拒绝。", cb_accept:"接受", cb_reject:"拒绝"
+    },
+    "es": {
+      f_guide:"Guía de compra",
+      title:"JapanMania | Comparativas de mercado y guía de compra por proxy",
+      desc:"Compara subastas de cartas TCG japonesas con los precios del mercado internacional y aprende a comprar desde Japón con el servicio proxy Buyee.",
+      tagline:"Comparativas de mercado y guía proxy",
+      aff:"*Este sitio contiene enlaces de afiliado. Podemos recibir una comisión si compras a través de Buyee, sin coste adicional para ti.",
+      notice:"Etiquetas como «Tasado» o «Autenticado» las asigna el vendedor o el sistema de Buyee. Este sitio no garantiza la autenticidad ni el estado. Revisa el anuncio en Buyee y decide por tu cuenta antes de comprar.",
+      feat_badge:"Comparativa destacada",
+      feat_sub:"Media del mercado internacional vs. una subasta activa en Japón. Precios consultados el 4 de noviembre de 2026.",
+      ov_head:"Media del mercado internacional", ov_note:"Media de ventas recientes fuera de Japón",
+      jp_head:"Subasta activa en Japón",
+      ref_img:"Imagen de referencia. Consulta el anuncio en Buyee para ver las fotos reales.",
+      cur_bid:"Puja actual (puede subir)",
+      excl:"No incluye comisiones, envío ni impuestos de importación.",
+      cta:"Ver esta subasta en Buyee →",
+      cta_note:"Las pujas, la inspección y el envío internacional los gestiona Buyee.",
+      how_h:"Cómo comparamos los precios",
+      how_ov_l:"Media internacional:", how_ov:"basada en ventas recientes completadas de la misma carta fuera de Japón. Cuando es posible, las cartas graduadas y sin graduar se comparan por separado.",
+      how_jp_l:"Precio en Japón:", how_jp:"la puja actual o el precio de compra inmediata del anuncio japonés, convertido a USD al tipo de cambio del día de la consulta. Los precios de subasta suelen subir antes de que termine.",
+      how_fee_l:"Comisiones y envío:", how_fee:"no están incluidos en los precios anteriores. Las comisiones del proxy, el envío internacional y los aranceles dependen de tu país y del método de envío, así que comprueba siempre el importe final al pagar.",
+      cat_h:"Explora categorías de TCG japonés en Buyee",
+      buynow:"Compra inmediata", auctions:"Subastas",
+      guide_h:"Cómo funciona la compra por proxy",
+      guide_p:"Muchos vendedores japoneses no envían al extranjero. Un servicio proxy compra el artículo por ti en Japón, lo recibe en su almacén y lo envía a tu país.",
+      s1:"1. Busca y puja", s2:"2. Llega al almacén", s3:"3. Envío internacional",
+      guide_link:"Ver la guía paso a paso de Buyee →",
+      faq_h:"Preguntas frecuentes",
+      q1:"¿Cómo puedo comprar cartas TCG japonesas desde el extranjero?",
+      a1:"Usa un servicio de compra por proxy como Buyee. Puja o compra por ti en plataformas japonesas y envía el artículo a tu dirección. Este sitio no vende artículos.",
+      q2:"¿Qué costes debo esperar?",
+      a2:"Normalmente: el precio del artículo, una comisión del proxy, el envío nacional en Japón, el envío internacional, comisiones de pago y aranceles o impuestos de tu país. Las tarifas cambian con el tiempo, así que consulta la página oficial de tarifas de Buyee antes de pujar. Este sitio no te cobra nada.",
+      q3:"¿Qué significa «Tasado» o «Autenticado» en un anuncio?",
+      a3:"Esta etiqueta la pone el vendedor en el anuncio japonés y es una autodeclaración. Este sitio no comprueba ni garantiza la autenticidad o el estado de ningún artículo. Revisa las fotos y la descripción del anuncio en Buyee y decide por tu cuenta antes de comprar.",
+      q4:"¿Qué opciones de pago y envío hay?",
+      a4:"Buyee acepta las principales tarjetas de crédito y otros métodos de pago, y ofrece varias empresas de envío internacional. Las opciones dependen de tu país, así que consúltalas en la web de Buyee.",
+      f_about:"Quiénes somos", f_privacy:"Política de privacidad", f_contact:"Contacto", f_cookie:"Configuración de cookies",
+      f_disc:"Este sitio es una guía independiente de información y comparación de precios. No estamos afiliados a Buyee ni a ningún marketplace, ni contamos con su respaldo, y no vendemos, inspeccionamos ni enviamos productos. Todas las transacciones las gestiona el servicio proxy que elijas. Etiquetas como «Tasado» o «Autenticado» las asignan los vendedores o sistemas de terceros; este sitio no garantiza la autenticidad ni el estado.",
+      about_t:"Quiénes somos",
+      about_b:"JapanMania lo gestiona un desarrollador independiente en Japón. Comparamos los precios de cartas coleccionables japonesas con los mercados internacionales y explicamos cómo los coleccionistas del extranjero pueden comprarlas mediante servicios proxy.",
+      priv_t:"Política de privacidad y aviso de afiliados",
+      p_info_l:"Información que recopilamos:", p_info:"Si nos contactas, recibimos el correo electrónico y el mensaje que envías. Solo los usamos para responderte.",
+      p_an_l:"Analítica:", p_an:"Usamos Google Analytics, que utiliza cookies, para entender cómo se usa este sitio. Los datos son agregados y no se usan para identificarte. A los visitantes del EEE, el Reino Unido y Suiza se les pide su consentimiento primero, y las cookies de analítica solo se activan si aceptas. Puedes cambiar tu elección en cualquier momento en «Configuración de cookies», al pie de la página.",
+      p_aff_l:"Enlaces de afiliado:", p_aff:"Algunos enlaces a Buyee son de afiliado. Si compras después de hacer clic en uno, podemos recibir una comisión sin coste adicional para ti. El programa de afiliados puede usar cookies para registrar las referencias.",
+      p_3p_l:"Sitios de terceros:", p_3p:"Las compras se realizan en sitios externos con sus propias políticas de privacidad. No somos responsables de sus prácticas.",
+      p_ct_l:"Contacto:", p_ct:"Para consultas sobre privacidad, usa el formulario de contacto de este sitio.",
+      contact_t:"Contáctanos", c_email:"Tu correo electrónico", c_msg:"Mensaje", c_ph:"Escribe tu mensaje...", c_send:"Enviar mensaje",
+      cb_text:"Usamos cookies de analítica para entender cómo se usa este sitio. Puedes aceptarlas o rechazarlas.", cb_accept:"Aceptar", cb_reject:"Rechazar"
+    },
+    "fr": {
+      f_guide:"Guide d'achat",
+      title:"JapanMania | Comparatifs de prix et guide des services proxy",
+      desc:"Comparez les enchères japonaises de cartes TCG avec les prix du marché international et découvrez comment acheter au Japon via le service proxy Buyee.",
+      tagline:"Comparatifs de prix et guide proxy",
+      aff:"*Ce site contient des liens d'affiliation. Nous pouvons percevoir une commission si vous achetez via Buyee, sans frais supplémentaires pour vous.",
+      notice:"Les mentions comme « Expertisé » ou « Authentifié » sont attribuées par le vendeur ou par le système de Buyee. Ce site ne garantit ni l'authenticité ni l'état. Vérifiez l'annonce sur Buyee et décidez par vous-même avant d'acheter.",
+      feat_badge:"Comparatif à la une",
+      feat_sub:"Moyenne du marché international vs. une enchère en cours au Japon. Prix relevés le 4 novembre 2026.",
+      ov_head:"Moyenne du marché international", ov_note:"Moyenne des ventes récentes hors du Japon",
+      jp_head:"Enchère en cours au Japon",
+      ref_img:"Image de référence. Consultez l'annonce sur Buyee pour les photos réelles.",
+      cur_bid:"Enchère actuelle (peut augmenter)",
+      excl:"Frais, livraison et taxes d'importation non inclus.",
+      cta:"Voir cette enchère sur Buyee →",
+      cta_note:"Les enchères, l'inspection et la livraison internationale sont gérées par Buyee.",
+      how_h:"Comment nous comparons les prix",
+      how_ov_l:"Moyenne internationale :", how_ov:"basée sur les ventes récentes conclues de la même carte hors du Japon. Les cartes gradées et non gradées sont comparées séparément lorsque c'est possible.",
+      how_jp_l:"Prix au Japon :", how_jp:"l'enchère actuelle ou le prix d'achat immédiat de l'annonce japonaise, converti en USD au taux du jour du relevé. Les prix des enchères augmentent généralement avant la fin.",
+      how_fee_l:"Frais et livraison :", how_fee:"non inclus dans les prix ci-dessus. Les frais du service proxy, la livraison internationale et les droits de douane dépendent de votre pays et du mode d'expédition ; vérifiez toujours le montant final lors du paiement.",
+      cat_h:"Parcourir les catégories TCG japonaises sur Buyee",
+      buynow:"Achat immédiat", auctions:"Enchères",
+      guide_h:"Comment fonctionne l'achat via proxy",
+      guide_p:"Beaucoup de vendeurs japonais n'expédient pas à l'étranger. Un service proxy achète l'article pour vous au Japon, le reçoit dans son entrepôt et l'expédie dans votre pays.",
+      s1:"1. Chercher et enchérir", s2:"2. Arrivée à l'entrepôt", s3:"3. Livraison internationale",
+      guide_link:"Voir le guide Buyee étape par étape →",
+      faq_h:"Questions fréquentes",
+      q1:"Comment acheter des cartes TCG japonaises depuis l'étranger ?",
+      a1:"Utilisez un service d'achat proxy comme Buyee. Il enchérit ou achète pour vous sur les plateformes japonaises et expédie l'article à votre adresse. Ce site ne vend pas d'articles.",
+      q2:"Quels frais prévoir ?",
+      a2:"En général : le prix de l'article, des frais de service proxy, la livraison au Japon, la livraison internationale, des frais de paiement et les droits ou taxes d'importation de votre pays. Les tarifs évoluent, consultez donc la page officielle des frais de Buyee avant d'enchérir. Ce site ne vous facture rien.",
+      q3:"Que signifie « Expertisé » ou « Authentifié » sur une annonce ?",
+      a3:"Cette mention est ajoutée par le vendeur sur l'annonce japonaise et relève de sa propre déclaration. Ce site ne vérifie ni ne garantit l'authenticité ou l'état d'aucun article. Examinez les photos et la description sur Buyee et décidez par vous-même avant d'acheter.",
+      q4:"Quels modes de paiement et de livraison sont disponibles ?",
+      a4:"Buyee accepte les principales cartes bancaires et d'autres moyens de paiement, et propose plusieurs transporteurs internationaux. Les options dépendent de votre pays ; vérifiez-les sur le site de Buyee.",
+      f_about:"À propos", f_privacy:"Politique de confidentialité", f_contact:"Contact", f_cookie:"Paramètres des cookies",
+      f_disc:"Ce site est un guide indépendant d'information et de comparaison de prix. Nous ne sommes ni affiliés à Buyee ou à une plateforme de vente, ni soutenus par eux, et nous ne vendons, n'inspectons ni n'expédions de produits. Toutes les transactions sont gérées par le service proxy de votre choix. Les mentions comme « Expertisé » ou « Authentifié » sont attribuées par les vendeurs ou des systèmes tiers ; ce site ne garantit ni l'authenticité ni l'état.",
+      about_t:"À propos",
+      about_b:"JapanMania est géré par un développeur indépendant au Japon. Nous comparons les prix des cartes à collectionner japonaises avec les marchés étrangers et expliquons comment les collectionneurs à l'étranger peuvent les acheter via des services proxy.",
+      priv_t:"Politique de confidentialité et mention d'affiliation",
+      p_info_l:"Données collectées :", p_info:"Si vous nous contactez, nous recevons l'adresse e-mail et le message que vous envoyez. Nous les utilisons uniquement pour vous répondre.",
+      p_an_l:"Mesure d'audience :", p_an:"Nous utilisons Google Analytics, qui dépose des cookies, pour comprendre comment ce site est utilisé. Les données sont agrégées et ne servent pas à vous identifier. Les visiteurs de l'EEE, du Royaume-Uni et de la Suisse sont d'abord invités à donner leur consentement, et les cookies de mesure ne sont déposés que si vous acceptez. Vous pouvez modifier votre choix à tout moment via « Paramètres des cookies » en bas de page.",
+      p_aff_l:"Liens d'affiliation :", p_aff:"Certains liens vers Buyee sont des liens d'affiliation. Si vous achetez après avoir cliqué sur l'un d'eux, nous pouvons percevoir une commission sans frais supplémentaires pour vous. Le programme d'affiliation peut utiliser des cookies pour suivre les recommandations.",
+      p_3p_l:"Sites tiers :", p_3p:"Les achats sont effectués sur des sites externes qui ont leurs propres politiques de confidentialité. Nous ne sommes pas responsables de leurs pratiques.",
+      p_ct_l:"Contact :", p_ct:"Pour toute question sur la confidentialité, utilisez le formulaire de contact de ce site.",
+      contact_t:"Nous contacter", c_email:"Votre e-mail", c_msg:"Message", c_ph:"Saisissez votre message...", c_send:"Envoyer",
+      cb_text:"Nous utilisons des cookies de mesure d'audience pour comprendre comment ce site est utilisé. Vous pouvez les accepter ou les refuser.", cb_accept:"Accepter", cb_reject:"Refuser"
+    },
+    "de": {
+      f_guide:"Kaufratgeber",
+      title:"JapanMania | Marktvergleiche & Proxy-Ratgeber",
+      desc:"Vergleiche japanische TCG-Auktionen mit internationalen Marktpreisen und erfahre, wie du über den Proxy-Dienst Buyee in Japan kaufst.",
+      tagline:"Marktvergleiche & Proxy-Ratgeber",
+      aff:"*Diese Website enthält Affiliate-Links. Wenn du über Buyee kaufst, erhalten wir möglicherweise eine Provision – für dich ohne Mehrkosten.",
+      notice:"Kennzeichnungen wie „Geprüft“ oder „Authentifiziert“ werden vom Verkäufer oder vom System von Buyee vergeben. Diese Website garantiert weder Echtheit noch Zustand. Prüfe das Angebot auf Buyee und entscheide selbst, bevor du kaufst.",
+      feat_badge:"Preisvergleich im Fokus",
+      feat_sub:"Internationaler Marktdurchschnitt vs. eine laufende Auktion in Japan. Preise geprüft am 4. November 2026.",
+      ov_head:"Internationaler Marktdurchschnitt", ov_note:"Durchschnitt aktueller Verkäufe außerhalb Japans",
+      jp_head:"Laufende Auktion in Japan",
+      ref_img:"Referenzbild. Echte Artikelfotos findest du im Angebot auf Buyee.",
+      cur_bid:"Aktuelles Gebot (kann steigen)",
+      excl:"Gebühren, Versand und Einfuhrabgaben nicht enthalten.",
+      cta:"Diese Auktion auf Buyee ansehen →",
+      cta_note:"Gebote, Prüfung und internationaler Versand werden von Buyee abgewickelt.",
+      how_h:"So vergleichen wir Preise",
+      how_ov_l:"Internationaler Durchschnitt:", how_ov:"basiert auf aktuellen abgeschlossenen Verkäufen derselben Karte außerhalb Japans. Gegradete und ungegradete Karten werden nach Möglichkeit getrennt verglichen.",
+      how_jp_l:"Preis in Japan:", how_jp:"das aktuelle Gebot oder der Sofortkaufpreis im japanischen Angebot, umgerechnet in USD zum Kurs am Tag der Prüfung. Auktionspreise steigen meist vor dem Auktionsende.",
+      how_fee_l:"Gebühren und Versand:", how_fee:"sind in den obigen Preisen nicht enthalten. Proxy-Gebühren, internationaler Versand und Einfuhrzölle hängen von deinem Land und der Versandart ab – prüfe daher immer den Endbetrag an der Kasse.",
+      cat_h:"Japanische TCG-Kategorien auf Buyee durchsuchen",
+      buynow:"Sofortkauf", auctions:"Auktionen",
+      guide_h:"So funktioniert Proxy-Shopping",
+      guide_p:"Viele japanische Verkäufer versenden nicht ins Ausland. Ein Proxy-Dienst kauft den Artikel für dich in Japan, nimmt ihn in seinem Lager an und schickt ihn in dein Land.",
+      s1:"1. Suchen & bieten", s2:"2. Ankunft im Lager", s3:"3. Internationaler Versand",
+      guide_link:"Zur Schritt-für-Schritt-Anleitung für Buyee →",
+      faq_h:"Häufige Fragen",
+      q1:"Wie kann ich japanische TCG-Karten aus dem Ausland kaufen?",
+      a1:"Nutze einen Proxy-Dienst wie Buyee. Er bietet oder kauft für dich auf japanischen Marktplätzen und schickt den Artikel an deine Adresse. Diese Website verkauft selbst keine Artikel.",
+      q2:"Mit welchen Kosten muss ich rechnen?",
+      a2:"In der Regel: Artikelpreis, Proxy-Servicegebühr, Inlandsversand in Japan, internationaler Versand, Zahlungsgebühren sowie Einfuhrzölle oder Steuern in deinem Land. Die Gebühren ändern sich mit der Zeit, prüfe daher vor dem Bieten die offizielle Gebührenseite von Buyee. Diese Website berechnet dir nichts.",
+      q3:"Was bedeutet „Geprüft“ oder „Authentifiziert“ in einem Angebot?",
+      a3:"Diese Kennzeichnung setzt der Verkäufer im japanischen Angebot, es handelt sich um eine Selbstauskunft. Diese Website prüft oder garantiert weder Echtheit noch Zustand eines Artikels. Sieh dir Fotos und Beschreibung im Angebot auf Buyee an und entscheide selbst, bevor du kaufst.",
+      q4:"Welche Zahlungs- und Versandoptionen gibt es?",
+      a4:"Buyee akzeptiert gängige Kreditkarten und weitere Zahlungsmethoden und bietet mehrere internationale Versanddienstleister an. Die verfügbaren Optionen hängen von deinem Land ab – prüfe sie auf der Website von Buyee.",
+      f_about:"Über uns", f_privacy:"Datenschutz", f_contact:"Kontakt", f_cookie:"Cookie-Einstellungen",
+      f_disc:"Diese Website ist ein unabhängiger Informations- und Preisvergleichsratgeber. Wir sind weder mit Buyee noch mit einem Marktplatz verbunden oder von ihnen unterstützt und verkaufen, prüfen oder versenden keine Produkte. Alle Transaktionen werden über den von dir gewählten Proxy-Dienst abgewickelt. Kennzeichnungen wie „Geprüft“ oder „Authentifiziert“ stammen von Verkäufern oder Drittsystemen; diese Website garantiert weder Echtheit noch Zustand.",
+      about_t:"Über uns",
+      about_b:"JapanMania wird von einem unabhängigen Entwickler in Japan betrieben. Wir vergleichen die Preise japanischer Sammelkarten mit internationalen Märkten und erklären, wie Sammler im Ausland sie über Proxy-Dienste kaufen können.",
+      priv_t:"Datenschutzerklärung & Affiliate-Hinweis",
+      p_info_l:"Erhobene Daten:", p_info:"Wenn du uns kontaktierst, erhalten wir deine E-Mail-Adresse und Nachricht. Wir verwenden sie nur, um zu antworten.",
+      p_an_l:"Analyse:", p_an:"Wir nutzen Google Analytics, das Cookies verwendet, um zu verstehen, wie diese Website genutzt wird. Die Daten werden zusammengefasst und nicht zu deiner Identifizierung verwendet. Besucher aus dem EWR, dem Vereinigten Königreich und der Schweiz werden zuerst um Einwilligung gebeten; Analyse-Cookies werden nur gesetzt, wenn du zustimmst. Du kannst deine Wahl jederzeit über „Cookie-Einstellungen“ unten auf der Seite ändern.",
+      p_aff_l:"Affiliate-Links:", p_aff:"Einige Links zu Buyee sind Affiliate-Links. Wenn du nach einem Klick kaufst, erhalten wir möglicherweise eine Provision – für dich ohne Mehrkosten. Das Partnerprogramm kann Cookies verwenden, um Empfehlungen zu erfassen.",
+      p_3p_l:"Websites Dritter:", p_3p:"Käufe erfolgen auf externen Websites mit eigenen Datenschutzrichtlinien. Für deren Praktiken sind wir nicht verantwortlich.",
+      p_ct_l:"Kontakt:", p_ct:"Für Fragen zum Datenschutz nutze das Kontaktformular dieser Website.",
+      contact_t:"Kontakt", c_email:"Deine E-Mail", c_msg:"Nachricht", c_ph:"Deine Nachricht...", c_send:"Nachricht senden",
+      cb_text:"Wir verwenden Analyse-Cookies, um zu verstehen, wie diese Website genutzt wird. Du kannst sie akzeptieren oder ablehnen.", cb_accept:"Akzeptieren", cb_reject:"Ablehnen"
+    },
+    "ko": {
+      f_guide:"구매 가이드",
+      title:"JapanMania | 시세 비교 & 구매대행 가이드",
+      desc:"일본 TCG 경매 매물과 해외 시세를 비교하고, 구매대행 서비스 Buyee로 일본에서 구매하는 방법을 알아보세요.",
+      tagline:"시세 비교 & 구매대행 가이드",
+      aff:"*이 사이트에는 제휴 링크가 포함되어 있습니다. Buyee를 통해 구매하시면 추가 비용 없이 저희가 수수료를 받을 수 있습니다.",
+      notice:"'감정 완료', '인증됨' 등의 표시는 판매자 또는 Buyee 시스템이 설정한 것입니다. 이 사이트는 진품 여부나 상태를 보증하지 않습니다. 구매 전 Buyee에서 상품 페이지를 확인하고 직접 판단해 주세요.",
+      feat_badge:"추천 가격 비교",
+      feat_sub:"해외 시세 평균 vs. 진행 중인 일본 국내 경매. 가격 확인일: 2026년 11월 4일.",
+      ov_head:"해외 시세 평균", ov_note:"최근 해외 거래 평균가",
+      jp_head:"일본 진행 중 경매",
+      ref_img:"참고 이미지입니다. 실제 상품 사진은 Buyee 상품 페이지에서 확인하세요.",
+      cur_bid:"현재 입찰가 (오를 수 있음)",
+      excl:"수수료, 배송비, 수입 세금은 포함되지 않습니다.",
+      cta:"Buyee에서 이 경매 보기 →",
+      cta_note:"입찰, 검수, 국제 배송은 Buyee가 처리합니다.",
+      how_h:"가격 비교 방법",
+      how_ov_l:"해외 평균:", how_ov:"일본 외 지역에서 같은 카드가 최근 실제 거래된 가격을 기준으로 합니다. 가능한 경우 그레이딩 카드와 미그레이딩 카드를 따로 비교합니다.",
+      how_jp_l:"일본 가격:", how_jp:"일본 상품 페이지의 현재 입찰가 또는 즉시구매가를 확인 당일 환율로 USD 환산한 금액입니다. 경매 가격은 보통 종료 전에 오릅니다.",
+      how_fee_l:"수수료와 배송비:", how_fee:"위 가격에는 포함되지 않습니다. 구매대행 수수료, 국제 배송비, 수입 관세는 국가와 배송 방법에 따라 다르므로 결제 시 최종 금액을 꼭 확인하세요.",
+      cat_h:"Buyee에서 일본 TCG 카테고리 둘러보기",
+      buynow:"즉시구매", auctions:"경매",
+      guide_h:"구매대행 이용 방법",
+      guide_p:"많은 일본 판매자는 해외 배송을 하지 않습니다. 구매대행 서비스가 일본에서 대신 구매해 자사 창고로 받은 뒤 고객님의 국가로 발송합니다.",
+      s1:"1. 검색 & 입찰", s2:"2. 창고 도착", s3:"3. 국제 배송",
+      guide_link:"Buyee 구매 단계 자세히 보기 →",
+      faq_h:"자주 묻는 질문",
+      q1:"해외에서 일본 TCG 카드를 어떻게 구매하나요?",
+      a1:"Buyee 같은 구매대행 서비스를 이용하세요. 일본 마켓에서 대신 입찰하거나 구매한 뒤 고객님의 주소로 보내 줍니다. 이 사이트는 직접 상품을 판매하지 않습니다.",
+      q2:"어떤 비용이 드나요?",
+      a2:"일반적으로 상품 가격, 구매대행 수수료, 일본 국내 배송비, 국제 배송비, 결제 수수료, 그리고 거주 국가의 수입 관세나 세금이 있습니다. 요금은 바뀔 수 있으니 입찰 전에 Buyee 공식 요금 페이지를 확인하세요. 이 사이트는 어떤 비용도 청구하지 않습니다.",
+      q3:"상품 페이지의 '감정 완료' 또는 '인증됨'은 무슨 뜻인가요?",
+      a3:"이 표시는 일본 상품 페이지에서 판매자가 설정한 것으로, 판매자의 자체 신고입니다. 이 사이트는 어떤 상품의 진품 여부나 상태도 확인하거나 보증하지 않습니다. 구매 전 Buyee 상품 페이지의 사진과 설명을 확인하고 직접 판단해 주세요.",
+      q4:"어떤 결제 및 배송 방법을 이용할 수 있나요?",
+      a4:"Buyee는 주요 신용카드와 기타 결제 수단을 지원하며, 여러 국제 배송사를 제공합니다. 이용 가능한 옵션은 국가마다 다르므로 Buyee 사이트에서 확인하세요.",
+      f_about:"소개", f_privacy:"개인정보 처리방침", f_contact:"문의", f_cookie:"쿠키 설정",
+      f_disc:"이 사이트는 독립적인 정보 및 가격 비교 가이드입니다. Buyee나 어떤 마켓과도 제휴 관계가 아니며 보증을 받지도 않았고, 상품을 판매·검수·배송하지 않습니다. 모든 거래는 고객님이 선택한 구매대행 서비스가 처리합니다. '감정 완료', '인증됨' 등의 표시는 판매자나 제3자 시스템이 설정한 것이며, 이 사이트는 진품 여부나 상태를 보증하지 않습니다.",
+      about_t:"소개",
+      about_b:"JapanMania는 일본의 개인 개발자가 운영합니다. 일본 트레이딩 카드의 가격을 해외 시세와 비교하고, 해외 컬렉터가 구매대행 서비스로 구매하는 방법을 안내합니다.",
+      priv_t:"개인정보 처리방침 및 제휴 고지",
+      p_info_l:"수집하는 정보:", p_info:"문의를 보내시면 이메일 주소와 메시지를 받게 되며, 답변 용도로만 사용합니다.",
+      p_an_l:"분석:", p_an:"사이트 이용 방식을 파악하기 위해 쿠키를 사용하는 Google Analytics를 이용합니다. 데이터는 집계되며 개인 식별에 사용되지 않습니다. EEA, 영국, 스위스 방문자에게는 먼저 동의를 구하며, 동의하신 경우에만 분석 쿠키가 설정됩니다. 페이지 하단의 '쿠키 설정'에서 언제든지 선택을 변경할 수 있습니다.",
+      p_aff_l:"제휴 링크:", p_aff:"Buyee로 연결되는 일부 링크는 제휴 링크입니다. 클릭 후 구매하시면 추가 비용 없이 저희가 수수료를 받을 수 있습니다. 제휴 프로그램은 추천 추적을 위해 쿠키를 사용할 수 있습니다.",
+      p_3p_l:"외부 사이트:", p_3p:"구매는 자체 개인정보 처리방침을 가진 외부 사이트에서 이루어집니다. 저희는 해당 사이트의 운영에 책임지지 않습니다.",
+      p_ct_l:"문의:", p_ct:"개인정보 관련 문의는 이 사이트의 문의 양식을 이용해 주세요.",
+      contact_t:"문의하기", c_email:"이메일", c_msg:"메시지", c_ph:"메시지를 입력하세요...", c_send:"보내기",
+      cb_text:"사이트 이용 방식을 파악하기 위해 분석 쿠키를 사용합니다. 동의하거나 거부할 수 있습니다.", cb_accept:"동의", cb_reject:"거부"
+    },
+    "th": {
+      f_guide:"คู่มือการซื้อ",
+      title:"JapanMania | เปรียบเทียบราคาตลาดและคู่มือสั่งซื้อผ่านตัวแทน",
+      desc:"เปรียบเทียบรายการประมูลการ์ด TCG ญี่ปุ่นกับราคาตลาดต่างประเทศ และเรียนรู้วิธีซื้อสินค้าจากญี่ปุ่นผ่านบริการตัวแทน Buyee",
+      tagline:"เปรียบเทียบราคาและคู่มือสั่งซื้อผ่านตัวแทน",
+      aff:"*เว็บไซต์นี้มีลิงก์แอฟฟิลิเอต เราอาจได้รับค่าคอมมิชชันหากคุณซื้อสินค้าผ่าน Buyee โดยคุณไม่ต้องเสียค่าใช้จ่ายเพิ่ม",
+      notice:"ป้ายกำกับเช่น “ผ่านการประเมิน” หรือ “ยืนยันของแท้” ถูกกำหนดโดยผู้ขายหรือระบบของ Buyee เว็บไซต์นี้ไม่รับประกันความเป็นของแท้หรือสภาพสินค้า โปรดตรวจสอบรายการสินค้าบน Buyee และตัดสินใจด้วยตนเองก่อนซื้อ",
+      feat_badge:"เปรียบเทียบราคาแนะนำ",
+      feat_sub:"ราคาเฉลี่ยตลาดต่างประเทศ เทียบกับรายการประมูลที่กำลังดำเนินอยู่ในญี่ปุ่น ตรวจสอบราคาเมื่อ 4 พฤศจิกายน 2026",
+      ov_head:"ราคาเฉลี่ยตลาดต่างประเทศ", ov_note:"ราคาเฉลี่ยจากการขายล่าสุดนอกญี่ปุ่น",
+      jp_head:"ประมูลสดในญี่ปุ่น",
+      ref_img:"ภาพประกอบ ดูรูปสินค้าจริงได้ที่หน้ารายการบน Buyee",
+      cur_bid:"ราคาประมูลปัจจุบัน (อาจสูงขึ้น)",
+      excl:"ยังไม่รวมค่าธรรมเนียม ค่าจัดส่ง และภาษีนำเข้า",
+      cta:"ดูการประมูลนี้บน Buyee →",
+      cta_note:"การประมูล การตรวจสอบ และการจัดส่งระหว่างประเทศดำเนินการโดย Buyee",
+      how_h:"วิธีที่เราเปรียบเทียบราคา",
+      how_ov_l:"ราคาเฉลี่ยต่างประเทศ:", how_ov:"อ้างอิงจากการขายที่เสร็จสิ้นล่าสุดของการ์ดใบเดียวกันนอกญี่ปุ่น หากเป็นไปได้ จะเปรียบเทียบการ์ดที่ผ่านการเกรดและไม่ผ่านการเกรดแยกกัน",
+      how_jp_l:"ราคาในญี่ปุ่น:", how_jp:"ราคาประมูลปัจจุบันหรือราคาซื้อทันทีในรายการของญี่ปุ่น แปลงเป็น USD ตามอัตราแลกเปลี่ยนในวันที่ตรวจสอบ ราคาประมูลมักสูงขึ้นก่อนปิดประมูล",
+      how_fee_l:"ค่าธรรมเนียมและค่าจัดส่ง:", how_fee:"ไม่รวมอยู่ในราคาข้างต้น ค่าบริการตัวแทน ค่าจัดส่งระหว่างประเทศ และภาษีนำเข้าขึ้นอยู่กับประเทศและวิธีจัดส่งของคุณ โปรดตรวจสอบยอดสุดท้ายทุกครั้งเมื่อชำระเงิน",
+      cat_h:"เลือกดูหมวดหมู่ TCG ญี่ปุ่นบน Buyee",
+      buynow:"ซื้อทันที", auctions:"ประมูล",
+      guide_h:"การสั่งซื้อผ่านตัวแทนทำงานอย่างไร",
+      guide_p:"ผู้ขายญี่ปุ่นจำนวนมากไม่ส่งสินค้าไปต่างประเทศ บริการตัวแทนจะซื้อสินค้าแทนคุณในญี่ปุ่น รับสินค้าเข้าคลัง แล้วจัดส่งไปยังประเทศของคุณ",
+      s1:"1. ค้นหาและประมูล", s2:"2. สินค้าถึงคลัง", s3:"3. จัดส่งระหว่างประเทศ",
+      guide_link:"ดูคู่มือการซื้อผ่าน Buyee ทีละขั้นตอน →",
+      faq_h:"คำถามที่พบบ่อย",
+      q1:"จะซื้อการ์ด TCG ญี่ปุ่นจากต่างประเทศได้อย่างไร?",
+      a1:"ใช้บริการตัวแทนสั่งซื้ออย่าง Buyee ซึ่งจะประมูลหรือซื้อสินค้าบนแพลตฟอร์มญี่ปุ่นแทนคุณ แล้วจัดส่งไปยังที่อยู่ของคุณ เว็บไซต์นี้ไม่ได้ขายสินค้าเอง",
+      q2:"มีค่าใช้จ่ายอะไรบ้าง?",
+      a2:"โดยทั่วไปได้แก่ ราคาสินค้า ค่าบริการตัวแทน ค่าจัดส่งภายในญี่ปุ่น ค่าจัดส่งระหว่างประเทศ ค่าธรรมเนียมการชำระเงิน และอากรหรือภาษีนำเข้าในประเทศของคุณ ค่าธรรมเนียมอาจเปลี่ยนแปลงได้ โปรดตรวจสอบหน้าค่าธรรมเนียมอย่างเป็นทางการของ Buyee ก่อนประมูล เว็บไซต์นี้ไม่เก็บค่าใช้จ่ายใดๆ จากคุณ",
+      q3:"“ผ่านการประเมิน” หรือ “ยืนยันของแท้” ในรายการสินค้าหมายความว่าอะไร?",
+      a3:"ป้ายกำกับนี้กำหนดโดยผู้ขายในรายการสินค้าของญี่ปุ่น และเป็นการแจ้งด้วยตนเองของผู้ขาย เว็บไซต์นี้ไม่ได้ตรวจสอบหรือรับประกันความเป็นของแท้หรือสภาพของสินค้าใดๆ โปรดดูรูปภาพและรายละเอียดในรายการบน Buyee และตัดสินใจด้วยตนเองก่อนซื้อ",
+      q4:"มีวิธีชำระเงินและจัดส่งแบบใดบ้าง?",
+      a4:"Buyee รองรับบัตรเครดิตหลักและวิธีชำระเงินอื่นๆ และมีบริษัทขนส่งระหว่างประเทศหลายราย ตัวเลือกที่ใช้ได้ขึ้นอยู่กับประเทศของคุณ โปรดตรวจสอบบนเว็บไซต์ของ Buyee",
+      f_about:"เกี่ยวกับเรา", f_privacy:"นโยบายความเป็นส่วนตัว", f_contact:"ติดต่อ", f_cookie:"ตั้งค่าคุกกี้",
+      f_disc:"เว็บไซต์นี้เป็นคู่มือข้อมูลและเปรียบเทียบราคาอิสระ เราไม่ได้มีส่วนเกี่ยวข้องหรือได้รับการรับรองจาก Buyee หรือแพลตฟอร์มใดๆ และเราไม่ได้ขาย ตรวจสอบ หรือจัดส่งสินค้า ธุรกรรมทั้งหมดดำเนินการโดยบริการตัวแทนที่คุณเลือก ป้ายกำกับเช่น “ผ่านการประเมิน” หรือ “ยืนยันของแท้” ถูกกำหนดโดยผู้ขายหรือระบบภายนอก เว็บไซต์นี้ไม่รับประกันความเป็นของแท้หรือสภาพสินค้า",
+      about_t:"เกี่ยวกับเรา",
+      about_b:"JapanMania ดำเนินการโดยนักพัฒนาอิสระในญี่ปุ่น เราเปรียบเทียบราคาการ์ดสะสมญี่ปุ่นกับตลาดต่างประเทศ และอธิบายวิธีที่นักสะสมในต่างประเทศสามารถซื้อผ่านบริการตัวแทน",
+      priv_t:"นโยบายความเป็นส่วนตัวและการเปิดเผยแอฟฟิลิเอต",
+      p_info_l:"ข้อมูลที่เราเก็บ:", p_info:"หากคุณติดต่อเรา เราจะได้รับอีเมลและข้อความที่คุณส่งมา และใช้เพื่อตอบกลับเท่านั้น",
+      p_an_l:"การวิเคราะห์:", p_an:"เราใช้ Google Analytics ซึ่งใช้คุกกี้ เพื่อทำความเข้าใจว่าผู้เข้าชมใช้งานเว็บไซต์อย่างไร ข้อมูลเป็นแบบรวม และไม่ได้ใช้ระบุตัวตนของคุณ ผู้เข้าชมจาก EEA สหราชอาณาจักร และสวิตเซอร์แลนด์จะถูกขอความยินยอมก่อน และคุกกี้วิเคราะห์จะถูกตั้งค่าเฉพาะเมื่อคุณยอมรับเท่านั้น คุณสามารถเปลี่ยนตัวเลือกได้ทุกเมื่อผ่าน “ตั้งค่าคุกกี้” ที่ด้านล่างของหน้า",
+      p_aff_l:"ลิงก์แอฟฟิลิเอต:", p_aff:"ลิงก์บางส่วนไปยัง Buyee เป็นลิงก์แอฟฟิลิเอต หากคุณซื้อสินค้าหลังจากคลิก เราอาจได้รับค่าคอมมิชชันโดยคุณไม่ต้องเสียค่าใช้จ่ายเพิ่ม โปรแกรมแอฟฟิลิเอตอาจใช้คุกกี้เพื่อติดตามการแนะนำ",
+      p_3p_l:"เว็บไซต์ภายนอก:", p_3p:"การซื้อเกิดขึ้นบนเว็บไซต์ภายนอกที่มีนโยบายความเป็นส่วนตัวของตนเอง เราไม่รับผิดชอบต่อการดำเนินการของเว็บไซต์เหล่านั้น",
+      p_ct_l:"ติดต่อ:", p_ct:"หากมีคำถามเกี่ยวกับความเป็นส่วนตัว โปรดใช้แบบฟอร์มติดต่อบนเว็บไซต์นี้",
+      contact_t:"ติดต่อเรา", c_email:"อีเมลของคุณ", c_msg:"ข้อความ", c_ph:"พิมพ์ข้อความของคุณ...", c_send:"ส่งข้อความ",
+      cb_text:"เราใช้คุกกี้เพื่อการวิเคราะห์ เพื่อทำความเข้าใจว่าผู้เข้าชมใช้งานเว็บไซต์อย่างไร คุณสามารถยอมรับหรือปฏิเสธได้", cb_accept:"ยอมรับ", cb_reject:"ปฏิเสธ"
     }
+  };
+
+  /* ===== Language switcher ===== */
+  (function(){
+    var LANGS = ['en','zh-TW','zh-CN','es','fr','de','ko','th'];
+    var EN = {};
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ var k=el.dataset.i18n; if(!(k in EN)) EN[k]=el.innerHTML; });
+    document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ EN[el.dataset.i18nPh]=el.getAttribute('placeholder'); });
+    var md = document.querySelector('meta[name="description"]');
+    EN.title = document.title; if (md) EN.desc = md.content;
+    I18N.en = EN;
+
+    function pick(){
+      try { var p=new URLSearchParams(location.search).get('lang'); if(p && LANGS.indexOf(p)>-1) return p; } catch(e){}
+      try { var s=localStorage.getItem('jm_lang'); if(s && LANGS.indexOf(s)>-1) return s; } catch(e){}
+      var navs = navigator.languages || [navigator.language || 'en'];
+      for (var i=0;i<navs.length;i++){
+        var l=(navs[i]||'').toLowerCase();
+        if (l.indexOf('zh')===0) return /tw|hk|mo|hant/.test(l) ? 'zh-TW' : 'zh-CN';
+        var b=l.split('-')[0];
+        if (LANGS.indexOf(b)>-1) return b;
+      }
+      return 'en';
+    }
+    function apply(lang, save){
+      var d = I18N[lang] || EN;
+      var t = function(k){ return d[k]!=null ? d[k] : EN[k]; };
+      document.querySelectorAll('[data-i18n]').forEach(function(el){ var v=t(el.dataset.i18n); if(v!=null) el.innerHTML=v; });
+      document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ var v=t(el.dataset.i18nPh); if(v!=null) el.setAttribute('placeholder', v); });
+      document.title = t('title');
+      if (md && t('desc')) md.content = t('desc');
+      document.documentElement.lang = lang;
+      var sel = document.getElementById('langSelect'); if (sel) sel.value = lang;
+      if (save) { try { localStorage.setItem('jm_lang', lang); } catch(e){} }
+    }
+    window.changeLanguage = function(lang){
+      apply(lang, true);
+      if (typeof gtag === 'function') gtag('event', 'change_language', { language: lang });
+    };
+    apply(pick(), false);
+  })();
+
+  /* ===== Cookie consent (EU visitors) ===== */
+  (function(){
+    var banner = document.getElementById('cookieBanner');
+    function saved(){ try { return localStorage.getItem('jm_consent'); } catch(e){ return null; } }
+    function isEuropeTZ(){
+      try {
+        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+        return tz.indexOf('Europe/')===0 || /^Atlantic\/(Reykjavik|Canary|Madeira|Azores|Faroe)$/.test(tz);
+      } catch(e){ return false; }
+    }
+    function setConsent(v){
+      gtag('consent', 'update', { analytics_storage: v });
+      try { localStorage.setItem('jm_consent', v); } catch(e){}
+      banner.hidden = true;
+    }
+    if (!saved() && isEuropeTZ()) banner.hidden = false;
+    document.getElementById('cbAccept').addEventListener('click', function(){ setConsent('granted'); });
+    document.getElementById('cbReject').addEventListener('click', function(){ setConsent('denied'); });
+    document.getElementById('cookieSettings').addEventListener('click', function(e){ e.preventDefault(); banner.hidden = false; });
+  })();
   </script>
 </body>
 </html>
