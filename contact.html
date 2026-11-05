@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | JapanMania</title>
+  <meta name="description" content="Contact JapanMania about errors in our content, feedback on the site, or partnership inquiries.">
+  <link rel="canonical" href="https://japanmania.store/contact.html">
+  <!-- Google Analytics 4 + Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+      analytics_storage: 'denied',
+      region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'],
+      wait_for_update: 500
+    });
+    gtag('consent', 'default', {
+      ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+      analytics_storage: 'granted'
+    });
+    try {
+      var jmConsent = localStorage.getItem('jm_consent');
+      if (jmConsent === 'granted' || jmConsent === 'denied') {
+        gtag('consent', 'update', { analytics_storage: jmConsent });
+      }
+    } catch (e) {}
+    gtag('js', new Date());
+    gtag('config', 'G-K30E6LBQDN');
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K30E6LBQDN"></script>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .extra-small { font-size: 0.75rem; }
+    .max-width-800 { max-width: 800px; }
+    .affiliate-notice { background-color: #f8f9fa; border-bottom: 1px solid #e9ecef; font-size: 0.7rem; color: #6c757d; }
+    .site-notice { background-color: #fff8e1; border: 1px solid #ffe08a; color: #5d4700; border-radius: 8px; }
+    .sub-nav .nav-row { overflow-x: auto; white-space: nowrap; }
+    .sub-nav a { color: #212529; text-decoration: none; }
+    .sub-nav a.active { color: #dc3545; border-bottom: 2px solid #dc3545; }
+    .crumb a { color: #dc3545; text-decoration: none; }
+    .kw-table td:first-child { font-weight: 700; white-space: nowrap; }
+    .why-card { border-radius: 12px; }
+    .info-table th { width: 30%; white-space: nowrap; color: #6c757d; font-weight: 600; }
+    .todo { background: #fff3cd; color: #664d03; padding: 0 4px; border-radius: 4px; }
+    .policy h2 { font-size: 1rem; font-weight: 700; margin-top: 1.5rem; }
+    .policy p, .policy li { font-size: .875rem; }
+  </style>
+</head>
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
+
+  <header class="bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center">
+    <a href="./" class="fw-bold fs-6 text-white text-decoration-none">JapanMania</a>
+    <div class="d-flex align-items-center gap-2">
+      <small class="text-secondary d-none d-md-inline" data-i18n="tagline">Market Comparisons &amp; Proxy Guide</small>
+      <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)" aria-label="Language"><option value="en">English</option><option value="zh-TW">繁體中文</option><option value="zh-CN">简体中文</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="ko">한국어</option><option value="th">ไทย</option></select>
+    </div>
+  </header>
+  <nav class="sub-nav bg-white border-bottom">
+    <div class="container max-width-800 nav-row d-flex gap-3 py-2 small fw-bold">
+      <a href="./" data-i18n="nav_home">Home</a>
+      <a href="buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
+      <a href="pokemon.html" data-i18n="nav_pk">Pokémon</a>
+      <a href="one-piece.html">ONE PIECE</a>
+      <a href="dragon-ball.html" data-i18n="nav_db">Dragon Ball</a>
+    </div>
+  </nav>
+
+  <main class="container max-width-800 py-4">
+    <nav class="crumb small text-muted mb-2"><a href="./" data-i18n="nav_home">Home</a> › <span data-i18n="contact_t">Contact Us</span></nav>
+    <h1 class="fw-bold fs-3 mb-2" data-i18n="contact_t">Contact Us</h1>
+    <p class="small text-muted mb-1" data-i18n="c_lead">Please use the form below to point out errors in our content, share feedback on the site, or ask about partnerships.</p>
+    <p class="small text-muted"><span data-i18n="c_reply_l">Typical reply time:</span> <span data-i18n="c_reply">3 business days</span></p>
+
+    <div class="site-notice small p-3 mb-3" data-i18n="c_notice">This site does not sell or ship products. For questions about orders, payment, delivery status or returns, please contact the proxy service you used (such as Buyee) directly.</div>
+
+    <form action="https://formspree.io/f/mbggqjga" method="POST" class="bg-white border rounded shadow-sm p-3 p-md-4">
+      <input type="hidden" name="_subject" value="JapanMania inquiry">
+      <div class="mb-3">
+        <label class="form-label fw-bold small" for="name" data-i18n="l_name">Name (optional)</label>
+        <input type="text" id="name" name="name" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold small" for="email"><span data-i18n="c_email">Your Email</span> <span class="text-danger">*</span></label>
+        <input type="email" id="email" name="email" class="form-control" required placeholder="name@example.com">
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold small" for="topic" data-i18n="l_topic">Topic</label>
+        <select id="topic" name="topic" class="form-select">
+          <option value="About the site" data-i18n="o1">About the site</option>
+          <option value="Error in our content" data-i18n="o2">Error in our content</option>
+          <option value="Partnership / advertising" data-i18n="o3">Partnership / advertising</option>
+          <option value="Personal information" data-i18n="o4">Personal information</option>
+          <option value="Other" data-i18n="o5">Other</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fw-bold small" for="message"><span data-i18n="c_msg">Message</span> <span class="text-danger">*</span></label>
+        <textarea id="message" name="message" class="form-control" rows="6" required></textarea>
+      </div>
+      <p class="extra-small text-muted" data-i18n="c_note">We use the information you send only to reply to your inquiry. For details, see our <a href="privacy.html">Privacy Policy</a>.</p>
+      <button type="submit" class="btn btn-dark fw-bold w-100" data-i18n="c_send">Send Message</button>
+    </form>
+  </main>
+
+  <footer class="bg-dark text-secondary py-4 mt-auto extra-small">
+    <div class="container text-center max-width-800">
+      <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+        <a href="./" class="text-secondary text-decoration-none" data-i18n="nav_home">Home</a>
+        <a href="buyee-flow.html" class="text-secondary text-decoration-none" data-i18n="f_guide">Buying Guide</a>
+        <a href="about.html" class="text-secondary text-decoration-none" data-i18n="f_about">About Us</a>
+        <a href="privacy.html" class="text-secondary text-decoration-none" data-i18n="f_privacy">Privacy Policy</a>
+        <a href="contact.html" class="text-white text-decoration-none" data-i18n="f_contact">Contact</a>
+        <a href="#" id="cookieSettings" class="text-secondary text-decoration-none" data-i18n="f_cookie">Cookie Settings</a>
+      </div>
+      <p class="mb-2 text-white-50">© 2026 JapanMania. All rights reserved.</p>
+      <p class="text-muted mx-auto" style="font-size:0.65rem;max-width:600px;" data-i18n="f_disc2">This site is an independent information and price comparison guide. We are not affiliated with or endorsed by Buyee or any marketplace, and we do not sell, inspect or ship products. All transactions are handled by the proxy service you choose.</p>
+    </div>
+  </footer>
+
+  <!-- Cookie consent banner (EU visitors) -->
+  <div id="cookieBanner" role="dialog" aria-live="polite" hidden style="position:fixed;left:0;right:0;bottom:0;z-index:1080;background:#212529;color:#fff;border-top:3px solid #dc3545;font-size:14px;line-height:1.5;">
+    <div style="max-width:800px;margin:0 auto;padding:12px 16px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;">
+      <div style="flex:1 1 260px;" data-i18n="cb_text">We use analytics cookies to understand how visitors use this site. You can accept or reject them.</div>
+      <div style="display:flex;gap:8px;">
+        <button type="button" id="cbReject" data-i18n="cb_reject" style="padding:6px 16px;border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;background:transparent;color:#fff;border:1px solid #fff;">Reject</button>
+        <button type="button" id="cbAccept" data-i18n="cb_accept" style="padding:6px 16px;border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;background:#f8f9fa;color:#212529;border:1px solid #f8f9fa;">Accept</button>
+      </div>
+    </div>
+  </div>
+
+  <script>window.PAGE_I18N = {
+ "zh-TW": {
+  "desc": "如需指正內容錯誤、提供網站意見或洽談合作，請與JapanMania聯絡。",
+  "c_lead": "如需指正內容錯誤、提供網站意見或洽談合作，請使用下方表單。",
+  "c_reply_l": "回覆時間參考：",
+  "c_notice": "本站不販售或寄送商品。有關訂單、付款、配送狀況或退貨的問題，請直接聯絡您使用的代購服務（如Buyee）。",
+  "l_name": "姓名（選填）",
+  "l_topic": "詢問類型",
+  "o1": "關於網站",
+  "o2": "內容有誤",
+  "o3": "合作・廣告洽談",
+  "o4": "個人資料處理",
+  "o5": "其他",
+  "c_note": "您傳送的資訊僅用於回覆詢問。詳情請參閱<a href=\"privacy.html\">隱私權政策</a>。",
+  "title": "聯絡我們 | JapanMania",
+  "c_reply": "3個工作天"
+ },
+ "zh-CN": {
+  "desc": "如需指正内容错误、提供网站意见或洽谈合作，请联系JapanMania。",
+  "c_lead": "如需指正内容错误、提供网站意见或洽谈合作，请使用下方表单。",
+  "c_reply_l": "回复时间参考：",
+  "c_notice": "本站不销售或寄送商品。有关订单、付款、配送状态或退货的问题，请直接联系您使用的代购服务（如Buyee）。",
+  "l_name": "姓名（选填）",
+  "l_topic": "咨询类型",
+  "o1": "关于网站",
+  "o2": "内容有误",
+  "o3": "合作・广告洽谈",
+  "o4": "个人信息处理",
+  "o5": "其他",
+  "c_note": "您发送的信息仅用于回复咨询。详情请参阅<a href=\"privacy.html\">隐私政策</a>。",
+  "title": "联系我们 | JapanMania",
+  "c_reply": "3个工作日"
+ },
+ "es": {
+  "desc": "Contacta con JapanMania para señalar errores, enviar comentarios sobre el sitio o proponer colaboraciones.",
+  "c_lead": "Usa el formulario de abajo para señalar errores, enviar comentarios sobre el sitio o consultar sobre colaboraciones.",
+  "c_reply_l": "Tiempo de respuesta habitual:",
+  "c_notice": "Este sitio no vende ni envía productos. Para dudas sobre pedidos, pagos, estado del envío o devoluciones, contacta directamente con el servicio proxy que usaste (como Buyee).",
+  "l_name": "Nombre (opcional)",
+  "l_topic": "Tipo de consulta",
+  "o1": "Sobre el sitio",
+  "o2": "Error en el contenido",
+  "o3": "Colaboraciones / publicidad",
+  "o4": "Datos personales",
+  "o5": "Otro",
+  "c_note": "Usamos la información que envías solo para responder a tu consulta. Más detalles en nuestra <a href=\"privacy.html\">política de privacidad</a>.",
+  "title": "Contáctanos | JapanMania",
+  "c_reply": "3 días hábiles"
+ },
+ "fr": {
+  "desc": "Contactez JapanMania pour signaler une erreur, donner votre avis sur le site ou proposer un partenariat.",
+  "c_lead": "Utilisez le formulaire ci-dessous pour signaler une erreur, donner votre avis sur le site ou proposer un partenariat.",
+  "c_reply_l": "Délai de réponse habituel :",
+  "c_notice": "Ce site ne vend ni n'expédie de produits. Pour toute question sur une commande, un paiement, une livraison ou un retour, contactez directement le service proxy utilisé (comme Buyee).",
+  "l_name": "Nom (facultatif)",
+  "l_topic": "Objet",
+  "o1": "À propos du site",
+  "o2": "Erreur dans le contenu",
+  "o3": "Partenariat / publicité",
+  "o4": "Données personnelles",
+  "o5": "Autre",
+  "c_note": "Nous utilisons les informations envoyées uniquement pour répondre à votre demande. Détails dans notre <a href=\"privacy.html\">politique de confidentialité</a>.",
+  "title": "Nous contacter | JapanMania",
+  "c_reply": "3 jours ouvrés"
+ },
+ "de": {
+  "desc": "Kontaktiere JapanMania bei Fehlern im Inhalt, Feedback zur Website oder Kooperationsanfragen.",
+  "c_lead": "Nutze das Formular unten, um Fehler zu melden, Feedback zur Website zu geben oder nach Kooperationen zu fragen.",
+  "c_reply_l": "Übliche Antwortzeit:",
+  "c_notice": "Diese Website verkauft und versendet keine Produkte. Bei Fragen zu Bestellung, Zahlung, Versandstatus oder Rückgabe wende dich bitte direkt an den genutzten Proxy-Dienst (z. B. Buyee).",
+  "l_name": "Name (optional)",
+  "l_topic": "Anliegen",
+  "o1": "Zur Website",
+  "o2": "Fehler im Inhalt",
+  "o3": "Kooperation / Werbung",
+  "o4": "Personenbezogene Daten",
+  "o5": "Sonstiges",
+  "c_note": "Wir verwenden deine Angaben nur, um deine Anfrage zu beantworten. Details findest du in unserer <a href=\"privacy.html\">Datenschutzerklärung</a>.",
+  "title": "Kontakt | JapanMania",
+  "c_reply": "3 Werktage"
+ },
+ "ko": {
+  "desc": "내용 오류 지적, 사이트 의견, 제휴 문의는 JapanMania로 연락해 주세요.",
+  "c_lead": "내용 오류 지적, 사이트에 대한 의견, 제휴 문의는 아래 양식으로 보내 주세요.",
+  "c_reply_l": "답변 기준:",
+  "c_notice": "이 사이트는 상품을 판매·배송하지 않습니다. 주문, 결제, 배송 상황, 반품 관련 문의는 이용하신 구매대행 서비스(Buyee 등)로 직접 해 주세요.",
+  "l_name": "이름 (선택)",
+  "l_topic": "문의 종류",
+  "o1": "사이트 관련",
+  "o2": "게재 내용 오류",
+  "o3": "제휴·광고 문의",
+  "o4": "개인정보 취급",
+  "o5": "기타",
+  "c_note": "보내주신 정보는 문의 답변에만 사용합니다. 자세한 내용은 <a href=\"privacy.html\">개인정보 처리방침</a>을 참고하세요.",
+  "title": "문의하기 | JapanMania",
+  "c_reply": "3영업일"
+ },
+ "th": {
+  "desc": "ติดต่อ JapanMania เพื่อแจ้งข้อผิดพลาด ให้ความเห็นเกี่ยวกับเว็บไซต์ หรือสอบถามเรื่องความร่วมมือ",
+  "c_lead": "โปรดใช้แบบฟอร์มด้านล่างเพื่อแจ้งข้อผิดพลาด ให้ความเห็นเกี่ยวกับเว็บไซต์ หรือสอบถามเรื่องความร่วมมือ",
+  "c_reply_l": "ระยะเวลาตอบกลับโดยประมาณ:",
+  "c_notice": "เว็บไซต์นี้ไม่ได้ขายหรือจัดส่งสินค้า หากมีคำถามเกี่ยวกับคำสั่งซื้อ การชำระเงิน สถานะการจัดส่ง หรือการคืนสินค้า โปรดติดต่อบริการตัวแทนที่คุณใช้ (เช่น Buyee) โดยตรง",
+  "l_name": "ชื่อ (ไม่บังคับ)",
+  "l_topic": "หัวข้อ",
+  "o1": "เกี่ยวกับเว็บไซต์",
+  "o2": "ข้อมูลผิดพลาด",
+  "o3": "ความร่วมมือ / โฆษณา",
+  "o4": "ข้อมูลส่วนบุคคล",
+  "o5": "อื่นๆ",
+  "c_note": "เราใช้ข้อมูลที่คุณส่งเพื่อตอบกลับคำถามเท่านั้น ดูรายละเอียดได้ที่<a href=\"privacy.html\">นโยบายความเป็นส่วนตัว</a>",
+  "title": "ติดต่อเรา | JapanMania",
+  "c_reply": "3 วันทำการ"
+ }
+};</script>
+  <script src="site.js"></script>
+</body>
+</html>

@@ -49,6 +49,9 @@
     .max-width-800 { max-width: 800px; }
     .affiliate-notice { background-color: #f8f9fa; border-bottom: 1px solid #e9ecef; font-size: 0.7rem; color: #6c757d; }
     .site-notice { background-color: #fff8e1; border-bottom: 1px solid #ffe08a; font-size: 0.75rem; color: #5d4700; }
+    .sub-nav .nav-row { overflow-x: auto; white-space: nowrap; }
+    .sub-nav a { color: #212529; text-decoration: none; }
+    .sub-nav a.active { color: #dc3545; border-bottom: 2px solid #dc3545; }
     .cookie-banner { position: fixed; left: 0; right: 0; bottom: 0; background: #212529; color: #fff; z-index: 1080; border-top: 3px solid #dc3545; }
   </style>
 
@@ -81,6 +84,15 @@
       </select>
     </div>
   </header>
+  <nav class="sub-nav bg-white border-bottom">
+    <div class="container max-width-800 nav-row d-flex gap-3 py-2 small fw-bold">
+      <a href="./" class="active" data-i18n="nav_home">Home</a>
+      <a href="buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
+      <a href="pokemon.html" data-i18n="nav_pk">Pokémon</a>
+      <a href="one-piece.html">ONE PIECE</a>
+      <a href="dragon-ball.html" data-i18n="nav_db">Dragon Ball</a>
+    </div>
+  </nav>
 
   <div class="affiliate-notice py-1 text-center px-2" data-i18n="aff">
     *This site contains affiliate links. We may earn a commission if you make a purchase via Buyee, at no extra cost to you.
@@ -152,7 +164,7 @@
     <div class="row g-2">
       <div class="col-12 col-md-6">
         <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
-          <div class="fw-bold fs-6">Pokémon <span class="text-muted extra-small d-block fw-normal">(ポケモン)</span></div>
+          <div class="fw-bold fs-6">Pokémon <span class="text-muted extra-small d-block fw-normal">(ポケモン)</span><a href="pokemon.html" class="extra-small text-danger fw-bold text-decoration-none" data-i18n="cat_guide">Buying tips →</a></div>
           <div class="d-flex gap-1">
             <a href="https://buyee.jp/item/search/category/2084241343?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="buynow">Buy It Now</a>
             <a href="https://buyee.jp/item/search/category/2084241343?sort=bids&order=a&isAppraisal=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="auctions">Auctions</a>
@@ -161,7 +173,7 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
-          <div class="fw-bold fs-6">ONE PIECE <span class="text-muted extra-small d-block fw-normal">(ワンピース)</span></div>
+          <div class="fw-bold fs-6">ONE PIECE <span class="text-muted extra-small d-block fw-normal">(ワンピース)</span><a href="one-piece.html" class="extra-small text-danger fw-bold text-decoration-none" data-i18n="cat_guide">Buying tips →</a></div>
           <div class="d-flex gap-1">
             <a href="https://buyee.jp/item/search/category/2084236680?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="buynow">Buy It Now</a>
             <a href="https://buyee.jp/item/search/category/2084236680?sort=bids&order=a&isAppraisal=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="auctions">Auctions</a>
@@ -170,7 +182,7 @@
       </div>
       <div class="col-12 col-md-6">
         <div class="p-2 border rounded bg-white shadow-sm d-flex align-items-center justify-content-between">
-          <div class="fw-bold fs-6">Dragon Ball <span class="text-muted extra-small d-block fw-normal">(ドラゴンボール)</span></div>
+          <div class="fw-bold fs-6">Dragon Ball <span class="text-muted extra-small d-block fw-normal">(ドラゴンボール)</span><a href="dragon-ball.html" class="extra-small text-danger fw-bold text-decoration-none" data-i18n="cat_guide">Buying tips →</a></div>
           <div class="d-flex gap-1">
             <a href="https://buyee.jp/item/search/category/2084064426?sort=score&ranking=popular&buynow=1&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="buynow">Buy It Now</a>
             <a href="https://buyee.jp/item/search/category/2084064426?sort=bids&order=a&isAppraisal=1&page=1&lang=en" target="_blank" rel="noopener sponsored" class="btn btn-sm btn-light border extra-small fw-bold text-dark text-center" style="min-width:6.5rem;" data-i18n="auctions">Auctions</a>
@@ -221,9 +233,9 @@
     <div class="container text-center max-width-800">
       <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
         <a href="buyee-flow.html" class="text-secondary text-decoration-none" data-i18n="f_guide">Buying Guide</a>
-        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#aboutModal" data-i18n="f_about">About Us</a>
-        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#privacyModal" data-i18n="f_privacy">Privacy Policy</a>
-        <a href="#" class="text-secondary text-decoration-none" data-bs-toggle="modal" data-bs-target="#contactModal" data-i18n="f_contact">Contact</a>
+        <a href="about.html" class="text-secondary text-decoration-none" data-i18n="f_about">About Us</a>
+        <a href="privacy.html" class="text-secondary text-decoration-none" data-i18n="f_privacy">Privacy Policy</a>
+        <a href="contact.html" class="text-secondary text-decoration-none" data-i18n="f_contact">Contact</a>
         <a href="#" id="cookieSettings" class="text-secondary text-decoration-none" data-i18n="f_cookie">Cookie Settings</a>
       </div>
       <p class="mb-2 text-white-50">© 2026 JapanMania. All rights reserved.</p>
@@ -232,47 +244,6 @@
       </p>
     </div>
   </footer>
-
-  <div class="modal fade" id="aboutModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content text-start">
-      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold" data-i18n="about_t">About Us</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body extra-small text-muted" data-i18n="about_b">
-        JapanMania is run by an independent developer in Japan. We compare prices of Japanese trading cards with overseas markets and explain how collectors abroad can buy them through proxy services.
-      </div>
-    </div></div>
-  </div>
-
-  <div class="modal fade" id="privacyModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable"><div class="modal-content text-start">
-      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold" data-i18n="priv_t">Privacy Policy & Affiliate Disclosure</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body extra-small text-muted">
-        <p><strong data-i18n="p_info_l">Information we collect:</strong> <span data-i18n="p_info">If you contact us, we receive the email address and message you send. We use it only to reply.</span></p>
-        <p><strong data-i18n="p_an_l">Analytics:</strong> <span data-i18n="p_an">We use Google Analytics, which uses cookies, to understand how visitors use this site. The data is aggregated and is not used to identify you. Visitors in the EEA, the UK and Switzerland are asked for consent first, and analytics cookies are only set if you accept. You can change your choice at any time via "Cookie Settings" at the bottom of the page.</span></p>
-        <p><strong data-i18n="p_aff_l">Affiliate links:</strong> <span data-i18n="p_aff">Some links to Buyee are affiliate links. If you make a purchase after clicking one, we may earn a commission at no extra cost to you. The affiliate program may use cookies to track referrals.</span></p>
-        <p><strong data-i18n="p_3p_l">Third-party sites:</strong> <span data-i18n="p_3p">Purchases are made on external sites that have their own privacy policies. We are not responsible for their practices.</span></p>
-        <p class="mb-0"><strong data-i18n="p_ct_l">Contact:</strong> <span data-i18n="p_ct">For privacy questions, use the Contact form on this site.</span></p>
-      </div>
-    </div></div>
-  </div>
-
-  <div class="modal fade" id="contactModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered"><div class="modal-content text-start">
-      <div class="modal-header"><h5 class="modal-title fs-6 fw-bold" data-i18n="contact_t">Contact Us</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-      <div class="modal-body extra-small text-muted">
-        <form action="https://formspree.io/f/mbggqjga" method="POST">
-          <div class="mb-2">
-            <label class="form-label text-dark fw-bold" data-i18n="c_email">Your Email</label>
-            <input type="email" name="email" class="form-control form-control-sm" required placeholder="name@example.com">
-          </div>
-          <div class="mb-2">
-            <label class="form-label text-dark fw-bold" data-i18n="c_msg">Message</label>
-            <textarea name="message" class="form-control form-control-sm" rows="3" required placeholder="Type your message..." data-i18n-ph="c_ph"></textarea>
-          </div>
-          <button type="submit" class="btn btn-dark btn-sm w-100 fw-bold mt-2" data-i18n="c_send">Send Message</button>
-        </form>
-      </div>
-    </div></div>
-  </div>
 
   <!-- Cookie consent banner (EU visitors) -->
   <div id="cookieBanner" class="cookie-banner shadow-lg" role="dialog" aria-live="polite" hidden>
@@ -291,6 +262,7 @@
   <script>
   const I18N = {
     "zh-TW": {
+      nav_home:"首頁", nav_pk:"寶可夢", nav_db:"七龍珠", cat_guide:"購買攻略 →",
       f_guide:"購買指南",
       title:"JapanMania | 市場比價與代購指南",
       desc:"比較日本TCG拍賣商品與海外市場價格，並了解如何透過Buyee代購服務從日本購買。",
@@ -339,6 +311,7 @@
       cb_text:"我們使用分析用Cookie來了解訪客如何使用本站。您可以選擇接受或拒絕。", cb_accept:"接受", cb_reject:"拒絕"
     },
     "zh-CN": {
+      nav_home:"首页", nav_pk:"宝可梦", nav_db:"龙珠", cat_guide:"购买攻略 →",
       f_guide:"购买指南",
       title:"JapanMania | 市场比价与代购指南",
       desc:"比较日本TCG拍卖商品与海外市场价格，并了解如何通过Buyee代购服务从日本购买。",
@@ -387,6 +360,7 @@
       cb_text:"我们使用分析Cookie来了解访客如何使用本站。您可以选择接受或拒绝。", cb_accept:"接受", cb_reject:"拒绝"
     },
     "es": {
+      nav_home:"Inicio", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Consejos de compra →",
       f_guide:"Guía de compra",
       title:"JapanMania | Comparativas de mercado y guía de compra por proxy",
       desc:"Compara subastas de cartas TCG japonesas con los precios del mercado internacional y aprende a comprar desde Japón con el servicio proxy Buyee.",
@@ -435,6 +409,7 @@
       cb_text:"Usamos cookies de analítica para entender cómo se usa este sitio. Puedes aceptarlas o rechazarlas.", cb_accept:"Aceptar", cb_reject:"Rechazar"
     },
     "fr": {
+      nav_home:"Accueil", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Conseils d'achat →",
       f_guide:"Guide d'achat",
       title:"JapanMania | Comparatifs de prix et guide des services proxy",
       desc:"Comparez les enchères japonaises de cartes TCG avec les prix du marché international et découvrez comment acheter au Japon via le service proxy Buyee.",
@@ -483,6 +458,7 @@
       cb_text:"Nous utilisons des cookies de mesure d'audience pour comprendre comment ce site est utilisé. Vous pouvez les accepter ou les refuser.", cb_accept:"Accepter", cb_reject:"Refuser"
     },
     "de": {
+      nav_home:"Startseite", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Kauftipps →",
       f_guide:"Kaufratgeber",
       title:"JapanMania | Marktvergleiche & Proxy-Ratgeber",
       desc:"Vergleiche japanische TCG-Auktionen mit internationalen Marktpreisen und erfahre, wie du über den Proxy-Dienst Buyee in Japan kaufst.",
@@ -531,6 +507,7 @@
       cb_text:"Wir verwenden Analyse-Cookies, um zu verstehen, wie diese Website genutzt wird. Du kannst sie akzeptieren oder ablehnen.", cb_accept:"Akzeptieren", cb_reject:"Ablehnen"
     },
     "ko": {
+      nav_home:"홈", nav_pk:"포켓몬", nav_db:"드래곤볼", cat_guide:"구매 팁 →",
       f_guide:"구매 가이드",
       title:"JapanMania | 시세 비교 & 구매대행 가이드",
       desc:"일본 TCG 경매 매물과 해외 시세를 비교하고, 구매대행 서비스 Buyee로 일본에서 구매하는 방법을 알아보세요.",
@@ -579,6 +556,7 @@
       cb_text:"사이트 이용 방식을 파악하기 위해 분석 쿠키를 사용합니다. 동의하거나 거부할 수 있습니다.", cb_accept:"동의", cb_reject:"거부"
     },
     "th": {
+      nav_home:"หน้าแรก", nav_pk:"โปเกมอน", nav_db:"ดราก้อนบอล", cat_guide:"เคล็ดลับการซื้อ →",
       f_guide:"คู่มือการซื้อ",
       title:"JapanMania | เปรียบเทียบราคาตลาดและคู่มือสั่งซื้อผ่านตัวแทน",
       desc:"เปรียบเทียบรายการประมูลการ์ด TCG ญี่ปุ่นกับราคาตลาดต่างประเทศ และเรียนรู้วิธีซื้อสินค้าจากญี่ปุ่นผ่านบริการตัวแทน Buyee",
