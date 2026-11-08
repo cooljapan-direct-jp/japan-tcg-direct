@@ -136,12 +136,19 @@ tr:last-child th,tr:last-child td{border-bottom:0}
   .summary{grid-template-columns:1fr}
   h1{font-size:1.28rem}
 }
+.guide-btn{color:var(--header-text);text-decoration:none;font-size:.85rem;font-weight:700;border:1px solid #6c757d;border-radius:6px;padding:3px 8px;white-space:nowrap}
+.site-nav{background:var(--card);border-bottom:1px solid rgba(128,128,128,.25)}
+.site-nav-in{max-width:800px;margin:0 auto;padding:4px 16px;font-size:.85rem;font-weight:700}
+.site-nav-row{display:flex;gap:16px;padding:4px 0;overflow-x:auto;white-space:nowrap}
+.site-nav a{color:var(--text);text-decoration:none}
+.site-nav a.active{color:var(--accent);border-bottom:2px solid var(--accent)}
 </style>
 </head>
 <body>
 <header class="site-header">
-  <a class="brand" href="./">JapanMania</a>
+  <a class="brand" href="/">JapanMania</a>
   <div class="right">
+    <a class="guide-btn" href="/buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
     <small data-i18n="tagline">Market Comparisons &amp; Proxy Guide</small>
     <select id="langSelect" class="lang-select" onchange="changeLanguage(this.value)" aria-label="Language">
       <option value="en">English</option>
@@ -155,6 +162,20 @@ tr:last-child th,tr:last-child td{border-bottom:0}
     </select>
   </div>
 </header>
+<nav class="site-nav" aria-label="Site">
+  <div class="site-nav-in">
+    <div class="site-nav-row">
+      <a href="/" data-i18n="bc_home">Home</a>
+      <a href="/weekly/" data-i18n="nav_wk">Weekly Report</a>
+      <a href="/buyee-flow.html" class="active" data-i18n="f_guide">Buying Guide</a>
+    </div>
+    <div class="site-nav-row">
+      <a href="/pokemon.html" data-i18n="nav_pk">Pokémon</a>
+      <a href="/one-piece.html">ONE PIECE</a>
+      <a href="/dragon-ball.html" data-i18n="nav_db">Dragon Ball</a>
+    </div>
+  </div>
+</nav>
 
 <div class="wrap">
   <nav class="crumb" aria-label="Breadcrumb"><a href="./" data-i18n="bc_home">Home</a> › <span data-i18n="bc_here">How to Buy with Buyee</span></nav>
@@ -325,7 +346,7 @@ const I18N = {
   "zh-TW": {
     nav_pk:"寶可夢", nav_db:"七龍珠", f_about:"關於我們", f_privacy:"隱私權政策", f_contact:"聯絡我們",
     cb_text:"我們使用分析用Cookie來了解訪客如何使用本站。您可以選擇接受或拒絕。", cb_accept:"接受", cb_reject:"拒絕", f_cookie:"Cookie設定",
-    bc_home:"首頁", bc_here:"如何透過Buyee購買", back_btn:"← 返回比價頁面", f_guide:"購買指南",
+    bc_home:"首頁", nav_wk:"每週報告", bc_here:"如何透過Buyee購買", back_btn:"← 返回比價頁面", f_guide:"購買指南",
     title:"如何透過Buyee從日本購買 | JapanMania",
     tagline:"市場比價與代購指南", eyebrow:"代購指南",
     h1:"海外用戶使用Buyee購物的流程",
@@ -375,7 +396,7 @@ const I18N = {
   "zh-CN": {
     nav_pk:"宝可梦", nav_db:"龙珠", f_about:"关于我们", f_privacy:"隐私政策", f_contact:"联系我们",
     cb_text:"我们使用分析Cookie来了解访客如何使用本站。您可以选择接受或拒绝。", cb_accept:"接受", cb_reject:"拒绝", f_cookie:"Cookie设置",
-    bc_home:"首页", bc_here:"如何通过Buyee购买", back_btn:"← 返回比价页面", f_guide:"购买指南",
+    bc_home:"首页", nav_wk:"每周报告", bc_here:"如何通过Buyee购买", back_btn:"← 返回比价页面", f_guide:"购买指南",
     title:"如何通过Buyee从日本购买 | JapanMania",
     tagline:"市场比价与代购指南", eyebrow:"代购指南",
     h1:"海外用户使用Buyee购物的流程",
@@ -425,7 +446,7 @@ const I18N = {
   "es": {
     nav_pk:"Pokémon", nav_db:"Dragon Ball", f_about:"Quiénes somos", f_privacy:"Política de privacidad", f_contact:"Contacto",
     cb_text:"Usamos cookies de analítica para entender cómo se usa este sitio. Puedes aceptarlas o rechazarlas.", cb_accept:"Aceptar", cb_reject:"Rechazar", f_cookie:"Configuración de cookies",
-    bc_home:"Inicio", bc_here:"Cómo comprar con Buyee", back_btn:"← Volver a las comparativas", f_guide:"Guía de compra",
+    bc_home:"Inicio", nav_wk:"Informe semanal", bc_here:"Cómo comprar con Buyee", back_btn:"← Volver a las comparativas", f_guide:"Guía de compra",
     title:"Cómo comprar en Japón con Buyee | JapanMania",
     tagline:"Comparativas de mercado y guía proxy", eyebrow:"Guía proxy",
     h1:"Cómo compran con Buyee los usuarios del extranjero",
@@ -475,7 +496,7 @@ const I18N = {
   "fr": {
     nav_pk:"Pokémon", nav_db:"Dragon Ball", f_about:"À propos", f_privacy:"Politique de confidentialité", f_contact:"Contact",
     cb_text:"Nous utilisons des cookies de mesure d'audience pour comprendre comment ce site est utilisé. Vous pouvez les accepter ou les refuser.", cb_accept:"Accepter", cb_reject:"Refuser", f_cookie:"Paramètres des cookies",
-    bc_home:"Accueil", bc_here:"Acheter avec Buyee", back_btn:"← Retour aux comparatifs", f_guide:"Guide d'achat",
+    bc_home:"Accueil", nav_wk:"Rapport hebdo", bc_here:"Acheter avec Buyee", back_btn:"← Retour aux comparatifs", f_guide:"Guide d'achat",
     title:"Acheter au Japon avec Buyee | JapanMania",
     tagline:"Comparatifs de prix et guide proxy", eyebrow:"Guide proxy",
     h1:"Comment les acheteurs étrangers utilisent Buyee",
@@ -525,7 +546,7 @@ const I18N = {
   "de": {
     nav_pk:"Pokémon", nav_db:"Dragon Ball", f_about:"Über uns", f_privacy:"Datenschutz", f_contact:"Kontakt",
     cb_text:"Wir verwenden Analyse-Cookies, um zu verstehen, wie diese Website genutzt wird. Du kannst sie akzeptieren oder ablehnen.", cb_accept:"Akzeptieren", cb_reject:"Ablehnen", f_cookie:"Cookie-Einstellungen",
-    bc_home:"Startseite", bc_here:"Mit Buyee kaufen", back_btn:"← Zurück zu den Preisvergleichen", f_guide:"Kaufratgeber",
+    bc_home:"Startseite", nav_wk:"Wochenbericht", bc_here:"Mit Buyee kaufen", back_btn:"← Zurück zu den Preisvergleichen", f_guide:"Kaufratgeber",
     title:"So kaufst du mit Buyee in Japan | JapanMania",
     tagline:"Marktvergleiche & Proxy-Ratgeber", eyebrow:"Proxy-Ratgeber",
     h1:"So kaufen Nutzer aus dem Ausland mit Buyee ein",
@@ -575,7 +596,7 @@ const I18N = {
   "ko": {
     nav_pk:"포켓몬", nav_db:"드래곤볼", f_about:"소개", f_privacy:"개인정보 처리방침", f_contact:"문의",
     cb_text:"사이트 이용 방식을 파악하기 위해 분석 쿠키를 사용합니다. 동의하거나 거부할 수 있습니다.", cb_accept:"동의", cb_reject:"거부", f_cookie:"쿠키 설정",
-    bc_home:"홈", bc_here:"Buyee 구매 방법", back_btn:"← 가격 비교로 돌아가기", f_guide:"구매 가이드",
+    bc_home:"홈", nav_wk:"주간 리포트", bc_here:"Buyee 구매 방법", back_btn:"← 가격 비교로 돌아가기", f_guide:"구매 가이드",
     title:"Buyee로 일본에서 구매하는 방법 | JapanMania",
     tagline:"시세 비교 & 구매대행 가이드", eyebrow:"구매대행 가이드",
     h1:"해외 사용자가 Buyee로 구매하는 흐름",
@@ -625,7 +646,7 @@ const I18N = {
   "th": {
     nav_pk:"โปเกมอน", nav_db:"ดราก้อนบอล", f_about:"เกี่ยวกับเรา", f_privacy:"นโยบายความเป็นส่วนตัว", f_contact:"ติดต่อ",
     cb_text:"เราใช้คุกกี้เพื่อการวิเคราะห์ เพื่อทำความเข้าใจว่าผู้เข้าชมใช้งานเว็บไซต์อย่างไร คุณสามารถยอมรับหรือปฏิเสธได้", cb_accept:"ยอมรับ", cb_reject:"ปฏิเสธ", f_cookie:"ตั้งค่าคุกกี้",
-    bc_home:"หน้าแรก", bc_here:"วิธีซื้อผ่าน Buyee", back_btn:"← กลับไปหน้าเปรียบเทียบราคา", f_guide:"คู่มือการซื้อ",
+    bc_home:"หน้าแรก", nav_wk:"รายงานประจำสัปดาห์", bc_here:"วิธีซื้อผ่าน Buyee", back_btn:"← กลับไปหน้าเปรียบเทียบราคา", f_guide:"คู่มือการซื้อ",
     title:"วิธีซื้อสินค้าจากญี่ปุ่นผ่าน Buyee | JapanMania",
     tagline:"เปรียบเทียบราคาและคู่มือสั่งซื้อผ่านตัวแทน", eyebrow:"คู่มือตัวแทนสั่งซื้อ",
     h1:"ขั้นตอนการซื้อผ่าน Buyee สำหรับผู้ใช้ต่างประเทศ",

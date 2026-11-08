@@ -53,19 +53,34 @@
 <body class="bg-light text-dark d-flex flex-column min-vh-100">
 
   <header class="bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center">
-    <a href="./" class="fw-bold fs-6 text-white text-decoration-none">JapanMania</a>
+    <a href="/" class="fw-bold fs-6 text-white text-decoration-none">JapanMania</a>
     <div class="d-flex align-items-center gap-2">
+      <a href="/buyee-flow.html" class="text-white text-decoration-none small fw-bold border border-secondary rounded px-2 py-1" data-i18n="f_guide">Buying Guide</a>
       <small class="text-secondary d-none d-md-inline" data-i18n="tagline">Market Comparisons &amp; Proxy Guide</small>
-      <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)" aria-label="Language"><option value="en">English</option><option value="zh-TW">繁體中文</option><option value="zh-CN">简体中文</option><option value="es">Español</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="ko">한국어</option><option value="th">ไทย</option></select>
+      <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zh-TW">繁體中文</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="ko">한국어</option>
+        <option value="th">ไทย</option>
+      </select>
     </div>
   </header>
   <nav class="sub-nav bg-white border-bottom">
-    <div class="container max-width-800 nav-row d-flex gap-3 py-2 small fw-bold">
-      <a href="./" data-i18n="nav_home">Home</a>
-      <a href="buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
-      <a href="pokemon.html" data-i18n="nav_pk">Pokémon</a>
-      <a href="one-piece.html">ONE PIECE</a>
-      <a href="dragon-ball.html" class="active" data-i18n="nav_db">Dragon Ball</a>
+    <div class="container max-width-800 py-1 small fw-bold">
+      <div class="nav-row d-flex gap-3 py-1">
+        <a href="/" data-i18n="nav_home">Home</a>
+        <a href="/weekly/" data-i18n="nav_wk">Weekly Report</a>
+        <a href="/buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
+      </div>
+      <div class="nav-row d-flex gap-3 py-1">
+        <a href="/pokemon.html" data-i18n="nav_pk">Pokémon</a>
+        <a href="/one-piece.html">ONE PIECE</a>
+        <a href="/dragon-ball.html" class="active" data-i18n="nav_db">Dragon Ball</a>
+      </div>
     </div>
   </nav>
   <div class="affiliate-notice py-1 text-center px-2" data-i18n="aff">*This site contains affiliate links. We may earn a commission if you make a purchase via Buyee, at no extra cost to you.</div>
