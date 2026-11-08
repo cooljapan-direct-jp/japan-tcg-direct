@@ -85,12 +85,17 @@
     </div>
   </header>
   <nav class="sub-nav bg-white border-bottom">
-    <div class="container max-width-800 nav-row d-flex gap-3 py-2 small fw-bold">
-      <a href="./" class="active" data-i18n="nav_home">Home</a>
-      <a href="buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
-      <a href="pokemon.html" data-i18n="nav_pk">Pokémon</a>
-      <a href="one-piece.html">ONE PIECE</a>
-      <a href="dragon-ball.html" data-i18n="nav_db">Dragon Ball</a>
+    <div class="container max-width-800 py-1 small fw-bold">
+      <div class="nav-row d-flex gap-3 py-1">
+        <a href="./" class="active" data-i18n="nav_home">Home</a>
+        <a href="weekly/" data-i18n="nav_wk">Weekly Report</a>
+        <a href="buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
+      </div>
+      <div class="nav-row d-flex gap-3 py-1">
+        <a href="pokemon.html" data-i18n="nav_pk">Pokémon</a>
+        <a href="one-piece.html">ONE PIECE</a>
+        <a href="dragon-ball.html" data-i18n="nav_db">Dragon Ball</a>
+      </div>
     </div>
   </nav>
 
@@ -100,6 +105,15 @@
 
   <div class="site-notice py-2 px-3 text-center" data-i18n="notice">
     Labels such as "Appraised" or "Authenticated" are set by the seller or by Buyee's system. This site does not guarantee authenticity or condition. Please check the listing on Buyee and make your own decision before you buy.
+  </div>
+
+  <!-- Weekly report link -->
+  <div class="container max-width-800 pt-3">
+    <a href="weekly/" class="d-block bg-white border rounded p-3 text-decoration-none text-dark" style="border-left:4px solid #dc3545 !important;">
+      <div class="fw-bold small text-danger mb-1" data-i18n="wk_h">This Week in Japan</div>
+      <div class="extra-small text-muted" data-i18n="wk_p">Our weekly roundup of Japanese card news: what is official, what is only reported, and what is still unclear.</div>
+      <div class="extra-small fw-bold mt-1" data-i18n="wk_link">Read the weekly report →</div>
+    </a>
   </div>
 
   <!-- Featured comparison -->
@@ -262,7 +276,7 @@
   <script>
   const I18N = {
     "zh-TW": {
-      nav_home:"首頁", nav_pk:"寶可夢", nav_db:"七龍珠", cat_guide:"購買攻略 →",
+      nav_home:"首頁", nav_wk:"每週報告", wk_h:"本週日本動態", wk_p:"每週整理日本卡牌消息：哪些是官方資訊、哪些只是報導、哪些仍不明確。", wk_link:"閱讀每週報告 →", nav_pk:"寶可夢", nav_db:"七龍珠", cat_guide:"購買攻略 →",
       f_guide:"購買指南",
       title:"JapanMania | 市場比價與代購指南",
       desc:"比較日本TCG拍賣商品與海外市場價格，並了解如何透過Buyee代購服務從日本購買。",
@@ -311,7 +325,7 @@
       cb_text:"我們使用分析用Cookie來了解訪客如何使用本站。您可以選擇接受或拒絕。", cb_accept:"接受", cb_reject:"拒絕"
     },
     "zh-CN": {
-      nav_home:"首页", nav_pk:"宝可梦", nav_db:"龙珠", cat_guide:"购买攻略 →",
+      nav_home:"首页", nav_wk:"每周报告", wk_h:"本周日本动态", wk_p:"每周整理日本卡牌消息：哪些是官方信息、哪些只是报道、哪些仍不明确。", wk_link:"阅读每周报告 →", nav_pk:"宝可梦", nav_db:"龙珠", cat_guide:"购买攻略 →",
       f_guide:"购买指南",
       title:"JapanMania | 市场比价与代购指南",
       desc:"比较日本TCG拍卖商品与海外市场价格，并了解如何通过Buyee代购服务从日本购买。",
@@ -360,7 +374,7 @@
       cb_text:"我们使用分析Cookie来了解访客如何使用本站。您可以选择接受或拒绝。", cb_accept:"接受", cb_reject:"拒绝"
     },
     "es": {
-      nav_home:"Inicio", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Consejos de compra →",
+      nav_home:"Inicio", nav_wk:"Informe semanal", wk_h:"Esta semana en Japón", wk_p:"Resumen semanal de noticias de cartas en Japón: qué es oficial, qué solo se ha informado y qué sigue sin estar claro.", wk_link:"Leer el informe semanal →", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Consejos de compra →",
       f_guide:"Guía de compra",
       title:"JapanMania | Comparativas de mercado y guía de compra por proxy",
       desc:"Compara subastas de cartas TCG japonesas con los precios del mercado internacional y aprende a comprar desde Japón con el servicio proxy Buyee.",
@@ -409,7 +423,7 @@
       cb_text:"Usamos cookies de analítica para entender cómo se usa este sitio. Puedes aceptarlas o rechazarlas.", cb_accept:"Aceptar", cb_reject:"Rechazar"
     },
     "fr": {
-      nav_home:"Accueil", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Conseils d'achat →",
+      nav_home:"Accueil", nav_wk:"Rapport hebdo", wk_h:"Cette semaine au Japon", wk_p:"Le point hebdomadaire sur les cartes au Japon : ce qui est officiel, ce qui est seulement rapporté et ce qui reste flou.", wk_link:"Lire le rapport hebdo →", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Conseils d'achat →",
       f_guide:"Guide d'achat",
       title:"JapanMania | Comparatifs de prix et guide des services proxy",
       desc:"Comparez les enchères japonaises de cartes TCG avec les prix du marché international et découvrez comment acheter au Japon via le service proxy Buyee.",
@@ -458,7 +472,7 @@
       cb_text:"Nous utilisons des cookies de mesure d'audience pour comprendre comment ce site est utilisé. Vous pouvez les accepter ou les refuser.", cb_accept:"Accepter", cb_reject:"Refuser"
     },
     "de": {
-      nav_home:"Startseite", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Kauftipps →",
+      nav_home:"Startseite", nav_wk:"Wochenbericht", wk_h:"Diese Woche in Japan", wk_p:"Wöchentlicher Überblick über Kartennews aus Japan: was offiziell ist, was nur berichtet wird und was noch unklar ist.", wk_link:"Wochenbericht lesen →", nav_pk:"Pokémon", nav_db:"Dragon Ball", cat_guide:"Kauftipps →",
       f_guide:"Kaufratgeber",
       title:"JapanMania | Marktvergleiche & Proxy-Ratgeber",
       desc:"Vergleiche japanische TCG-Auktionen mit internationalen Marktpreisen und erfahre, wie du über den Proxy-Dienst Buyee in Japan kaufst.",
@@ -507,7 +521,7 @@
       cb_text:"Wir verwenden Analyse-Cookies, um zu verstehen, wie diese Website genutzt wird. Du kannst sie akzeptieren oder ablehnen.", cb_accept:"Akzeptieren", cb_reject:"Ablehnen"
     },
     "ko": {
-      nav_home:"홈", nav_pk:"포켓몬", nav_db:"드래곤볼", cat_guide:"구매 팁 →",
+      nav_home:"홈", nav_wk:"주간 리포트", wk_h:"이번 주 일본 소식", wk_p:"일본 카드 소식을 매주 정리합니다: 공식 정보, 보도된 내용, 아직 불확실한 내용.", wk_link:"주간 리포트 보기 →", nav_pk:"포켓몬", nav_db:"드래곤볼", cat_guide:"구매 팁 →",
       f_guide:"구매 가이드",
       title:"JapanMania | 시세 비교 & 구매대행 가이드",
       desc:"일본 TCG 경매 매물과 해외 시세를 비교하고, 구매대행 서비스 Buyee로 일본에서 구매하는 방법을 알아보세요.",
@@ -556,7 +570,7 @@
       cb_text:"사이트 이용 방식을 파악하기 위해 분석 쿠키를 사용합니다. 동의하거나 거부할 수 있습니다.", cb_accept:"동의", cb_reject:"거부"
     },
     "th": {
-      nav_home:"หน้าแรก", nav_pk:"โปเกมอน", nav_db:"ดราก้อนบอล", cat_guide:"เคล็ดลับการซื้อ →",
+      nav_home:"หน้าแรก", nav_wk:"รายงานประจำสัปดาห์", wk_h:"สัปดาห์นี้ในญี่ปุ่น", wk_p:"สรุปข่าวการ์ดจากญี่ปุ่นทุกสัปดาห์: อะไรเป็นทางการ อะไรเป็นเพียงรายงาน และอะไรยังไม่ชัดเจน", wk_link:"อ่านรายงานประจำสัปดาห์ →", nav_pk:"โปเกมอน", nav_db:"ดราก้อนบอล", cat_guide:"เคล็ดลับการซื้อ →",
       f_guide:"คู่มือการซื้อ",
       title:"JapanMania | เปรียบเทียบราคาตลาดและคู่มือสั่งซื้อผ่านตัวแทน",
       desc:"เปรียบเทียบรายการประมูลการ์ด TCG ญี่ปุ่นกับราคาตลาดต่างประเทศ และเรียนรู้วิธีซื้อสินค้าจากญี่ปุ่นผ่านบริการตัวแทน Buyee",
