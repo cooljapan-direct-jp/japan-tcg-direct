@@ -99,7 +99,7 @@ def page_head(title, desc, canonical, extra_head=""):
     <a href="/" class="fw-bold fs-6 text-white text-decoration-none">JapanMania</a>
     <div class="d-flex align-items-center gap-2">
       <a href="/buyee-flow.html" class="text-white text-decoration-none small fw-bold border border-secondary rounded px-2 py-1" data-i18n="f_guide">Buying Guide</a>
-      <small class="text-secondary d-none d-md-inline" data-i18n="tagline">Market Comparisons & Proxy Guide</small>
+      <small class="text-secondary d-none d-md-inline" data-i18n="tagline">Weekly Report & Proxy Guide</small>
       <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)" aria-label="Language">
         <option value="en">English</option>
         <option value="zh-TW">繁體中文</option>
@@ -141,7 +141,7 @@ PAGE_FOOT = """
       </div>
       <p class="mb-2 text-white-50">© 2026 JapanMania. All rights reserved.</p>
       <p class="text-muted" style="font-size: 0.65rem; max-width: 600px; margin: 0 auto;">
-        This site is an independent information and price comparison guide. We are not affiliated with or endorsed by Buyee, card publishers or any marketplace. Weekly reports summarize publicly available information and may change after publication.
+        This site is an independent information guide. We are not affiliated with or endorsed by Buyee, card publishers or any marketplace. Weekly reports summarize publicly available information and may change after publication.
       </p>
     </div>
   </footer>
