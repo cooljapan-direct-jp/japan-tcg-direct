@@ -1,10 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Buy from Japan with Buyee | JapanMania</title>
-<meta name="description" content="Step-by-step guide to buying from Japan with the Buyee proxy service: purchase, warehouse storage, international shipping and fees.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Buy from Japan with Buyee | JapanMania</title>
+  <meta name="description" content="What Buyee is, why it helps buyers outside Japan, what you pay and how an order works, step by step.">
+  <link rel="canonical" href="https://japanmania.store/buyee-flow">
   <!-- Google Analytics 4 + Consent Mode v2 -->
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -29,284 +30,232 @@
     gtag('config', 'G-K30E6LBQDN');
   </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-K30E6LBQDN"></script>
-<style>
-:root{
-  --bg:#f8f9fa; --card:#ffffff; --text:#212529; --muted:#6c757d; --line:#dee2e6;
-  --header:#212529; --header-text:#ffffff; --header-sub:#adb5bd;
-  --accent:#dc3545; --accent-soft:#fbe9eb;
-  --pay:#198754; --pay-soft:#ecfdf5; --pay-line:#a7f3d0;
-  --ship:#495057; --ship-soft:#e9ecef;
-  --warn:#5d4700; --warn-soft:#fff8e1; --warn-line:#ffe08a;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#121417; --card:#1c1f23; --text:#e9ecef; --muted:#9aa3ad; --line:#2f343a;
-    --header:#0b0c0e; --header-text:#ffffff; --header-sub:#8a929b;
-    --accent:#ea5a68; --accent-soft:#3a1c20;
-    --pay:#4cc38a; --pay-soft:#132a1f; --pay-line:#1f5a3c;
-    --ship:#ced4da; --ship-soft:#2b3035;
-    --warn:#ffd96a; --warn-soft:#2f2810; --warn-line:#6b5413;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#121417; --card:#1c1f23; --text:#e9ecef; --muted:#9aa3ad; --line:#2f343a;
-  --header:#0b0c0e; --header-text:#ffffff; --header-sub:#8a929b;
-  --accent:#ea5a68; --accent-soft:#3a1c20;
-  --pay:#4cc38a; --pay-soft:#132a1f; --pay-line:#1f5a3c;
-  --ship:#ced4da; --ship-soft:#2b3035;
-  --warn:#ffd96a; --warn-soft:#2f2810; --warn-line:#6b5413;
-}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);
-  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Hiragino Sans","Noto Sans JP","Noto Sans Thai","Malgun Gothic",sans-serif;
-  line-height:1.7;font-size:15px}
 
-.site-header{background:var(--header);color:var(--header-text);padding:8px 16px;
-  display:flex;justify-content:space-between;align-items:center;gap:10px}
-.site-header .brand{font-weight:700;font-size:1rem;color:var(--header-text);text-decoration:none}
-.site-header .right{display:flex;align-items:center;gap:8px}
-.site-header small{color:var(--header-sub);font-size:.8rem}
-.lang-select{background:#6c757d;color:#fff;border:0;border-radius:6px;padding:4px 8px;font-size:.85rem}
-@media (max-width:575px){ .site-header small{display:none} }
 
-.wrap{max-width:800px;margin:0 auto;padding:24px 16px 48px}
-.eyebrow{display:inline-block;background:var(--pay);color:#fff;font-size:.72rem;font-weight:700;
-  letter-spacing:.04em;text-transform:uppercase;padding:3px 10px;border-radius:6px;margin-bottom:8px}
-h1{font-size:1.5rem;font-weight:700;margin:0 0 4px;line-height:1.35}
-.lead{color:var(--muted);margin:0 0 20px;font-size:.92rem}
-
-.legend{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-.tag{font-size:.75rem;font-weight:700;padding:2px 10px;border-radius:6px;white-space:nowrap}
-.t-buy{background:var(--accent-soft);color:var(--accent)}
-.t-pay{background:var(--pay-soft);color:var(--pay);border:1px solid var(--pay-line)}
-.t-ship{background:var(--ship-soft);color:var(--ship)}
-
-.summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:28px}
-.summary div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;
-  box-shadow:0 .125rem .25rem rgba(0,0,0,.075)}
-.summary div:nth-child(1),.summary div:nth-child(3){border:2px solid var(--pay-line);background:var(--pay-soft)}
-.summary div:nth-child(1) b,.summary div:nth-child(3) b{color:var(--pay)}
-.summary b{display:block;font-size:1.02rem}
-.summary span{font-size:.8rem;color:var(--muted)}
-
-ol.flow{list-style:none;margin:0;padding:0;position:relative}
-ol.flow::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:var(--line)}
-.step{position:relative;padding-left:54px;margin-bottom:16px}
-.num{position:absolute;left:0;top:2px;width:40px;height:40px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;background:var(--accent);
-  box-shadow:0 .125rem .25rem rgba(0,0,0,.15)}
-.step.pay .num{background:var(--pay)}
-.step.ship .num{background:var(--header)}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .step.ship .num{background:#495057} }
-:root[data-theme="dark"] .step.ship .num{background:#495057}
-
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;
-  box-shadow:0 .125rem .25rem rgba(0,0,0,.075)}
-.step.pay .card{border-left:4px solid var(--pay)}
-.card h2{font-size:1.02rem;font-weight:700;margin:0 0 6px;display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.card p{margin:0 0 6px}
-.card ul{margin:4px 0 0;padding-left:1.2em}
-.card li{margin:2px 0}
-.who{font-size:.75rem;color:var(--muted)}
-.note{background:var(--warn-soft);border:1px solid var(--warn-line);color:var(--warn);border-radius:8px;
-  padding:9px 12px;margin-top:8px;font-size:.85rem}
-
-.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-top:24px;
-  box-shadow:0 .125rem .25rem rgba(0,0,0,.075)}
-.box.highlight{border:2px solid var(--accent)}
-.box h3{margin:0 0 8px;font-size:1.02rem;font-weight:700}
-.new{background:var(--accent);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:6px;margin-left:6px;vertical-align:middle}
-
-table{width:100%;border-collapse:collapse;font-size:.88rem}
-th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
-th{color:var(--muted);font-weight:600}
-tr:last-child th,tr:last-child td{border-bottom:0}
-
-.crumb{font-size:.8rem;color:var(--muted);margin:0 0 12px}
-.crumb a{color:var(--accent);text-decoration:none;font-weight:600}
-.back-wrap{text-align:center;margin-top:28px}
-.back-btn{display:inline-block;background:var(--accent);color:#fff;padding:12px 22px;border-radius:8px;font-weight:700;text-decoration:none}
-.foot-nav{margin-bottom:10px;font-size:.85rem}
-.foot-nav a{text-decoration:none}
-.site-footer{background:var(--header);color:var(--header-sub);padding:20px 16px;font-size:.78rem;text-align:center}
-.site-footer a{color:#fff}
-.site-footer .inner{max-width:800px;margin:0 auto}
-
-@media (max-width:520px){
-  .summary{grid-template-columns:1fr}
-  h1{font-size:1.28rem}
-}
-.guide-btn{color:var(--header-text);text-decoration:none;font-size:.85rem;font-weight:700;border:1px solid #6c757d;border-radius:6px;padding:3px 8px;white-space:nowrap}
-.site-nav{background:var(--card);border-bottom:1px solid rgba(128,128,128,.25)}
-.site-nav-in{max-width:800px;margin:0 auto;padding:4px 16px;font-size:.85rem;font-weight:700}
-.site-nav-row{display:flex;gap:16px;padding:4px 0;overflow-x:auto;white-space:nowrap}
-.site-nav a{color:var(--text);text-decoration:none}
-.site-nav a.active{color:var(--accent);border-bottom:2px solid var(--accent)}
-</style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .extra-small { font-size: 0.75rem; }
+    .max-width-800 { max-width: 800px; }
+    .affiliate-notice { background-color: #f8f9fa; border-bottom: 1px solid #e9ecef; font-size: 0.7rem; color: #6c757d; }
+    .site-notice { background-color: #fff8e1; border: 1px solid #ffe08a; color: #5d4700; border-radius: 8px; }
+    .sub-nav .nav-row { overflow-x: auto; white-space: nowrap; }
+    .sub-nav a { color: #212529; text-decoration: none; }
+    .sub-nav a.active { color: #dc3545; border-bottom: 2px solid #dc3545; }
+    .crumb a { color: #dc3545; text-decoration: none; }
+    .kw-table td:first-child { font-weight: 700; white-space: nowrap; }
+    .why-card { border-radius: 12px; }
+    .info-table th { width: 30%; white-space: nowrap; color: #6c757d; font-weight: 600; }
+    .todo { background: #fff3cd; color: #664d03; padding: 0 4px; border-radius: 4px; }
+    .policy h2 { font-size: 1rem; font-weight: 700; margin-top: 1.5rem; }
+    .policy p, .policy li { font-size: .875rem; }
+    .step-num { flex: 0 0 28px; height: 28px; border-radius: 50%; background: #212529; color: #fff; font-weight: 700; font-size: .85rem; display: flex; align-items: center; justify-content: center; }
+    .step-card .who { color: #6c757d; }
+    .step-note { background: #fff3cd; color: #664d03; border-radius: 6px; padding: 4px 8px; }
+    .step-card table th { white-space: normal; color: #6c757d; font-weight: 600; width: 45%; }
+    .pay-table th { width: 35%; color: #6c757d; font-weight: 600; }
+  </style>
 </head>
-<body>
-<header class="site-header">
-  <a class="brand" href="/">JapanMania</a>
-  <div class="right">
-    <a class="guide-btn" href="/buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
-    <small data-i18n="tagline">Weekly Report &amp; Proxy Guide</small>
-    <select id="langSelect" class="lang-select" onchange="changeLanguage(this.value)" aria-label="Language">
-      <option value="en">English</option>
-      <option value="zh-TW">繁體中文</option>
-      <option value="zh-CN">简体中文</option>
-      <option value="es">Español</option>
-      <option value="fr">Français</option>
-      <option value="de">Deutsch</option>
-      <option value="ko">한국어</option>
-      <option value="th">ไทย</option>
-    </select>
-  </div>
-</header>
-<nav class="site-nav" aria-label="Site">
-  <div class="site-nav-in">
-    <div class="site-nav-row">
-      <a href="/" data-i18n="bc_home">Home</a>
-      <a href="/weekly/" data-i18n="nav_wk">Weekly Report</a>
-      <a href="/buyee-flow.html" class="active" data-i18n="f_guide">Buying Guide</a>
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
+
+  <header class="bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center">
+    <a href="/" class="fw-bold fs-6 text-white text-decoration-none">JapanMania</a>
+    <div class="d-flex align-items-center gap-2">
+      <a href="/buyee-flow" class="text-white text-decoration-none small fw-bold border border-secondary rounded px-2 py-1" data-i18n="f_guide">Buying Guide</a>
+      <small class="text-secondary d-none d-md-inline" data-i18n="tagline">Market Comparisons &amp; Proxy Guide</small>
+      <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)" aria-label="Language">
+        <option value="en">English</option>
+        <option value="zh-TW">繁體中文</option>
+        <option value="zh-CN">简体中文</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="ko">한국어</option>
+        <option value="th">ไทย</option>
+      </select>
     </div>
-    <div class="site-nav-row">
-      <a href="/pokemon.html" data-i18n="nav_pk">Pokémon</a>
-      <a href="/one-piece.html">ONE PIECE</a>
-      <a href="/dragon-ball.html" data-i18n="nav_db">Dragon Ball</a>
+  </header>
+  <nav class="sub-nav bg-white border-bottom">
+    <div class="container max-width-800 py-1 small fw-bold">
+      <div class="nav-row d-flex gap-3 py-1">
+        <a href="/" data-i18n="nav_home">Home</a>
+        <a href="/weekly/" data-i18n="nav_wk">Weekly Report</a>
+        <a href="/buyee-flow" class="active" data-i18n="f_guide">Buying Guide</a>
+      </div>
+      <div class="nav-row d-flex gap-3 py-1">
+        <a href="/pokemon" data-i18n="nav_pk">Pokémon</a>
+        <a href="/one-piece">ONE PIECE</a>
+        <a href="/dragon-ball" data-i18n="nav_db">Dragon Ball</a>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+  <div class="affiliate-notice py-1 text-center px-2" data-i18n="aff">*This site contains affiliate links. We may earn a commission if you make a purchase via Buyee, at no extra cost to you.</div>
 
-<div class="wrap">
-  <nav class="crumb" aria-label="Breadcrumb"><a href="./" data-i18n="bc_home">Home</a> › <span data-i18n="bc_here">How to Buy with Buyee</span></nav>
-  <span class="eyebrow" data-i18n="eyebrow">Proxy Guide</span>
-  <h1 data-i18n="h1">How Overseas Buyers Shop with Buyee</h1>
-  <p class="lead" data-i18n="lead">Purchase → Japanese warehouse → international delivery. With Buyee you usually <b>pay twice</b>: once for the item and once for international shipping.</p>
+  <main class="container max-width-800 py-4">
+    <nav class="crumb small text-muted mb-2"><a href="/" data-i18n="nav_home">Home</a> › <span data-i18n="bc_here">How to Buy with Buyee</span></nav>
+    <span class="badge bg-success mb-2" data-i18n="eyebrow">Proxy Guide</span>
+    <h1 class="fw-bold fs-3 mb-2" data-i18n="h1">How Overseas Buyers Shop with Buyee</h1>
+    <p class="text-muted" data-i18n="intro">A guide for collectors outside Japan: what Buyee is, why it helps, what you pay and how an order works.</p>
 
-  <div class="legend">
-    <span class="tag t-buy" data-i18n="lg_buy">Purchase</span>
-    <span class="tag t-pay" data-i18n="lg_pay">Payment</span>
-    <span class="tag t-ship" data-i18n="lg_ship">Shipping</span>
-  </div>
+    <h2 class="fw-bold fs-5 mt-4 mb-2" data-i18n="bx_h">What is Buyee?</h2>
+    <p class="small" data-i18n="bx_p">Buyee is a proxy shopping service run by tenso, inc., a Japanese company, since 2012. It buys items from Japanese online shops, flea markets and auctions on your behalf, receives them at its warehouse in Japan, and ships them to you overseas.</p>
 
-  <div class="summary">
-    <div><b data-i18n="sum1_b">① 1st payment</b><span data-i18n="sum1_s">At purchase: item price + fees</span></div>
-    <div><b data-i18n="sum2_b">② Warehouse storage</b><span data-i18n="sum2_s">30 days free, up to 90 days</span></div>
-    <div><b data-i18n="sum3_b">③ 2nd payment</b><span data-i18n="sum3_s">After arrival: international shipping, etc.</span></div>
-  </div>
+    <h2 class="fw-bold fs-5 mt-4 mb-2" data-i18n="bx_why">Why it helps buyers outside Japan</h2>
+    <ul class="small bg-white border rounded p-3 ps-4 shadow-sm mb-2">
+      <li class="mb-1" data-i18n="bx_w1">Many Japanese sellers only ship within Japan. Because Buyee receives the item in Japan, these listings become available to you.</li>
+      <li class="mb-1" data-i18n="bx_w2">The site is in English and other languages, so you can search, bid and ask questions without reading Japanese.</li>
+      <li class="mb-1" data-i18n="bx_w3">You can pay with PayPal or international credit cards instead of Japanese payment methods.</li>
+      <li class="mb-1" data-i18n="bx_w4">You can bid on Japanese auctions, which are hard to join directly from abroad.</li>
+      <li class="mb-1" data-i18n="bx_w5">You can combine several purchases into one box to save on international shipping.</li>
+    </ul>
+    <p class="extra-small text-muted" data-i18n="bx_note">On top of the item price, you pay Buyee's fees and international shipping, so the total is higher than the Japanese price. This guide explains how the process and payments work.</p>
+    <p class="mb-0"><a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2F" target="_blank" rel="noopener sponsored nofollow" class="btn btn-danger fw-bold" data-i18n="cta">Visit Buyee (free sign-up) →</a></p>
 
-  <ol class="flow">
-    <li class="step">
-      <div class="num">1</div>
-      <div class="card">
-        <h2><span data-i18n="st1_h">Sign up</span> <span class="tag t-buy" data-i18n="lg_buy">Purchase</span></h2>
-        <p data-i18n="st1_p">Create a free Buyee account. The site is available in English, Chinese and other languages, so you don't need to read Japanese.</p>
-        <p class="who" data-i18n="st1_who">Done by you</p>
+    <h2 class="fw-bold fs-5 mt-4 mb-2" data-i18n="pay_h">What you pay</h2>
+    <p class="small" data-i18n="lead">Purchase → Japanese warehouse → international delivery. With Buyee you usually <b>pay twice</b>: once for the item and once for international shipping.</p>
+    <div class="table-responsive bg-white border rounded shadow-sm mb-3">
+      <table class="table table-sm mb-0 small pay-table">
+        <tr><th data-i18n="m1_h">1st (at purchase)</th><td data-i18n="m1">Item price, domestic shipping in Japan, Buyee fees / plan fees, etc.</td></tr>
+        <tr><th data-i18n="m2_h">2nd (after warehouse arrival)</th><td data-i18n="m2">International shipping, packing options, extended storage fees, prepaid duties (if eligible)</td></tr>
+        <tr><th data-i18n="m3_h">On delivery (if applicable)</th><td data-i18n="m3">Duties and import taxes charged locally</td></tr>
+      </table>
+    </div>
+    <div class="site-notice small p-3">
+      <div class="fw-bold mb-1"><span data-i18n="one_h">Buyee One: pay just once</span> <span class="badge bg-warning text-dark" data-i18n="one_new">Since Sep 2026</span></div>
+      <p class="mb-1" data-i18n="one_p">A new feature that shows the <b>total cost</b> — item price, shipping, fees and eligible duties/import taxes — at checkout and lets you pay it all at once. Shipping and duties are estimated in advance using delivery data and AI.</p>
+      <p class="mb-0"><span data-i18n="one_c_h">Launch country</span>: <span data-i18n="one_c">United States</span> / <span data-i18n="one_s_h">Launch store</span>: JDirectItems Fleamarket / <span data-i18n="one_f">More countries and stores to be added</span></p>
+    </div>
+
+    <h2 class="fw-bold fs-5 mt-4 mb-2" data-i18n="bx_flow">How it works</h2>
+    <ol class="list-unstyled mb-0">
+      <li class="step-card bg-white border rounded shadow-sm p-3 mb-2">
+        <div class="d-flex gap-2 align-items-start">
+          <span class="step-num">1</span>
+          <div class="flex-grow-1">
+            <h3 class="fs-6 fw-bold mb-1"><span data-i18n="st1_h">Sign up</span><span class="badge text-bg-primary ms-1" data-i18n="lg_buy">Purchase</span></h3>
+            <p class="small mb-1" data-i18n="st1_p">Create a free Buyee account. The site is available in English, Chinese and other languages, so you don't need to read Japanese.</p>
+            <p class="who small mb-2" data-i18n="st1_who">Done by you</p>
+            <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2F" target="_blank" rel="noopener sponsored nofollow" class="btn btn-danger btn-sm fw-bold" data-i18n="cta">Visit Buyee (free sign-up) →</a>
+          </div>
+        </div>
+      </li>
+      <li class="step-card bg-white border rounded shadow-sm p-3 mb-2">
+        <div class="d-flex gap-2 align-items-start">
+          <span class="step-num">2</span>
+          <div class="flex-grow-1">
+            <h3 class="fs-6 fw-bold mb-1"><span data-i18n="st2_h">Find items</span><span class="badge text-bg-primary ms-1" data-i18n="lg_buy">Purchase</span></h3>
+            <ul class="small mb-1">
+              <li data-i18n="st2_l1">Search within Buyee: JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon and more</li>
+              <li data-i18n="st2_l2">Buy directly from the “Buyee cart” on partner shops' official sites</li>
+              <li data-i18n="st2_l3">Add items from Japanese sites with the browser extension or app</li>
+              <li data-i18n="st2_l4">Paste the URL of any item to request a purchase (URL purchase)</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+      <li class="step-card bg-white border rounded shadow-sm p-3 mb-2">
+        <div class="d-flex gap-2 align-items-start">
+          <span class="step-num">3</span>
+          <div class="flex-grow-1">
+            <h3 class="fs-6 fw-bold mb-1"><span data-i18n="st3_h">Bid or order = 1st payment</span><span class="badge text-bg-danger ms-1" data-i18n="lg_pay">Payment</span></h3>
+            <p class="small mb-1" data-i18n="st3_p1">Place a bid for auctions, or a purchase request for online shops and flea markets. At this point you pay <b>the item price (plus domestic shipping, Buyee fees, etc.)</b>. For auctions, the amount is finalized when you win.</p>
+            <p class="small mb-1" data-i18n="st3_p2">Payment methods: PayPal, credit cards (VISA / Mastercard / JCB), Alipay, UnionPay</p>
+            <p class="who small mb-0" data-i18n="st3_who">You → Buyee (Buyee pays the Japanese seller or shop on your behalf)</p>
+          </div>
+        </div>
+      </li>
+      <li class="step-card bg-white border rounded shadow-sm p-3 mb-2">
+        <div class="d-flex gap-2 align-items-start">
+          <span class="step-num">4</span>
+          <div class="flex-grow-1">
+            <h3 class="fs-6 fw-bold mb-1"><span data-i18n="st4_h">Seller ships to Buyee's warehouse in Japan</span><span class="badge text-bg-success ms-1" data-i18n="lg_ship">Shipping</span></h3>
+            <p class="small mb-1" data-i18n="st4_p">Japanese sellers and shops ship to <b>Buyee's domestic warehouse in Japan</b>, not overseas, so it's handled as a domestic sale.</p>
+            <div class="step-note small mt-1" data-i18n="st4_n">For flea markets and auctions, the time until shipping varies by seller.</div>
+          </div>
+        </div>
+      </li>
+      <li class="step-card bg-white border rounded shadow-sm p-3 mb-2">
+        <div class="d-flex gap-2 align-items-start">
+          <span class="step-num">5</span>
+          <div class="flex-grow-1">
+            <h3 class="fs-6 fw-bold mb-1"><span data-i18n="st5_h">Arrival, storage &amp; packing options</span><span class="badge text-bg-success ms-1" data-i18n="lg_ship">Shipping</span></h3>
+            <p class="small mb-1" data-i18n="st5_p">You'll be notified by email and on My Page when the item arrives. Check the weighed package details under “Package Info”.</p>
+            <ul class="small mb-1">
+              <li data-i18n="st5_l1"><b>Package consolidation</b>: combine several items into one box to save on international shipping</li>
+              <li data-i18n="st5_l2">Order options such as <b>protective packing</b> from My Page</li>
+              <li data-i18n="st5_l3">Storage is <b>free for 30 days after arrival</b>, with daily fees from day 31, <b>up to 90 days</b></li>
+            </ul>
+            <div class="step-note small mt-1" data-i18n="st5_n">If international shipping isn't paid within 90 days, items may be disposed of.</div>
+          </div>
+        </div>
+      </li>
+      <li class="step-card bg-white border rounded shadow-sm p-3 mb-2">
+        <div class="d-flex gap-2 align-items-start">
+          <span class="step-num">6</span>
+          <div class="flex-grow-1">
+            <h3 class="fs-6 fw-bold mb-1"><span data-i18n="st6_h">Choose shipping = 2nd payment</span><span class="badge text-bg-danger ms-1" data-i18n="lg_pay">Payment</span></h3>
+            <p class="small mb-1" data-i18n="st6_p1">The price is fixed by the weight and size after packing. You pay <b>international shipping (plus option fees and, in eligible countries, prepaid duties)</b>.</p>
+            <p class="small mb-1" data-i18n="st6_p2">Main shipping methods: Japan Post, FedEx, DHL, UPS, Buyee Air Delivery, ECMS, etc. (options vary by country/region)</p>
+          </div>
+        </div>
+      </li>
+      <li class="step-card bg-white border rounded shadow-sm p-3 mb-2">
+        <div class="d-flex gap-2 align-items-start">
+          <span class="step-num">7</span>
+          <div class="flex-grow-1">
+            <h3 class="fs-6 fw-bold mb-1"><span data-i18n="st7_h">Shipped overseas → delivered</span><span class="badge text-bg-success ms-1" data-i18n="lg_ship">Shipping</span></h3>
+            <table class="table table-sm small mb-1">
+              <tr><th data-i18n="t7_r1h">Japan Post / FedEx / DHL / UPS / Buyee Air Delivery</th><td data-i18n="t7_r1">Ships the business day after payment</td></tr>
+              <tr><th data-i18n="t7_r2h">Buyee Air Delivery (Taiwan) / Domestic delivery</th><td data-i18n="t7_r2">2–3 business days after payment</td></tr>
+              <tr><th>ECMS</th><td data-i18n="t7_r3">Ships every Mon, Wed and Fri</td></tr>
+            </table>
+            <div class="step-note small mt-1" data-i18n="st7_n">Duties and import taxes not collected in advance may be charged on delivery (depends on country and carrier).</div>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <h2 class="fw-bold fs-5 mt-4 mb-2" data-i18n="chk_h">Things to check before you buy</h2>
+    <ul class="small bg-white border rounded p-3 ps-4 shadow-sm mb-0">
+      <li class="mb-1" data-i18n="chk1">Estimate the total before you buy: item price, Buyee fees, international shipping and import duties.</li>
+      <li class="mb-1" data-i18n="chk2">Auction prices usually rise before the end. Decide your maximum bid in advance.</li>
+      <li class="mb-1" data-i18n="chk3">Combine several items into one package to lower international shipping.</li>
+      <li class="mb-1" data-i18n="chk4">Pay for international shipping within 90 days; items left longer may be disposed of.</li>
+    </ul>
+
+    <h2 class="fw-bold fs-5 mt-4 mb-2" data-i18n="cat_h">Find cards on Buyee by category</h2>
+    <div class="d-flex gap-2 flex-wrap">
+      <a href="/pokemon" class="btn btn-danger btn-sm fw-bold" data-i18n="other_pk">Pokémon cards →</a>
+      <a href="/one-piece" class="btn btn-danger btn-sm fw-bold" data-i18n="other_op">ONE PIECE cards →</a>
+      <a href="/dragon-ball" class="btn btn-danger btn-sm fw-bold" data-i18n="other_db">Dragon Ball cards →</a>
+    </div>
+
+    <div class="mt-4">
+      <p class="small mb-2" data-i18n="foot_p">Fees and available shipping methods vary by country and over time. Check Buyee's official guides for the latest information:</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2Fhelpcenter%2Fguide%2Ffees%3Flang%3Den" target="_blank" rel="noopener sponsored nofollow" class="btn btn-light border btn-sm fw-bold" data-i18n="lk1">Fees</a>
+        <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2Fhelpcenter%2Fguide%2Fshipping-method%3Flang%3Den" target="_blank" rel="noopener sponsored nofollow" class="btn btn-light border btn-sm fw-bold" data-i18n="lk2">Shipping methods</a>
+        <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2Fhelpcenter%2Fguide%2Fconsolidate%3Flang%3Den" target="_blank" rel="noopener sponsored nofollow" class="btn btn-light border btn-sm fw-bold" data-i18n="lk3">Package consolidation</a>
+        <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2Fhelpcenter%2Fguide%2Fcountries%3Flang%3Den" target="_blank" rel="noopener sponsored nofollow" class="btn btn-light border btn-sm fw-bold" data-i18n="lk4">Supported countries</a>
       </div>
-    </li>
+    </div>
 
-    <li class="step">
-      <div class="num">2</div>
-      <div class="card">
-        <h2><span data-i18n="st2_h">Find items</span> <span class="tag t-buy" data-i18n="lg_buy">Purchase</span></h2>
-        <ul>
-          <li data-i18n="st2_l1">Search within Buyee: JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon and more</li>
-          <li data-i18n="st2_l2">Buy directly from the “Buyee cart” on partner shops' official sites</li>
-          <li data-i18n="st2_l3">Add items from Japanese sites with the browser extension or app</li>
-          <li data-i18n="st2_l4">Paste the URL of any item to request a purchase (URL purchase)</li>
-        </ul>
+    <p class="extra-small text-muted mt-4 mb-0" data-i18n="foot_src">Sources: Buyee official site &amp; FAQ, tenso Inc. press release (Sep 8, 2026). Information as of Nov 2026.</p>
+  </main>
+
+  <footer class="bg-dark text-secondary py-4 mt-auto extra-small">
+    <div class="container text-center max-width-800">
+      <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
+        <a href="./" class="text-secondary text-decoration-none" data-i18n="nav_home">Home</a>
+        <a href="/buyee-flow" class="text-secondary text-decoration-none" data-i18n="f_guide">Buying Guide</a>
+        <a href="/about" class="text-secondary text-decoration-none" data-i18n="f_about">About Us</a>
+        <a href="/privacy" class="text-secondary text-decoration-none" data-i18n="f_privacy">Privacy Policy</a>
+        <a href="/contact" class="text-secondary text-decoration-none" data-i18n="f_contact">Contact</a>
+        <a href="#" id="cookieSettings" class="text-secondary text-decoration-none" data-i18n="f_cookie">Cookie Settings</a>
       </div>
-    </li>
-
-    <li class="step pay">
-      <div class="num">3</div>
-      <div class="card">
-        <h2><span data-i18n="st3_h">Bid or order = 1st payment</span> <span class="tag t-pay" data-i18n="lg_pay">Payment</span></h2>
-        <p data-i18n="st3_p1">Place a bid for auctions, or a purchase request for online shops and flea markets. At this point you pay <b>the item price (plus domestic shipping, Buyee fees, etc.)</b>. For auctions, the amount is finalized when you win.</p>
-        <p data-i18n="st3_p2">Payment methods: PayPal, credit cards (VISA / Mastercard / JCB), Alipay, UnionPay</p>
-        <p class="who" data-i18n="st3_who">You → Buyee (Buyee pays the Japanese seller or shop on your behalf)</p>
-      </div>
-    </li>
-
-    <li class="step ship">
-      <div class="num">4</div>
-      <div class="card">
-        <h2><span data-i18n="st4_h">Seller ships to Buyee's warehouse in Japan</span> <span class="tag t-ship" data-i18n="lg_ship">Shipping</span></h2>
-        <p data-i18n="st4_p">Japanese sellers and shops ship to <b>Buyee's domestic warehouse in Japan</b>, not overseas, so it's handled as a domestic sale.</p>
-        <div class="note" data-i18n="st4_n">For flea markets and auctions, the time until shipping varies by seller.</div>
-      </div>
-    </li>
-
-    <li class="step ship">
-      <div class="num">5</div>
-      <div class="card">
-        <h2><span data-i18n="st5_h">Arrival, storage &amp; packing options</span> <span class="tag t-ship" data-i18n="lg_ship">Shipping</span></h2>
-        <p data-i18n="st5_p">You'll be notified by email and on My Page when the item arrives. Check the weighed package details under “Package Info”.</p>
-        <ul>
-          <li data-i18n="st5_l1"><b>Package consolidation</b>: combine several items into one box to save on international shipping</li>
-          <li data-i18n="st5_l2">Order options such as <b>protective packing</b> from My Page</li>
-          <li data-i18n="st5_l3">Storage is <b>free for 30 days after arrival</b>, with daily fees from day 31, <b>up to 90 days</b></li>
-        </ul>
-        <div class="note" data-i18n="st5_n">If international shipping isn't paid within 90 days, items may be disposed of.</div>
-      </div>
-    </li>
-
-    <li class="step pay">
-      <div class="num">6</div>
-      <div class="card">
-        <h2><span data-i18n="st6_h">Choose shipping = 2nd payment</span> <span class="tag t-pay" data-i18n="lg_pay">Payment</span></h2>
-        <p data-i18n="st6_p1">The price is fixed by the weight and size after packing. You pay <b>international shipping (plus option fees and, in eligible countries, prepaid duties)</b>.</p>
-        <p data-i18n="st6_p2">Main shipping methods: Japan Post, FedEx, DHL, UPS, Buyee Air Delivery, ECMS, etc. (options vary by country/region)</p>
-      </div>
-    </li>
-
-    <li class="step ship">
-      <div class="num">7</div>
-      <div class="card">
-        <h2><span data-i18n="st7_h">Shipped overseas → delivered</span> <span class="tag t-ship" data-i18n="lg_ship">Shipping</span></h2>
-        <table>
-          <tr><th data-i18n="t7_r1h">Japan Post / FedEx / DHL / UPS / Buyee Air Delivery</th><td data-i18n="t7_r1">Ships the business day after payment</td></tr>
-          <tr><th data-i18n="t7_r2h">Buyee Air Delivery (Taiwan) / Domestic delivery</th><td data-i18n="t7_r2">2–3 business days after payment</td></tr>
-          <tr><th>ECMS</th><td data-i18n="t7_r3">Ships every Mon, Wed and Fri</td></tr>
-        </table>
-        <div class="note" data-i18n="st7_n">Duties and import taxes not collected in advance may be charged on delivery (depends on country and carrier).</div>
-      </div>
-    </li>
-  </ol>
-
-  <div class="box highlight">
-    <h3><span data-i18n="one_h">Buyee One: pay just once</span> <span class="new" data-i18n="one_new">Since Sep 2026</span></h3>
-    <p data-i18n="one_p">A new feature that shows the <b>total cost</b> — item price, shipping, fees and eligible duties/import taxes — at checkout and lets you pay it all at once. Shipping and duties are estimated in advance using delivery data and AI.</p>
-    <table>
-      <tr><th data-i18n="one_c_h">Launch country</th><td data-i18n="one_c">United States</td></tr>
-      <tr><th data-i18n="one_s_h">Launch store</th><td>JDirectItems Fleamarket</td></tr>
-      <tr><th data-i18n="one_f_h">Coming next</th><td data-i18n="one_f">More countries and stores to be added</td></tr>
-    </table>
-  </div>
-
-  <div class="box">
-    <h3 data-i18n="money_h">Money flow summary</h3>
-    <table>
-      <tr><th data-i18n="m1_h">1st (at purchase)</th><td data-i18n="m1">Item price, domestic shipping in Japan, Buyee fees / plan fees, etc.</td></tr>
-      <tr><th data-i18n="m2_h">2nd (after warehouse arrival)</th><td data-i18n="m2">International shipping, packing options, extended storage fees, prepaid duties (if eligible)</td></tr>
-      <tr><th data-i18n="m3_h">On delivery (if applicable)</th><td data-i18n="m3">Duties and import taxes charged locally</td></tr>
-    </table>
-  </div>
-  <div class="back-wrap"><a class="back-btn" href="./" data-i18n="back_btn">← Back to Home</a></div>
-</div>
-
-<footer class="site-footer">
-  <div class="inner">
-    <div class="foot-nav"><a href="./" data-i18n="bc_home">Home</a> · <a href="buyee-flow.html" data-i18n="f_guide">Buying Guide</a> · <a href="pokemon.html" data-i18n="nav_pk">Pokémon</a> · <a href="one-piece.html">ONE PIECE</a> · <a href="dragon-ball.html" data-i18n="nav_db">Dragon Ball</a><br>
-      <a href="about.html" data-i18n="f_about">About Us</a> · <a href="privacy.html" data-i18n="f_privacy">Privacy Policy</a> · <a href="contact.html" data-i18n="f_contact">Contact</a> · <a href="#" id="cookieSettings" data-i18n="f_cookie">Cookie Settings</a></div>
-    <span data-i18n="foot_p">Fees and available shipping methods vary by country and over time. Check Buyee's official guides for the latest information:</span>
-    <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2Fhelpcenter%2Fguide%2Ffees%3Flang%3Den" target="_blank" rel="noopener sponsored nofollow" data-i18n="lk1">Fees</a> /
-    <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2Fhelpcenter%2Fguide%2Fshipping-method%3Flang%3Den" target="_blank" rel="noopener sponsored nofollow" data-i18n="lk2">Shipping methods</a> /
-    <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2Fhelpcenter%2Fguide%2Fconsolidate%3Flang%3Den" target="_blank" rel="noopener sponsored nofollow" data-i18n="lk3">Package consolidation</a> /
-    <a href="https://io20.info/dpl/6aeee7ba41710?url=https%3A%2F%2Fbuyee.jp%2Fhelpcenter%2Fguide%2Fcountries%3Flang%3Den" target="_blank" rel="noopener sponsored nofollow" data-i18n="lk4">Supported countries</a><br>
-    <span data-i18n="foot_src">Sources: Buyee official site &amp; FAQ, tenso Inc. press release (Sep 8, 2026). Information as of Nov 2026.</span>
-  </div>
-</footer>
+      <p class="mb-2 text-white-50">© 2026 JapanMania. All rights reserved.</p>
+      <p class="text-muted mx-auto" style="font-size:0.65rem;max-width:600px;" data-i18n="f_disc2">This site is an independent information and price comparison guide. We are not affiliated with or endorsed by Buyee or any marketplace, and we do not sell, inspect or ship products. All transactions are handled by the proxy service you choose.</p>
+    </div>
+  </footer>
 
   <!-- Cookie consent banner (EU visitors) -->
   <div id="cookieBanner" role="dialog" aria-live="polite" hidden style="position:fixed;left:0;right:0;bottom:0;z-index:1080;background:#212529;color:#fff;border-top:3px solid #dc3545;font-size:14px;line-height:1.5;">
@@ -318,417 +267,566 @@ tr:last-child th,tr:last-child td{border-bottom:0}
       </div>
     </div>
   </div>
-  <script>
-  (function(){
-    var banner = document.getElementById('cookieBanner');
-    function saved(){ try { return localStorage.getItem('jm_consent'); } catch(e){ return null; } }
-    function isEuropeTZ(){
-      try {
-        var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-        return tz.indexOf('Europe/')===0 || /^Atlantic\/(Reykjavik|Canary|Madeira|Azores|Faroe)$/.test(tz);
-      } catch(e){ return false; }
-    }
-    function setConsent(v){
-      gtag('consent', 'update', { analytics_storage: v });
-      try { localStorage.setItem('jm_consent', v); } catch(e){}
-      banner.hidden = true;
-    }
-    if (!saved() && isEuropeTZ()) banner.hidden = false;
-    document.getElementById('cbAccept').addEventListener('click', function(){ setConsent('granted'); });
-    document.getElementById('cbReject').addEventListener('click', function(){ setConsent('denied'); });
-    var cs = document.getElementById('cookieSettings');
-    if (cs) cs.addEventListener('click', function(e){ e.preventDefault(); banner.hidden = false; });
-  })();
-  </script>
 
-<script>
-const I18N = {
-  "zh-TW": {
-    nav_pk:"寶可夢", nav_db:"七龍珠", f_about:"關於我們", f_privacy:"隱私權政策", f_contact:"聯絡我們",
-    cb_text:"我們使用分析用Cookie來了解訪客如何使用本站。您可以選擇接受或拒絕。", cb_accept:"接受", cb_reject:"拒絕", f_cookie:"Cookie設定",
-    bc_home:"首頁", nav_wk:"每週報告", bc_here:"如何透過Buyee購買", back_btn:"← 返回首頁", f_guide:"購買指南",
-    title:"如何透過Buyee從日本購買 | JapanMania",
-    tagline:"每週報告與代購指南", eyebrow:"代購指南",
-    h1:"海外用戶使用Buyee購物的流程",
-    lead:"購買 → 日本倉庫 → 國際配送。Buyee的特點是<b>通常需要付款兩次</b>：一次付商品款，一次付國際運費。",
-    lg_buy:"購買", lg_pay:"付款", lg_ship:"配送",
-    sum1_b:"① 第1次付款", sum1_s:"購買時：商品價格＋手續費等",
-    sum2_b:"② 倉庫保管", sum2_s:"免費30天・最長90天",
-    sum3_b:"③ 第2次付款", sum3_s:"抵達倉庫後：國際運費等",
-    st1_h:"註冊會員", st1_p:"在Buyee免費註冊。網站支援英文、中文等多種語言，不懂日文也能使用。", st1_who:"由您操作",
-    st2_h:"搜尋商品",
-    st2_l1:"在Buyee內搜尋：JDirectItems Auction／Fleamarket／Shopping、Mercari、樂天、Rakuma、Amazon等",
-    st2_l2:"在合作商店官網上的「Buyee購物車」直接購買",
-    st2_l3:"使用瀏覽器擴充功能或App從日本網站加入商品",
-    st2_l4:"貼上想要商品的網址申請代購（網址代購）",
-    st3_h:"出價・申請購買＝第1次付款",
-    st3_p1:"拍賣為出價，網購・二手平台為申請購買。此時需支付<b>商品價格（＋日本國內運費・Buyee手續費等）</b>。拍賣在得標後確定金額。",
-    st3_p2:"可用付款方式：PayPal、信用卡（VISA／Mastercard／JCB）、支付寶（Alipay）、銀聯（UnionPay）",
-    st3_who:"您 → Buyee（由Buyee代您支付給日本賣家・商店）",
-    st4_h:"賣家 → 寄送至Buyee日本國內倉庫",
-    st4_p:"日本的賣家・商店不是寄往海外，而是寄送到<b>Buyee的日本國內倉庫</b>（以國內交易完成）。",
-    st4_n:"二手平台與拍賣的出貨天數因賣家而異。",
-    st5_h:"抵達倉庫・保管・包裝選項",
-    st5_p:"商品到達後會透過電子郵件與會員頁面通知。可在「包裹資訊」查看秤重後的內容。",
-    st5_l1:"<b>合併包裝</b>：將多件商品合併為一箱，節省國際運費",
-    st5_l2:"也可從會員頁面申請<b>保護包裝</b>等選項",
-    st5_l3:"保管<b>自到貨起30天免費</b>，第31天起按日收取延長費用，<b>最長90天</b>",
-    st5_n:"若90天內未支付國際運費，商品可能會被處理掉。",
-    st6_h:"選擇配送方式＝第2次付款",
-    st6_p1:"依包裝後的重量與尺寸確定金額。支付<b>國際運費（＋選項費用・適用國家的預收關稅）</b>。",
-    st6_p2:"主要配送方式：日本郵政、FedEx、DHL、UPS、Buyee Air Delivery、ECMS等（依國家・地區而異）",
-    st7_h:"寄往海外 → 收件",
-    t7_r1h:"日本郵政／FedEx／DHL／UPS／Buyee Air Delivery", t7_r1:"付款後的下一個工作日出貨",
-    t7_r2h:"Buyee Air Delivery（台灣）／日本國內配送", t7_r2:"付款後2〜3個工作日",
-    t7_r3:"每週一・三・五出貨",
-    st7_n:"未預收的關稅・進口稅可能會在收件時於當地請款（依國家・物流業者而異）。",
-    one_h:"Buyee One：一次付清", one_new:"2026年9月起",
-    one_p:"購買時即可確認包含「商品價格・運費・手續費・適用的關稅／進口稅」的<b>付款總額</b>，並一次完成付款的新功能。透過配送實績資料與AI預先估算運費與關稅。",
-    one_c_h:"首波適用國家", one_c:"美國", one_s_h:"首波適用商店", one_f_h:"今後", one_f:"將陸續擴大適用國家與商店",
-    money_h:"金流整理",
-    m1_h:"第1次（購買時）", m1:"商品價格、日本國內運費、Buyee手續費・方案費用等",
-    m2_h:"第2次（抵達倉庫後）", m2:"國際運費、包裝選項、保管延長費、預收關稅（適用時）",
-    m3_h:"收件時（視情況）", m3:"於當地請款的關稅・進口稅",
-    foot_p:"手續費金額與可用的配送方式因國家與時期而異，最新資訊請查看官方指南：",
-    lk1:"費用", lk2:"配送方式", lk3:"合併包裝", lk4:"支援國家",
-    foot_src:"資料來源：Buyee官方網站・FAQ、tenso股份有限公司新聞稿（2026年9月8日）。2026年11月時的資訊。"
-  },
-  "zh-CN": {
-    nav_pk:"宝可梦", nav_db:"龙珠", f_about:"关于我们", f_privacy:"隐私政策", f_contact:"联系我们",
-    cb_text:"我们使用分析Cookie来了解访客如何使用本站。您可以选择接受或拒绝。", cb_accept:"接受", cb_reject:"拒绝", f_cookie:"Cookie设置",
-    bc_home:"首页", nav_wk:"每周报告", bc_here:"如何通过Buyee购买", back_btn:"← 返回首页", f_guide:"购买指南",
-    title:"如何通过Buyee从日本购买 | JapanMania",
-    tagline:"每周报告与代购指南", eyebrow:"代购指南",
-    h1:"海外用户使用Buyee购物的流程",
-    lead:"购买 → 日本仓库 → 国际配送。Buyee的特点是<b>通常需要付款两次</b>：一次付商品款，一次付国际运费。",
-    lg_buy:"购买", lg_pay:"付款", lg_ship:"配送",
-    sum1_b:"① 第1次付款", sum1_s:"购买时：商品价格＋手续费等",
-    sum2_b:"② 仓库保管", sum2_s:"免费30天・最长90天",
-    sum3_b:"③ 第2次付款", sum3_s:"到达仓库后：国际运费等",
-    st1_h:"注册会员", st1_p:"在Buyee免费注册。网站支持英文、中文等多种语言，不懂日语也能使用。", st1_who:"由您操作",
-    st2_h:"搜索商品",
-    st2_l1:"在Buyee内搜索：JDirectItems Auction／Fleamarket／Shopping、Mercari、乐天、Rakuma、Amazon等",
-    st2_l2:"在合作店铺官网上的“Buyee购物车”直接购买",
-    st2_l3:"使用浏览器插件或App从日本网站添加商品",
-    st2_l4:"粘贴想要商品的链接申请代购（链接代购）",
-    st3_h:"出价・申请购买＝第1次付款",
-    st3_p1:"拍卖为出价，网购・二手平台为申请购买。此时需支付<b>商品价格（＋日本国内运费・Buyee手续费等）</b>。拍卖在中标后确定金额。",
-    st3_p2:"可用支付方式：PayPal、信用卡（VISA／Mastercard／JCB）、支付宝（Alipay）、银联（UnionPay）",
-    st3_who:"您 → Buyee（由Buyee代您向日本卖家・店铺付款）",
-    st4_h:"卖家 → 发货至Buyee日本国内仓库",
-    st4_p:"日本的卖家・店铺不是发往海外，而是发货到<b>Buyee的日本国内仓库</b>（作为国内交易完成）。",
-    st4_n:"二手平台和拍卖的发货天数因卖家而异。",
-    st5_h:"到达仓库・保管・包装选项",
-    st5_p:"商品到达后会通过邮件和会员页面通知。可在“包裹信息”查看称重后的内容。",
-    st5_l1:"<b>合并包装</b>：将多件商品合并为一箱，节省国际运费",
-    st5_l2:"也可从会员页面申请<b>保护包装</b>等选项",
-    st5_l3:"保管<b>自到货起30天免费</b>，第31天起按日收取延长费用，<b>最长90天</b>",
-    st5_n:"如90天内未支付国际运费，商品可能会被处理。",
-    st6_h:"选择配送方式＝第2次付款",
-    st6_p1:"根据包装后的重量和尺寸确定金额。支付<b>国际运费（＋选项费用・适用国家的预收关税）</b>。",
-    st6_p2:"主要配送方式：日本邮政、FedEx、DHL、UPS、Buyee Air Delivery、ECMS等（因国家・地区而异）",
-    st7_h:"发往海外 → 收货",
-    t7_r1h:"日本邮政／FedEx／DHL／UPS／Buyee Air Delivery", t7_r1:"付款后的下一个工作日发货",
-    t7_r2h:"Buyee Air Delivery（台湾）／日本国内配送", t7_r2:"付款后2〜3个工作日",
-    t7_r3:"每周一・三・五发货",
-    st7_n:"未预收的关税・进口税可能会在收货时于当地收取（因国家・物流商而异）。",
-    one_h:"Buyee One：一次付清", one_new:"2026年9月起",
-    one_p:"购买时即可确认包含“商品价格・运费・手续费・适用的关税／进口税”的<b>支付总额</b>，并一次完成付款的新功能。通过配送实绩数据和AI预先估算运费和关税。",
-    one_c_h:"首批适用国家", one_c:"美国", one_s_h:"首批适用店铺", one_f_h:"今后", one_f:"将逐步扩大适用国家和店铺",
-    money_h:"资金流向汇总",
-    m1_h:"第1次（购买时）", m1:"商品价格、日本国内运费、Buyee手续费・套餐费用等",
-    m2_h:"第2次（到达仓库后）", m2:"国际运费、包装选项、保管延长费、预收关税（适用时）",
-    m3_h:"收货时（视情况）", m3:"在当地收取的关税・进口税",
-    foot_p:"手续费金额和可用配送方式因国家和时期而异，最新信息请查看官方指南：",
-    lk1:"费用", lk2:"配送方式", lk3:"合并包装", lk4:"支持国家",
-    foot_src:"来源：Buyee官方网站・FAQ、tenso株式会社新闻稿（2026年9月8日）。截至2026年11月的信息。"
-  },
-  "es": {
-    nav_pk:"Pokémon", nav_db:"Dragon Ball", f_about:"Quiénes somos", f_privacy:"Política de privacidad", f_contact:"Contacto",
-    cb_text:"Usamos cookies de analítica para entender cómo se usa este sitio. Puedes aceptarlas o rechazarlas.", cb_accept:"Aceptar", cb_reject:"Rechazar", f_cookie:"Configuración de cookies",
-    bc_home:"Inicio", nav_wk:"Informe semanal", bc_here:"Cómo comprar con Buyee", back_btn:"← Volver al inicio", f_guide:"Guía de compra",
-    title:"Cómo comprar en Japón con Buyee | JapanMania",
-    tagline:"Informe semanal y guía proxy", eyebrow:"Guía proxy",
-    h1:"Cómo compran con Buyee los usuarios del extranjero",
-    lead:"Compra → almacén en Japón → envío internacional. Con Buyee normalmente <b>pagas dos veces</b>: una por el artículo y otra por el envío internacional.",
-    lg_buy:"Compra", lg_pay:"Pago", lg_ship:"Envío",
-    sum1_b:"① 1.er pago", sum1_s:"Al comprar: precio del artículo + comisiones",
-    sum2_b:"② Almacenaje", sum2_s:"30 días gratis, máximo 90 días",
-    sum3_b:"③ 2.º pago", sum3_s:"Tras la llegada: envío internacional, etc.",
-    st1_h:"Regístrate", st1_p:"Crea una cuenta gratuita en Buyee. La web está en inglés, chino y otros idiomas, así que no necesitas saber japonés.", st1_who:"Lo haces tú",
-    st2_h:"Busca artículos",
-    st2_l1:"Busca dentro de Buyee: JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon y más",
-    st2_l2:"Compra directamente con el “carrito Buyee” en las webs oficiales de tiendas asociadas",
-    st2_l3:"Añade artículos de webs japonesas con la extensión del navegador o la app",
-    st2_l4:"Pega la URL de cualquier artículo para solicitar su compra (compra por URL)",
-    st3_h:"Puja o pedido = 1.er pago",
-    st3_p1:"En subastas haces una puja; en tiendas online y mercadillos, una solicitud de compra. En ese momento pagas <b>el precio del artículo (más envío nacional, comisiones de Buyee, etc.)</b>. En subastas, el importe se confirma al ganar.",
-    st3_p2:"Métodos de pago: PayPal, tarjetas de crédito (VISA / Mastercard / JCB), Alipay, UnionPay",
-    st3_who:"Tú → Buyee (Buyee paga al vendedor o tienda japonesa en tu nombre)",
-    st4_h:"El vendedor envía al almacén de Buyee en Japón",
-    st4_p:"Los vendedores y tiendas japoneses no envían al extranjero, sino al <b>almacén nacional de Buyee en Japón</b>, por lo que es una venta nacional.",
-    st4_n:"En mercadillos y subastas, el plazo de envío varía según el vendedor.",
-    st5_h:"Llegada, almacenaje y opciones de embalaje",
-    st5_p:"Recibirás un aviso por correo y en Mi página cuando llegue el artículo. Consulta los datos del paquete pesado en “Información del paquete”.",
-    st5_l1:"<b>Consolidación de paquetes</b>: junta varios artículos en una caja para ahorrar en el envío internacional",
-    st5_l2:"Solicita opciones como el <b>embalaje protector</b> desde Mi página",
-    st5_l3:"El almacenaje es <b>gratis durante 30 días desde la llegada</b>, con tarifa diaria desde el día 31, <b>hasta 90 días</b>",
-    st5_n:"Si no pagas el envío internacional en 90 días, los artículos pueden ser desechados.",
-    st6_h:"Elige el envío = 2.º pago",
-    st6_p1:"El precio se fija según el peso y el tamaño tras el embalaje. Pagas <b>el envío internacional (más opciones y, en países elegibles, aranceles prepagados)</b>.",
-    st6_p2:"Principales métodos de envío: Japan Post, FedEx, DHL, UPS, Buyee Air Delivery, ECMS, etc. (varían según país/región)",
-    st7_h:"Envío al extranjero → entrega",
-    t7_r1:"Sale el día hábil siguiente al pago",
-    t7_r2h:"Buyee Air Delivery (Taiwán) / Envío nacional", t7_r2:"2–3 días hábiles tras el pago",
-    t7_r3:"Sale cada lunes, miércoles y viernes",
-    st7_n:"Los aranceles e impuestos de importación no cobrados por adelantado pueden cobrarse a la entrega (según país y transportista).",
-    one_h:"Buyee One: paga una sola vez", one_new:"Desde sept. 2026",
-    one_p:"Una nueva función que muestra el <b>coste total</b> —precio, envío, comisiones y aranceles/impuestos aplicables— al comprar y te permite pagarlo todo de una vez. El envío y los aranceles se estiman por adelantado con datos de envíos e IA.",
-    one_c_h:"País inicial", one_c:"Estados Unidos", one_s_h:"Tienda inicial", one_f_h:"Próximamente", one_f:"Se añadirán más países y tiendas",
-    money_h:"Resumen de pagos",
-    m1_h:"1.º (al comprar)", m1:"Precio del artículo, envío nacional en Japón, comisiones de Buyee / plan, etc.",
-    m2_h:"2.º (tras llegar al almacén)", m2:"Envío internacional, opciones de embalaje, almacenaje extra, aranceles prepagados (si aplica)",
-    m3_h:"A la entrega (si aplica)", m3:"Aranceles e impuestos de importación cobrados localmente",
-    foot_p:"Las tarifas y los métodos de envío disponibles varían según el país y la fecha. Consulta las guías oficiales de Buyee para ver la información más reciente:",
-    lk1:"Tarifas", lk2:"Métodos de envío", lk3:"Consolidación", lk4:"Países admitidos",
-    foot_src:"Fuentes: web oficial y FAQ de Buyee, nota de prensa de tenso Inc. (8 de septiembre de 2026). Información a noviembre de 2026."
-  },
-  "fr": {
-    nav_pk:"Pokémon", nav_db:"Dragon Ball", f_about:"À propos", f_privacy:"Politique de confidentialité", f_contact:"Contact",
-    cb_text:"Nous utilisons des cookies de mesure d'audience pour comprendre comment ce site est utilisé. Vous pouvez les accepter ou les refuser.", cb_accept:"Accepter", cb_reject:"Refuser", f_cookie:"Paramètres des cookies",
-    bc_home:"Accueil", nav_wk:"Rapport hebdo", bc_here:"Acheter avec Buyee", back_btn:"← Retour à l'accueil", f_guide:"Guide d'achat",
-    title:"Acheter au Japon avec Buyee | JapanMania",
-    tagline:"Rapport hebdo et guide proxy", eyebrow:"Guide proxy",
-    h1:"Comment les acheteurs étrangers utilisent Buyee",
-    lead:"Achat → entrepôt au Japon → livraison internationale. Avec Buyee, vous <b>payez généralement deux fois</b> : une fois pour l'article, une fois pour la livraison internationale.",
-    lg_buy:"Achat", lg_pay:"Paiement", lg_ship:"Livraison",
-    sum1_b:"① 1er paiement", sum1_s:"À l'achat : prix de l'article + frais",
-    sum2_b:"② Stockage en entrepôt", sum2_s:"30 jours gratuits, 90 jours max.",
-    sum3_b:"③ 2e paiement", sum3_s:"Après l'arrivée : livraison internationale, etc.",
-    st1_h:"Inscription", st1_p:"Créez un compte Buyee gratuit. Le site est disponible en anglais, en chinois et dans d'autres langues : inutile de lire le japonais.", st1_who:"À faire par vous",
-    st2_h:"Trouver des articles",
-    st2_l1:"Chercher sur Buyee : JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon, etc.",
-    st2_l2:"Acheter directement via le « panier Buyee » sur les sites officiels des boutiques partenaires",
-    st2_l3:"Ajouter des articles de sites japonais avec l'extension de navigateur ou l'application",
-    st2_l4:"Coller l'URL d'un article pour demander son achat (achat par URL)",
-    st3_h:"Enchère ou commande = 1er paiement",
-    st3_p1:"Pour les enchères, vous enchérissez ; pour les boutiques et sites de seconde main, vous faites une demande d'achat. Vous payez alors <b>le prix de l'article (plus livraison au Japon, frais Buyee, etc.)</b>. Pour les enchères, le montant est fixé une fois l'enchère remportée.",
-    st3_p2:"Moyens de paiement : PayPal, cartes bancaires (VISA / Mastercard / JCB), Alipay, UnionPay",
-    st3_who:"Vous → Buyee (Buyee paie le vendeur ou la boutique japonaise pour vous)",
-    st4_h:"Le vendeur expédie à l'entrepôt Buyee au Japon",
-    st4_p:"Les vendeurs et boutiques japonais n'expédient pas à l'étranger mais à <b>l'entrepôt de Buyee au Japon</b> : la vente reste nationale.",
-    st4_n:"Sur les sites de seconde main et d'enchères, le délai d'expédition varie selon le vendeur.",
-    st5_h:"Arrivée, stockage et options d'emballage",
-    st5_p:"Vous êtes prévenu par e-mail et sur Mon espace à l'arrivée de l'article. Consultez les détails du colis pesé dans « Infos colis ».",
-    st5_l1:"<b>Regroupement de colis</b> : réunir plusieurs articles dans un carton pour économiser sur la livraison internationale",
-    st5_l2:"Commander des options comme l'<b>emballage renforcé</b> depuis Mon espace",
-    st5_l3:"Stockage <b>gratuit 30 jours après l'arrivée</b>, puis frais journaliers dès le 31e jour, <b>90 jours maximum</b>",
-    st5_n:"Si la livraison internationale n'est pas payée sous 90 jours, les articles peuvent être détruits.",
-    st6_h:"Choisir la livraison = 2e paiement",
-    st6_p1:"Le prix est fixé selon le poids et la taille après emballage. Vous payez <b>la livraison internationale (plus les options et, dans les pays éligibles, les droits prépayés)</b>.",
-    st6_p2:"Principaux modes : Japan Post, FedEx, DHL, UPS, Buyee Air Delivery, ECMS, etc. (selon le pays/la région)",
-    st7_h:"Expédition à l'étranger → réception",
-    t7_r1:"Expédié le jour ouvré suivant le paiement",
-    t7_r2h:"Buyee Air Delivery (Taïwan) / Livraison au Japon", t7_r2:"2 à 3 jours ouvrés après le paiement",
-    t7_r3:"Expédié chaque lundi, mercredi et vendredi",
-    st7_n:"Les droits et taxes d'importation non prélevés à l'avance peuvent être facturés à la livraison (selon le pays et le transporteur).",
-    one_h:"Buyee One : un seul paiement", one_new:"Depuis sept. 2026",
-    one_p:"Une nouvelle fonction qui affiche le <b>coût total</b> — prix, livraison, frais et droits/taxes applicables — au moment de l'achat et permet de tout régler en une fois. Livraison et droits sont estimés à l'avance grâce aux données d'expédition et à l'IA.",
-    one_c_h:"Pays au lancement", one_c:"États-Unis", one_s_h:"Boutique au lancement", one_f_h:"À venir", one_f:"D'autres pays et boutiques seront ajoutés",
-    money_h:"Récapitulatif des paiements",
-    m1_h:"1er (à l'achat)", m1:"Prix de l'article, livraison au Japon, frais Buyee / forfait, etc.",
-    m2_h:"2e (après l'arrivée)", m2:"Livraison internationale, options d'emballage, frais de stockage prolongé, droits prépayés (si éligible)",
-    m3_h:"À la livraison (le cas échéant)", m3:"Droits et taxes d'importation facturés localement",
-    foot_p:"Les frais et les modes de livraison disponibles varient selon le pays et la période. Consultez les guides officiels de Buyee pour les dernières informations :",
-    lk1:"Frais", lk2:"Modes de livraison", lk3:"Regroupement", lk4:"Pays pris en charge",
-    foot_src:"Sources : site officiel et FAQ de Buyee, communiqué de tenso Inc. (8 septembre 2026). Informations à jour en novembre 2026."
-  },
-  "de": {
-    nav_pk:"Pokémon", nav_db:"Dragon Ball", f_about:"Über uns", f_privacy:"Datenschutz", f_contact:"Kontakt",
-    cb_text:"Wir verwenden Analyse-Cookies, um zu verstehen, wie diese Website genutzt wird. Du kannst sie akzeptieren oder ablehnen.", cb_accept:"Akzeptieren", cb_reject:"Ablehnen", f_cookie:"Cookie-Einstellungen",
-    bc_home:"Startseite", nav_wk:"Wochenbericht", bc_here:"Mit Buyee kaufen", back_btn:"← Zurück zur Startseite", f_guide:"Kaufratgeber",
-    title:"So kaufst du mit Buyee in Japan | JapanMania",
-    tagline:"Wochenbericht & Proxy-Ratgeber", eyebrow:"Proxy-Ratgeber",
-    h1:"So kaufen Nutzer aus dem Ausland mit Buyee ein",
-    lead:"Kauf → Lager in Japan → internationaler Versand. Bei Buyee <b>zahlst du in der Regel zweimal</b>: einmal für den Artikel und einmal für den internationalen Versand.",
-    lg_buy:"Kauf", lg_pay:"Zahlung", lg_ship:"Versand",
-    sum1_b:"① 1. Zahlung", sum1_s:"Beim Kauf: Artikelpreis + Gebühren",
-    sum2_b:"② Lagerung", sum2_s:"30 Tage kostenlos, max. 90 Tage",
-    sum3_b:"③ 2. Zahlung", sum3_s:"Nach Ankunft: internationaler Versand usw.",
-    st1_h:"Registrieren", st1_p:"Erstelle ein kostenloses Buyee-Konto. Die Website gibt es auf Englisch, Chinesisch und in weiteren Sprachen – Japanischkenntnisse sind nicht nötig.", st1_who:"Machst du selbst",
-    st2_h:"Artikel finden",
-    st2_l1:"In Buyee suchen: JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon u. a.",
-    st2_l2:"Direkt über den „Buyee-Warenkorb“ auf den offiziellen Websites von Partnershops kaufen",
-    st2_l3:"Artikel von japanischen Websites per Browser-Erweiterung oder App hinzufügen",
-    st2_l4:"Die URL eines Artikels einfügen und den Kauf beauftragen (URL-Kauf)",
-    st3_h:"Gebot oder Bestellung = 1. Zahlung",
-    st3_p1:"Bei Auktionen gibst du ein Gebot ab, bei Onlineshops und Flohmärkten einen Kaufauftrag. Dabei zahlst du <b>den Artikelpreis (plus Inlandsversand, Buyee-Gebühren usw.)</b>. Bei Auktionen steht der Betrag mit dem Zuschlag fest.",
-    st3_p2:"Zahlungsarten: PayPal, Kreditkarten (VISA / Mastercard / JCB), Alipay, UnionPay",
-    st3_who:"Du → Buyee (Buyee bezahlt den japanischen Verkäufer oder Shop in deinem Auftrag)",
-    st4_h:"Verkäufer schickt an Buyees Lager in Japan",
-    st4_p:"Japanische Verkäufer und Shops versenden nicht ins Ausland, sondern an <b>Buyees Inlandslager in Japan</b> – es bleibt ein Inlandsgeschäft.",
-    st4_n:"Bei Flohmärkten und Auktionen hängt die Versanddauer vom Verkäufer ab.",
-    st5_h:"Ankunft, Lagerung & Verpackungsoptionen",
-    st5_p:"Bei Ankunft wirst du per E-Mail und auf Meine Seite benachrichtigt. Unter „Paketinfo“ siehst du die Angaben nach dem Wiegen.",
-    st5_l1:"<b>Paketzusammenlegung</b>: mehrere Artikel in einem Karton bündeln und internationale Versandkosten sparen",
-    st5_l2:"Optionen wie <b>Schutzverpackung</b> über Meine Seite bestellen",
-    st5_l3:"Lagerung <b>30 Tage ab Ankunft kostenlos</b>, ab Tag 31 tägliche Gebühren, <b>maximal 90 Tage</b>",
-    st5_n:"Wird der internationale Versand nicht innerhalb von 90 Tagen bezahlt, können die Artikel entsorgt werden.",
-    st6_h:"Versandart wählen = 2. Zahlung",
-    st6_p1:"Der Preis richtet sich nach Gewicht und Größe nach dem Verpacken. Du zahlst <b>den internationalen Versand (plus Optionen und in berechtigten Ländern vorab erhobene Zölle)</b>.",
-    st6_p2:"Wichtige Versandarten: Japan Post, FedEx, DHL, UPS, Buyee Air Delivery, ECMS usw. (je nach Land/Region)",
-    st7_h:"Versand ins Ausland → Zustellung",
-    t7_r1:"Versand am Werktag nach der Zahlung",
-    t7_r2h:"Buyee Air Delivery (Taiwan) / Inlandsversand", t7_r2:"2–3 Werktage nach der Zahlung",
-    t7_r3:"Versand jeden Mo, Mi und Fr",
-    st7_n:"Nicht vorab erhobene Zölle und Einfuhrsteuern können bei der Zustellung fällig werden (je nach Land und Versanddienst).",
-    one_h:"Buyee One: nur einmal zahlen", one_new:"Seit Sept. 2026",
-    one_p:"Eine neue Funktion, die beim Kauf die <b>Gesamtkosten</b> – Artikelpreis, Versand, Gebühren und anfallende Zölle/Einfuhrsteuern – anzeigt und alles in einer Zahlung abwickelt. Versand und Zölle werden vorab mit Versanddaten und KI geschätzt.",
-    one_c_h:"Startland", one_c:"USA", one_s_h:"Start-Shop", one_f_h:"Demnächst", one_f:"Weitere Länder und Shops folgen",
-    money_h:"Zahlungen im Überblick",
-    m1_h:"1. (beim Kauf)", m1:"Artikelpreis, Inlandsversand in Japan, Buyee-Gebühren / Tarifgebühren usw.",
-    m2_h:"2. (nach Ankunft im Lager)", m2:"Internationaler Versand, Verpackungsoptionen, Lagerverlängerung, vorab erhobene Zölle (falls zutreffend)",
-    m3_h:"Bei Zustellung (ggf.)", m3:"Vor Ort erhobene Zölle und Einfuhrsteuern",
-    foot_p:"Gebühren und verfügbare Versandarten ändern sich je nach Land und Zeitpunkt. Aktuelle Informationen findest du in den offiziellen Buyee-Anleitungen:",
-    lk1:"Gebühren", lk2:"Versandarten", lk3:"Paketzusammenlegung", lk4:"Unterstützte Länder",
-    foot_src:"Quellen: offizielle Buyee-Website & FAQ, Pressemitteilung der tenso Inc. (8. September 2026). Stand: November 2026."
-  },
-  "ko": {
-    nav_pk:"포켓몬", nav_db:"드래곤볼", f_about:"소개", f_privacy:"개인정보 처리방침", f_contact:"문의",
-    cb_text:"사이트 이용 방식을 파악하기 위해 분석 쿠키를 사용합니다. 동의하거나 거부할 수 있습니다.", cb_accept:"동의", cb_reject:"거부", f_cookie:"쿠키 설정",
-    bc_home:"홈", nav_wk:"주간 리포트", bc_here:"Buyee 구매 방법", back_btn:"← 홈으로 돌아가기", f_guide:"구매 가이드",
-    title:"Buyee로 일본에서 구매하는 방법 | JapanMania",
-    tagline:"주간 리포트 & 구매대행 가이드", eyebrow:"구매대행 가이드",
-    h1:"해외 사용자가 Buyee로 구매하는 흐름",
-    lead:"구매 → 일본 창고 → 국제 배송. Buyee는 <b>보통 두 번 결제</b>합니다. 한 번은 상품 대금, 한 번은 국제 배송비입니다.",
-    lg_buy:"구매", lg_pay:"결제", lg_ship:"배송",
-    sum1_b:"① 1차 결제", sum1_s:"구매 시: 상품 대금 + 수수료 등",
-    sum2_b:"② 창고 보관", sum2_s:"30일 무료, 최대 90일",
-    sum3_b:"③ 2차 결제", sum3_s:"창고 도착 후: 국제 배송비 등",
-    st1_h:"회원가입", st1_p:"Buyee에 무료로 가입하세요. 영어, 중국어 등 다국어를 지원하므로 일본어를 몰라도 이용할 수 있습니다.", st1_who:"직접 진행",
-    st2_h:"상품 찾기",
-    st2_l1:"Buyee 내 검색: JDirectItems Auction / Fleamarket / Shopping, 메루카리, 라쿠텐, 라쿠마, Amazon 등",
-    st2_l2:"제휴 쇼핑몰 공식 사이트의 'Buyee 장바구니'로 바로 구매",
-    st2_l3:"브라우저 확장 프로그램이나 앱으로 일본 사이트의 상품 추가",
-    st2_l4:"원하는 상품의 URL을 붙여넣어 구매 요청 (URL 구매)",
-    st3_h:"입찰·구매 신청 = 1차 결제",
-    st3_p1:"경매는 입찰, 쇼핑몰·중고 거래는 구매 신청을 합니다. 이때 <b>상품 대금(+일본 국내 배송비, Buyee 수수료 등)</b>을 결제합니다. 경매는 낙찰 후 금액이 확정됩니다.",
-    st3_p2:"결제 수단: PayPal, 신용카드(VISA / Mastercard / JCB), Alipay, 은련(UnionPay)",
-    st3_who:"고객 → Buyee (Buyee가 일본 판매자·쇼핑몰에 대신 결제)",
-    st4_h:"판매자 → Buyee 일본 국내 창고로 발송",
-    st4_p:"일본 판매자·쇼핑몰은 해외가 아닌 <b>Buyee의 일본 국내 창고</b>로 발송합니다 (국내 거래로 완료).",
-    st4_n:"중고 거래·경매는 판매자에 따라 발송까지 걸리는 기간이 다릅니다.",
-    st5_h:"창고 도착·보관·포장 옵션",
-    st5_p:"상품이 도착하면 이메일과 마이페이지로 알려 드립니다. '짐 정보'에서 계량 후 내용을 확인할 수 있습니다.",
-    st5_l1:"<b>합포장</b>: 여러 상품을 한 상자로 묶어 국제 배송비 절약",
-    st5_l2:"<b>보호 포장</b> 등의 옵션도 마이페이지에서 신청",
-    st5_l3:"보관은 <b>도착 후 30일간 무료</b>, 31일째부터 일할 연장 요금, <b>최대 90일</b>",
-    st5_n:"90일 이내에 국제 배송비를 결제하지 않으면 상품이 폐기될 수 있습니다.",
-    st6_h:"배송 방법 선택 = 2차 결제",
-    st6_p1:"포장 후 무게와 크기로 금액이 확정됩니다. <b>국제 배송비(+옵션 요금, 대상 국가는 관세 사전 징수)</b>를 결제합니다.",
-    st6_p2:"주요 배송 방법: 일본우편, FedEx, DHL, UPS, Buyee Air Delivery, ECMS 등 (국가·지역에 따라 다름)",
-    st7_h:"해외 발송 → 수령",
-    t7_r1h:"일본우편 / FedEx / DHL / UPS / Buyee Air Delivery", t7_r1:"결제 다음 영업일에 발송",
-    t7_r2h:"Buyee Air Delivery (대만) / 일본 국내 배송", t7_r2:"결제 후 2~3영업일",
-    t7_r3:"매주 월·수·금 발송",
-    st7_n:"사전 징수되지 않은 관세·수입세는 수령 시 현지에서 청구될 수 있습니다 (국가·배송사에 따라 다름).",
-    one_h:"Buyee One: 한 번에 결제 완료", one_new:"2026년 9월~",
-    one_p:"구매 시점에 '상품 대금·배송비·수수료·해당 관세/수입세'를 포함한 <b>결제 총액</b>을 확인하고 한 번에 결제할 수 있는 새 기능입니다. 배송 실적 데이터와 AI로 배송비와 관세를 미리 예측합니다.",
-    one_c_h:"시작 대상 국가", one_c:"미국", one_s_h:"시작 대상 스토어", one_f_h:"향후", one_f:"대상 국가·스토어를 순차 확대 예정",
-    money_h:"돈의 흐름 정리",
-    m1_h:"1차 (구매 시)", m1:"상품 대금, 일본 국내 배송비, Buyee 수수료·플랜 요금 등",
-    m2_h:"2차 (창고 도착 후)", m2:"국제 배송비, 포장 옵션, 보관 연장료, 사전 징수 관세(해당 시)",
-    m3_h:"수령 시 (경우에 따라)", m3:"현지에서 청구되는 관세·수입세",
-    foot_p:"수수료 금액과 이용 가능한 배송 방법은 국가와 시기에 따라 달라지므로, 최신 정보는 공식 가이드에서 확인하세요:",
-    lk1:"이용 요금", lk2:"배송 방법", lk3:"합포장", lk4:"지원 국가",
-    foot_src:"출처: Buyee 공식 사이트·FAQ, tenso 주식회사 보도자료(2026년 9월 8일). 2026년 11월 기준 정보."
-  },
-  "th": {
-    nav_pk:"โปเกมอน", nav_db:"ดราก้อนบอล", f_about:"เกี่ยวกับเรา", f_privacy:"นโยบายความเป็นส่วนตัว", f_contact:"ติดต่อ",
-    cb_text:"เราใช้คุกกี้เพื่อการวิเคราะห์ เพื่อทำความเข้าใจว่าผู้เข้าชมใช้งานเว็บไซต์อย่างไร คุณสามารถยอมรับหรือปฏิเสธได้", cb_accept:"ยอมรับ", cb_reject:"ปฏิเสธ", f_cookie:"ตั้งค่าคุกกี้",
-    bc_home:"หน้าแรก", nav_wk:"รายงานประจำสัปดาห์", bc_here:"วิธีซื้อผ่าน Buyee", back_btn:"← กลับหน้าแรก", f_guide:"คู่มือการซื้อ",
-    title:"วิธีซื้อสินค้าจากญี่ปุ่นผ่าน Buyee | JapanMania",
-    tagline:"รายงานประจำสัปดาห์และคู่มือสั่งซื้อผ่านตัวแทน", eyebrow:"คู่มือตัวแทนสั่งซื้อ",
-    h1:"ขั้นตอนการซื้อผ่าน Buyee สำหรับผู้ใช้ต่างประเทศ",
-    lead:"ซื้อสินค้า → คลังสินค้าในญี่ปุ่น → จัดส่งระหว่างประเทศ จุดเด่นของ Buyee คือ<b>โดยปกติจะชำระเงิน 2 ครั้ง</b> คือค่าสินค้าและค่าจัดส่งระหว่างประเทศแยกกัน",
-    lg_buy:"ซื้อ", lg_pay:"ชำระเงิน", lg_ship:"จัดส่ง",
-    sum1_b:"① ชำระครั้งที่ 1", sum1_s:"ตอนซื้อ: ค่าสินค้า + ค่าธรรมเนียม",
-    sum2_b:"② เก็บในคลัง", sum2_s:"ฟรี 30 วัน สูงสุด 90 วัน",
-    sum3_b:"③ ชำระครั้งที่ 2", sum3_s:"หลังถึงคลัง: ค่าจัดส่งระหว่างประเทศ ฯลฯ",
-    st1_h:"สมัครสมาชิก", st1_p:"สมัครสมาชิก Buyee ได้ฟรี รองรับหลายภาษา เช่น อังกฤษ จีน จึงใช้งานได้แม้อ่านภาษาญี่ปุ่นไม่ออก", st1_who:"คุณดำเนินการเอง",
-    st2_h:"ค้นหาสินค้า",
-    st2_l1:"ค้นหาใน Buyee: JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon ฯลฯ",
-    st2_l2:"ซื้อโดยตรงผ่าน “ตะกร้า Buyee” บนเว็บไซต์ทางการของร้านค้าพันธมิตร",
-    st2_l3:"เพิ่มสินค้าจากเว็บไซต์ญี่ปุ่นด้วยส่วนขยายเบราว์เซอร์หรือแอป",
-    st2_l4:"วาง URL ของสินค้าที่ต้องการเพื่อขอให้สั่งซื้อ (สั่งซื้อด้วย URL)",
-    st3_h:"ประมูล/ขอสั่งซื้อ = ชำระครั้งที่ 1",
-    st3_p1:"สินค้าประมูลให้ลงประมูล ส่วนร้านค้าออนไลน์และตลาดมือสองให้ส่งคำขอสั่งซื้อ ในขั้นตอนนี้คุณจะชำระ<b>ค่าสินค้า (+ค่าส่งในญี่ปุ่น ค่าธรรมเนียม Buyee ฯลฯ)</b> สำหรับการประมูล ยอดเงินจะยืนยันเมื่อชนะประมูล",
-    st3_p2:"ช่องทางชำระเงิน: PayPal, บัตรเครดิต (VISA / Mastercard / JCB), Alipay, UnionPay",
-    st3_who:"คุณ → Buyee (Buyee ชำระเงินให้ผู้ขายหรือร้านค้าในญี่ปุ่นแทนคุณ)",
-    st4_h:"ผู้ขาย → ส่งไปยังคลังของ Buyee ในญี่ปุ่น",
-    st4_p:"ผู้ขายและร้านค้าญี่ปุ่นไม่ได้ส่งไปต่างประเทศ แต่ส่งไปยัง<b>คลังสินค้าของ Buyee ภายในญี่ปุ่น</b> (เป็นการซื้อขายภายในประเทศ)",
-    st4_n:"สำหรับตลาดมือสองและการประมูล ระยะเวลาจนถึงการจัดส่งแตกต่างกันไปตามผู้ขาย",
-    st5_h:"สินค้าถึงคลัง การเก็บรักษา และตัวเลือกการแพ็ก",
-    st5_p:"เมื่อสินค้าถึงคลัง จะมีแจ้งเตือนทางอีเมลและหน้าของฉัน ตรวจสอบรายละเอียดหลังชั่งน้ำหนักได้ที่ “ข้อมูลพัสดุ”",
-    st5_l1:"<b>รวมพัสดุ</b>: รวมสินค้าหลายชิ้นเป็นกล่องเดียวเพื่อประหยัดค่าจัดส่งระหว่างประเทศ",
-    st5_l2:"สั่งตัวเลือกอย่าง<b>แพ็กแบบป้องกัน</b>ได้จากหน้าของฉัน",
-    st5_l3:"เก็บรักษา<b>ฟรี 30 วันนับจากวันที่สินค้าถึง</b> ตั้งแต่วันที่ 31 คิดค่าธรรมเนียมรายวัน <b>สูงสุด 90 วัน</b>",
-    st5_n:"หากไม่ชำระค่าจัดส่งระหว่างประเทศภายใน 90 วัน สินค้าอาจถูกกำจัดทิ้ง",
-    st6_h:"เลือกวิธีจัดส่ง = ชำระครั้งที่ 2",
-    st6_p1:"ยอดเงินจะยืนยันตามน้ำหนักและขนาดหลังแพ็ก คุณจะชำระ<b>ค่าจัดส่งระหว่างประเทศ (+ค่าตัวเลือก และภาษีที่เก็บล่วงหน้าในประเทศที่เข้าเงื่อนไข)</b>",
-    st6_p2:"วิธีจัดส่งหลัก: ไปรษณีย์ญี่ปุ่น, FedEx, DHL, UPS, Buyee Air Delivery, ECMS ฯลฯ (แตกต่างตามประเทศ/ภูมิภาค)",
-    st7_h:"จัดส่งไปต่างประเทศ → รับสินค้า",
-    t7_r1h:"ไปรษณีย์ญี่ปุ่น / FedEx / DHL / UPS / Buyee Air Delivery", t7_r1:"จัดส่งในวันทำการถัดจากวันชำระเงิน",
-    t7_r2h:"Buyee Air Delivery (ไต้หวัน) / จัดส่งในญี่ปุ่น", t7_r2:"2–3 วันทำการหลังชำระเงิน",
-    t7_r3:"จัดส่งทุกวันจันทร์ พุธ และศุกร์",
-    st7_n:"อากรและภาษีนำเข้าที่ไม่ได้เก็บล่วงหน้าอาจถูกเรียกเก็บตอนรับสินค้า (ขึ้นอยู่กับประเทศและบริษัทขนส่ง)",
-    one_h:"Buyee One: ชำระครั้งเดียวจบ", one_new:"ตั้งแต่ ก.ย. 2026",
-    one_p:"ฟีเจอร์ใหม่ที่แสดง<b>ยอดชำระรวม</b> ทั้งค่าสินค้า ค่าจัดส่ง ค่าธรรมเนียม และอากร/ภาษีนำเข้าที่เกี่ยวข้อง ตั้งแต่ตอนซื้อ และชำระทั้งหมดได้ในครั้งเดียว โดยใช้ข้อมูลการจัดส่งและ AI ประเมินค่าจัดส่งและภาษีล่วงหน้า",
-    one_c_h:"ประเทศที่เริ่มให้บริการ", one_c:"สหรัฐอเมริกา", one_s_h:"ร้านค้าที่เริ่มให้บริการ", one_f_h:"ต่อไป", one_f:"จะขยายประเทศและร้านค้าเพิ่มเติมตามลำดับ",
-    money_h:"สรุปการชำระเงิน",
-    m1_h:"ครั้งที่ 1 (ตอนซื้อ)", m1:"ค่าสินค้า ค่าส่งในญี่ปุ่น ค่าธรรมเนียม Buyee/ค่าแพ็กเกจ ฯลฯ",
-    m2_h:"ครั้งที่ 2 (หลังถึงคลัง)", m2:"ค่าจัดส่งระหว่างประเทศ ตัวเลือกการแพ็ก ค่าเก็บรักษาเพิ่ม ภาษีที่เก็บล่วงหน้า (ถ้ามี)",
-    m3_h:"ตอนรับสินค้า (บางกรณี)", m3:"อากรและภาษีนำเข้าที่เรียกเก็บในประเทศปลายทาง",
-    foot_p:"ค่าธรรมเนียมและวิธีจัดส่งที่ใช้ได้แตกต่างกันตามประเทศและช่วงเวลา โปรดตรวจสอบข้อมูลล่าสุดในคู่มือทางการของ Buyee:",
-    lk1:"ค่าธรรมเนียม", lk2:"วิธีจัดส่ง", lk3:"รวมพัสดุ", lk4:"ประเทศที่รองรับ",
-    foot_src:"แหล่งข้อมูล: เว็บไซต์ทางการและ FAQ ของ Buyee, ข่าวประชาสัมพันธ์ของ tenso Inc. (8 กันยายน 2026) ข้อมูล ณ พฤศจิกายน 2026"
-  }
-};
-
-/* ===== Language switcher (shared "jm_lang" setting with the top page) ===== */
-(function(){
-  var LANGS = ['en','zh-TW','zh-CN','es','fr','de','ko','th'];
-  var EN = {};
-  document.querySelectorAll('[data-i18n]').forEach(function(el){ var k=el.dataset.i18n; if(!(k in EN)) EN[k]=el.innerHTML; });
-  var md = document.querySelector('meta[name="description"]');
-  EN.title = document.title; if (md) EN.desc = md.content;
-  I18N.en = EN;
-
-  function pick(){
-    try { var p=new URLSearchParams(location.search).get('lang'); if(p && LANGS.indexOf(p)>-1) return p; } catch(e){}
-    try { var s=localStorage.getItem('jm_lang'); if(s && LANGS.indexOf(s)>-1) return s; } catch(e){}
-    var navs = navigator.languages || [navigator.language || 'en'];
-    for (var i=0;i<navs.length;i++){
-      var l=(navs[i]||'').toLowerCase();
-      if (l.indexOf('zh')===0) return /tw|hk|mo|hant/.test(l) ? 'zh-TW' : 'zh-CN';
-      var b=l.split('-')[0];
-      if (LANGS.indexOf(b)>-1) return b;
-    }
-    return 'en';
-  }
-  function apply(lang, save){
-    var d = I18N[lang] || EN;
-    var t = function(k){ return d[k]!=null ? d[k] : EN[k]; };
-    document.querySelectorAll('[data-i18n]').forEach(function(el){ var v=t(el.dataset.i18n); if(v!=null) el.innerHTML=v; });
-    document.title = t('title');
-    if (md && t('desc')) md.content = t('desc');
-    document.documentElement.lang = lang;
-    var sel = document.getElementById('langSelect'); if (sel) sel.value = lang;
-    if (save) { try { localStorage.setItem('jm_lang', lang); } catch(e){} }
-  }
-  window.changeLanguage = function(lang){ apply(lang, true); };
-  apply(pick(), false);
-})();
-</script>
+  <script>window.PAGE_I18N = {
+ "zh-TW": {
+  "bx_h": "Buyee是什麼？",
+  "bx_p": "Buyee是日本公司tenso, inc.自2012年起經營的代購服務。它會代替您在日本的網路商店、二手平台與拍賣上購買商品，先送到Buyee在日本的倉庫，再寄送到海外給您。",
+  "bx_why": "對海外買家有什麼幫助",
+  "bx_w1": "許多日本賣家只寄送日本國內。Buyee在日本收貨，因此這些商品您也能購買。",
+  "bx_w2": "網站提供英文等多種語言，不懂日文也能搜尋、出價與詢問。",
+  "bx_w3": "可使用PayPal或國際信用卡付款，不需要日本的付款方式。",
+  "bx_w4": "可參加從海外直接參與較困難的日本拍賣。",
+  "bx_w5": "可將多件商品合併成一箱寄送，節省國際運費。",
+  "bx_note": "除了商品價格外，還需支付Buyee手續費與國際運費，因此總額會高於日本售價。本頁說明購買流程與付款方式。",
+  "bx_flow": "購買流程",
+  "bc_here": "如何透過Buyee購買",
+  "title": "如何透過Buyee從日本購買 | JapanMania",
+  "eyebrow": "代購指南",
+  "h1": "海外用戶使用Buyee購物的流程",
+  "lead": "購買 → 日本倉庫 → 國際配送。Buyee的特點是<b>通常需要付款兩次</b>：一次付商品款，一次付國際運費。",
+  "lg_buy": "購買",
+  "lg_pay": "付款",
+  "lg_ship": "配送",
+  "st1_h": "註冊會員",
+  "st1_p": "在Buyee免費註冊。網站支援英文、中文等多種語言，不懂日文也能使用。",
+  "st1_who": "由您操作",
+  "st2_h": "搜尋商品",
+  "st2_l1": "在Buyee內搜尋：JDirectItems Auction／Fleamarket／Shopping、Mercari、樂天、Rakuma、Amazon等",
+  "st2_l2": "在合作商店官網上的「Buyee購物車」直接購買",
+  "st2_l3": "使用瀏覽器擴充功能或App從日本網站加入商品",
+  "st2_l4": "貼上想要商品的網址申請代購（網址代購）",
+  "st3_h": "出價・申請購買＝第1次付款",
+  "st3_p1": "拍賣為出價，網購・二手平台為申請購買。此時需支付<b>商品價格（＋日本國內運費・Buyee手續費等）</b>。拍賣在得標後確定金額。",
+  "st3_p2": "可用付款方式：PayPal、信用卡（VISA／Mastercard／JCB）、支付寶（Alipay）、銀聯（UnionPay）",
+  "st3_who": "您 → Buyee（由Buyee代您支付給日本賣家・商店）",
+  "st4_h": "賣家 → 寄送至Buyee日本國內倉庫",
+  "st4_p": "日本的賣家・商店不是寄往海外，而是寄送到<b>Buyee的日本國內倉庫</b>（以國內交易完成）。",
+  "st4_n": "二手平台與拍賣的出貨天數因賣家而異。",
+  "st5_h": "抵達倉庫・保管・包裝選項",
+  "st5_p": "商品到達後會透過電子郵件與會員頁面通知。可在「包裹資訊」查看秤重後的內容。",
+  "st5_l1": "<b>合併包裝</b>：將多件商品合併為一箱，節省國際運費",
+  "st5_l2": "也可從會員頁面申請<b>保護包裝</b>等選項",
+  "st5_l3": "保管<b>自到貨起30天免費</b>，第31天起按日收取延長費用，<b>最長90天</b>",
+  "st5_n": "若90天內未支付國際運費，商品可能會被處理掉。",
+  "st6_h": "選擇配送方式＝第2次付款",
+  "st6_p1": "依包裝後的重量與尺寸確定金額。支付<b>國際運費（＋選項費用・適用國家的預收關稅）</b>。",
+  "st6_p2": "主要配送方式：日本郵政、FedEx、DHL、UPS、Buyee Air Delivery、ECMS等（依國家・地區而異）",
+  "st7_h": "寄往海外 → 收件",
+  "t7_r1h": "日本郵政／FedEx／DHL／UPS／Buyee Air Delivery",
+  "t7_r1": "付款後的下一個工作日出貨",
+  "t7_r2h": "Buyee Air Delivery（台灣）／日本國內配送",
+  "t7_r2": "付款後2〜3個工作日",
+  "t7_r3": "每週一・三・五出貨",
+  "st7_n": "未預收的關稅・進口稅可能會在收件時於當地請款（依國家・物流業者而異）。",
+  "one_h": "Buyee One：一次付清",
+  "one_new": "2026年9月起",
+  "one_p": "購買時即可確認包含「商品價格・運費・手續費・適用的關稅／進口稅」的<b>付款總額</b>，並一次完成付款的新功能。透過配送實績資料與AI預先估算運費與關稅。",
+  "one_c_h": "首波適用國家",
+  "one_c": "美國",
+  "one_s_h": "首波適用商店",
+  "one_f": "將陸續擴大適用國家與商店",
+  "m1_h": "第1次（購買時）",
+  "m1": "商品價格、日本國內運費、Buyee手續費・方案費用等",
+  "m2_h": "第2次（抵達倉庫後）",
+  "m2": "國際運費、包裝選項、保管延長費、預收關稅（適用時）",
+  "m3_h": "收件時（視情況）",
+  "m3": "於當地請款的關稅・進口稅",
+  "foot_p": "手續費金額與可用的配送方式因國家與時期而異，最新資訊請查看官方指南：",
+  "lk1": "費用",
+  "lk2": "配送方式",
+  "lk3": "合併包裝",
+  "lk4": "支援國家",
+  "foot_src": "資料來源：Buyee官方網站・FAQ、tenso股份有限公司新聞稿（2026年9月8日）。2026年11月時的資訊。",
+  "cta": "前往Buyee（免費註冊）→",
+  "desc": "Buyee是什麼、對海外買家有什麼幫助、需要支付哪些費用，以及下單流程的逐步說明。",
+  "intro": "給日本以外收藏家的指南：Buyee是什麼、有什麼好處、要付哪些費用，以及下單的流程。",
+  "pay_h": "需要支付的費用",
+  "chk_h": "購買前的確認事項",
+  "chk1": "購買前先估算總額：商品價格、Buyee手續費、國際運費及進口關稅。",
+  "chk2": "拍賣價格通常會在結標前上漲，請事先決定最高出價。",
+  "chk3": "將多件商品合併成一個包裹，可降低國際運費。",
+  "chk4": "請在90天內支付國際運費，超過期限的商品可能會被處分。",
+  "cat_h": "依分類在Buyee尋找卡牌"
+ },
+ "zh-CN": {
+  "bx_h": "Buyee是什么？",
+  "bx_p": "Buyee是日本公司tenso, inc.自2012年起运营的代购服务。它会代替您在日本的网店、二手平台和拍卖上购买商品，先送到Buyee在日本的仓库，再寄送到海外给您。",
+  "bx_why": "对海外买家有什么帮助",
+  "bx_w1": "许多日本卖家只寄送日本国内。Buyee在日本收货，因此这些商品您也能购买。",
+  "bx_w2": "网站提供英语等多种语言，不懂日语也能搜索、出价和咨询。",
+  "bx_w3": "可使用PayPal或国际信用卡付款，不需要日本的支付方式。",
+  "bx_w4": "可参与从海外直接参加较困难的日本拍卖。",
+  "bx_w5": "可将多件商品合并成一箱寄送，节省国际运费。",
+  "bx_note": "除商品价格外，还需支付Buyee手续费和国际运费，因此总额会高于日本售价。本页介绍购买流程和付款方式。",
+  "bx_flow": "购买流程",
+  "bc_here": "如何通过Buyee购买",
+  "title": "如何通过Buyee从日本购买 | JapanMania",
+  "eyebrow": "代购指南",
+  "h1": "海外用户使用Buyee购物的流程",
+  "lead": "购买 → 日本仓库 → 国际配送。Buyee的特点是<b>通常需要付款两次</b>：一次付商品款，一次付国际运费。",
+  "lg_buy": "购买",
+  "lg_pay": "付款",
+  "lg_ship": "配送",
+  "st1_h": "注册会员",
+  "st1_p": "在Buyee免费注册。网站支持英文、中文等多种语言，不懂日语也能使用。",
+  "st1_who": "由您操作",
+  "st2_h": "搜索商品",
+  "st2_l1": "在Buyee内搜索：JDirectItems Auction／Fleamarket／Shopping、Mercari、乐天、Rakuma、Amazon等",
+  "st2_l2": "在合作店铺官网上的“Buyee购物车”直接购买",
+  "st2_l3": "使用浏览器插件或App从日本网站添加商品",
+  "st2_l4": "粘贴想要商品的链接申请代购（链接代购）",
+  "st3_h": "出价・申请购买＝第1次付款",
+  "st3_p1": "拍卖为出价，网购・二手平台为申请购买。此时需支付<b>商品价格（＋日本国内运费・Buyee手续费等）</b>。拍卖在中标后确定金额。",
+  "st3_p2": "可用支付方式：PayPal、信用卡（VISA／Mastercard／JCB）、支付宝（Alipay）、银联（UnionPay）",
+  "st3_who": "您 → Buyee（由Buyee代您向日本卖家・店铺付款）",
+  "st4_h": "卖家 → 发货至Buyee日本国内仓库",
+  "st4_p": "日本的卖家・店铺不是发往海外，而是发货到<b>Buyee的日本国内仓库</b>（作为国内交易完成）。",
+  "st4_n": "二手平台和拍卖的发货天数因卖家而异。",
+  "st5_h": "到达仓库・保管・包装选项",
+  "st5_p": "商品到达后会通过邮件和会员页面通知。可在“包裹信息”查看称重后的内容。",
+  "st5_l1": "<b>合并包装</b>：将多件商品合并为一箱，节省国际运费",
+  "st5_l2": "也可从会员页面申请<b>保护包装</b>等选项",
+  "st5_l3": "保管<b>自到货起30天免费</b>，第31天起按日收取延长费用，<b>最长90天</b>",
+  "st5_n": "如90天内未支付国际运费，商品可能会被处理。",
+  "st6_h": "选择配送方式＝第2次付款",
+  "st6_p1": "根据包装后的重量和尺寸确定金额。支付<b>国际运费（＋选项费用・适用国家的预收关税）</b>。",
+  "st6_p2": "主要配送方式：日本邮政、FedEx、DHL、UPS、Buyee Air Delivery、ECMS等（因国家・地区而异）",
+  "st7_h": "发往海外 → 收货",
+  "t7_r1h": "日本邮政／FedEx／DHL／UPS／Buyee Air Delivery",
+  "t7_r1": "付款后的下一个工作日发货",
+  "t7_r2h": "Buyee Air Delivery（台湾）／日本国内配送",
+  "t7_r2": "付款后2〜3个工作日",
+  "t7_r3": "每周一・三・五发货",
+  "st7_n": "未预收的关税・进口税可能会在收货时于当地收取（因国家・物流商而异）。",
+  "one_h": "Buyee One：一次付清",
+  "one_new": "2026年9月起",
+  "one_p": "购买时即可确认包含“商品价格・运费・手续费・适用的关税／进口税”的<b>支付总额</b>，并一次完成付款的新功能。通过配送实绩数据和AI预先估算运费和关税。",
+  "one_c_h": "首批适用国家",
+  "one_c": "美国",
+  "one_s_h": "首批适用店铺",
+  "one_f": "将逐步扩大适用国家和店铺",
+  "m1_h": "第1次（购买时）",
+  "m1": "商品价格、日本国内运费、Buyee手续费・套餐费用等",
+  "m2_h": "第2次（到达仓库后）",
+  "m2": "国际运费、包装选项、保管延长费、预收关税（适用时）",
+  "m3_h": "收货时（视情况）",
+  "m3": "在当地收取的关税・进口税",
+  "foot_p": "手续费金额和可用配送方式因国家和时期而异，最新信息请查看官方指南：",
+  "lk1": "费用",
+  "lk2": "配送方式",
+  "lk3": "合并包装",
+  "lk4": "支持国家",
+  "foot_src": "来源：Buyee官方网站・FAQ、tenso株式会社新闻稿（2026年9月8日）。截至2026年11月的信息。",
+  "cta": "前往Buyee（免费注册）→",
+  "desc": "Buyee是什么、对海外买家有什么帮助、需要支付哪些费用，以及下单流程的分步说明。",
+  "intro": "写给日本以外收藏者的指南：Buyee是什么、有什么好处、要付哪些费用，以及下单的流程。",
+  "pay_h": "需要支付的费用",
+  "chk_h": "购买前的确认事项",
+  "chk1": "购买前先估算总额：商品价格、Buyee手续费、国际运费及进口关税。",
+  "chk2": "拍卖价格通常会在结束前上涨，请事先决定最高出价。",
+  "chk3": "将多件商品合并成一个包裹，可降低国际运费。",
+  "chk4": "请在90天内支付国际运费，超过期限的商品可能会被处理掉。",
+  "cat_h": "按分类在Buyee寻找卡牌"
+ },
+ "es": {
+  "bx_h": "¿Qué es Buyee?",
+  "bx_p": "Buyee es un servicio de compra por encargo (proxy) que gestiona desde 2012 la empresa japonesa tenso, inc. Compra en tu nombre en tiendas online, mercadillos y subastas de Japón, recibe los artículos en su almacén en Japón y te los envía al extranjero.",
+  "bx_why": "Por qué es útil fuera de Japón",
+  "bx_w1": "Muchos vendedores japoneses solo envían dentro de Japón. Como Buyee recibe el artículo en Japón, también puedes comprar esos anuncios.",
+  "bx_w2": "El sitio está en inglés y otros idiomas, así que puedes buscar, pujar y hacer preguntas sin leer japonés.",
+  "bx_w3": "Puedes pagar con PayPal o tarjetas de crédito internacionales en lugar de métodos de pago japoneses.",
+  "bx_w4": "Puedes pujar en subastas japonesas, a las que es difícil acceder directamente desde el extranjero.",
+  "bx_w5": "Puedes juntar varias compras en una sola caja para ahorrar en el envío internacional.",
+  "bx_note": "Además del precio del artículo, pagas las comisiones de Buyee y el envío internacional, así que el total es mayor que el precio en Japón. Esta guía explica el proceso y los pagos.",
+  "bx_flow": "Cómo funciona",
+  "bc_here": "Cómo comprar con Buyee",
+  "title": "Cómo comprar en Japón con Buyee | JapanMania",
+  "eyebrow": "Guía proxy",
+  "h1": "Cómo compran con Buyee los usuarios del extranjero",
+  "lead": "Compra → almacén en Japón → envío internacional. Con Buyee normalmente <b>pagas dos veces</b>: una por el artículo y otra por el envío internacional.",
+  "lg_buy": "Compra",
+  "lg_pay": "Pago",
+  "lg_ship": "Envío",
+  "st1_h": "Regístrate",
+  "st1_p": "Crea una cuenta gratuita en Buyee. La web está en inglés, chino y otros idiomas, así que no necesitas saber japonés.",
+  "st1_who": "Lo haces tú",
+  "st2_h": "Busca artículos",
+  "st2_l1": "Busca dentro de Buyee: JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon y más",
+  "st2_l2": "Compra directamente con el “carrito Buyee” en las webs oficiales de tiendas asociadas",
+  "st2_l3": "Añade artículos de webs japonesas con la extensión del navegador o la app",
+  "st2_l4": "Pega la URL de cualquier artículo para solicitar su compra (compra por URL)",
+  "st3_h": "Puja o pedido = 1.er pago",
+  "st3_p1": "En subastas haces una puja; en tiendas online y mercadillos, una solicitud de compra. En ese momento pagas <b>el precio del artículo (más envío nacional, comisiones de Buyee, etc.)</b>. En subastas, el importe se confirma al ganar.",
+  "st3_p2": "Métodos de pago: PayPal, tarjetas de crédito (VISA / Mastercard / JCB), Alipay, UnionPay",
+  "st3_who": "Tú → Buyee (Buyee paga al vendedor o tienda japonesa en tu nombre)",
+  "st4_h": "El vendedor envía al almacén de Buyee en Japón",
+  "st4_p": "Los vendedores y tiendas japoneses no envían al extranjero, sino al <b>almacén nacional de Buyee en Japón</b>, por lo que es una venta nacional.",
+  "st4_n": "En mercadillos y subastas, el plazo de envío varía según el vendedor.",
+  "st5_h": "Llegada, almacenaje y opciones de embalaje",
+  "st5_p": "Recibirás un aviso por correo y en Mi página cuando llegue el artículo. Consulta los datos del paquete pesado en “Información del paquete”.",
+  "st5_l1": "<b>Consolidación de paquetes</b>: junta varios artículos en una caja para ahorrar en el envío internacional",
+  "st5_l2": "Solicita opciones como el <b>embalaje protector</b> desde Mi página",
+  "st5_l3": "El almacenaje es <b>gratis durante 30 días desde la llegada</b>, con tarifa diaria desde el día 31, <b>hasta 90 días</b>",
+  "st5_n": "Si no pagas el envío internacional en 90 días, los artículos pueden ser desechados.",
+  "st6_h": "Elige el envío = 2.º pago",
+  "st6_p1": "El precio se fija según el peso y el tamaño tras el embalaje. Pagas <b>el envío internacional (más opciones y, en países elegibles, aranceles prepagados)</b>.",
+  "st6_p2": "Principales métodos de envío: Japan Post, FedEx, DHL, UPS, Buyee Air Delivery, ECMS, etc. (varían según país/región)",
+  "st7_h": "Envío al extranjero → entrega",
+  "t7_r1": "Sale el día hábil siguiente al pago",
+  "t7_r2h": "Buyee Air Delivery (Taiwán) / Envío nacional",
+  "t7_r2": "2–3 días hábiles tras el pago",
+  "t7_r3": "Sale cada lunes, miércoles y viernes",
+  "st7_n": "Los aranceles e impuestos de importación no cobrados por adelantado pueden cobrarse a la entrega (según país y transportista).",
+  "one_h": "Buyee One: paga una sola vez",
+  "one_new": "Desde sept. 2026",
+  "one_p": "Una nueva función que muestra el <b>coste total</b> —precio, envío, comisiones y aranceles/impuestos aplicables— al comprar y te permite pagarlo todo de una vez. El envío y los aranceles se estiman por adelantado con datos de envíos e IA.",
+  "one_c_h": "País inicial",
+  "one_c": "Estados Unidos",
+  "one_s_h": "Tienda inicial",
+  "one_f": "Se añadirán más países y tiendas",
+  "m1_h": "1.º (al comprar)",
+  "m1": "Precio del artículo, envío nacional en Japón, comisiones de Buyee / plan, etc.",
+  "m2_h": "2.º (tras llegar al almacén)",
+  "m2": "Envío internacional, opciones de embalaje, almacenaje extra, aranceles prepagados (si aplica)",
+  "m3_h": "A la entrega (si aplica)",
+  "m3": "Aranceles e impuestos de importación cobrados localmente",
+  "foot_p": "Las tarifas y los métodos de envío disponibles varían según el país y la fecha. Consulta las guías oficiales de Buyee para ver la información más reciente:",
+  "lk1": "Tarifas",
+  "lk2": "Métodos de envío",
+  "lk3": "Consolidación",
+  "lk4": "Países admitidos",
+  "foot_src": "Fuentes: web oficial y FAQ de Buyee, nota de prensa de tenso Inc. (8 de septiembre de 2026). Información a noviembre de 2026.",
+  "cta": "Ir a Buyee (registro gratuito) →",
+  "desc": "Qué es Buyee, por qué es útil fuera de Japón, qué pagas y cómo funciona un pedido, paso a paso.",
+  "intro": "Una guía para coleccionistas fuera de Japón: qué es Buyee, por qué es útil, qué pagas y cómo funciona un pedido.",
+  "pay_h": "Qué pagas",
+  "chk_h": "Qué comprobar antes de comprar",
+  "chk1": "Calcula el total antes de comprar: precio del artículo, comisiones de Buyee, envío internacional y aranceles.",
+  "chk2": "Los precios de subasta suelen subir antes del final. Decide de antemano tu puja máxima.",
+  "chk3": "Junta varios artículos en un solo paquete para pagar menos envío internacional.",
+  "chk4": "Paga el envío internacional en un plazo de 90 días; los artículos que se queden más tiempo pueden desecharse.",
+  "cat_h": "Buscar cartas en Buyee por categoría"
+ },
+ "fr": {
+  "bx_h": "Qu'est-ce que Buyee ?",
+  "bx_p": "Buyee est un service d'achat par procuration (proxy) géré depuis 2012 par la société japonaise tenso, inc. Il achète pour vous sur les boutiques en ligne, sites de seconde main et enchères japonais, reçoit les articles dans son entrepôt au Japon, puis vous les expédie à l'étranger.",
+  "bx_why": "Pourquoi c'est utile hors du Japon",
+  "bx_w1": "Beaucoup de vendeurs japonais n'expédient qu'au Japon. Comme Buyee reçoit l'article au Japon, ces annonces vous deviennent accessibles.",
+  "bx_w2": "Le site est disponible en anglais et dans d'autres langues : vous pouvez chercher, enchérir et poser des questions sans lire le japonais.",
+  "bx_w3": "Vous pouvez payer avec PayPal ou une carte bancaire internationale, sans moyen de paiement japonais.",
+  "bx_w4": "Vous pouvez enchérir sur des enchères japonaises, difficiles d'accès directement depuis l'étranger.",
+  "bx_w5": "Vous pouvez regrouper plusieurs achats dans un seul colis pour réduire les frais d'envoi internationaux.",
+  "bx_note": "En plus du prix de l'article, vous payez les frais de Buyee et la livraison internationale : le total est donc plus élevé que le prix au Japon. Ce guide explique le processus et les paiements.",
+  "bx_flow": "Comment ça marche",
+  "bc_here": "Acheter avec Buyee",
+  "title": "Acheter au Japon avec Buyee | JapanMania",
+  "eyebrow": "Guide proxy",
+  "h1": "Comment les acheteurs étrangers utilisent Buyee",
+  "lead": "Achat → entrepôt au Japon → livraison internationale. Avec Buyee, vous <b>payez généralement deux fois</b> : une fois pour l'article, une fois pour la livraison internationale.",
+  "lg_buy": "Achat",
+  "lg_pay": "Paiement",
+  "lg_ship": "Livraison",
+  "st1_h": "Inscription",
+  "st1_p": "Créez un compte Buyee gratuit. Le site est disponible en anglais, en chinois et dans d'autres langues : inutile de lire le japonais.",
+  "st1_who": "À faire par vous",
+  "st2_h": "Trouver des articles",
+  "st2_l1": "Chercher sur Buyee : JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon, etc.",
+  "st2_l2": "Acheter directement via le « panier Buyee » sur les sites officiels des boutiques partenaires",
+  "st2_l3": "Ajouter des articles de sites japonais avec l'extension de navigateur ou l'application",
+  "st2_l4": "Coller l'URL d'un article pour demander son achat (achat par URL)",
+  "st3_h": "Enchère ou commande = 1er paiement",
+  "st3_p1": "Pour les enchères, vous enchérissez ; pour les boutiques et sites de seconde main, vous faites une demande d'achat. Vous payez alors <b>le prix de l'article (plus livraison au Japon, frais Buyee, etc.)</b>. Pour les enchères, le montant est fixé une fois l'enchère remportée.",
+  "st3_p2": "Moyens de paiement : PayPal, cartes bancaires (VISA / Mastercard / JCB), Alipay, UnionPay",
+  "st3_who": "Vous → Buyee (Buyee paie le vendeur ou la boutique japonaise pour vous)",
+  "st4_h": "Le vendeur expédie à l'entrepôt Buyee au Japon",
+  "st4_p": "Les vendeurs et boutiques japonais n'expédient pas à l'étranger mais à <b>l'entrepôt de Buyee au Japon</b> : la vente reste nationale.",
+  "st4_n": "Sur les sites de seconde main et d'enchères, le délai d'expédition varie selon le vendeur.",
+  "st5_h": "Arrivée, stockage et options d'emballage",
+  "st5_p": "Vous êtes prévenu par e-mail et sur Mon espace à l'arrivée de l'article. Consultez les détails du colis pesé dans « Infos colis ».",
+  "st5_l1": "<b>Regroupement de colis</b> : réunir plusieurs articles dans un carton pour économiser sur la livraison internationale",
+  "st5_l2": "Commander des options comme l'<b>emballage renforcé</b> depuis Mon espace",
+  "st5_l3": "Stockage <b>gratuit 30 jours après l'arrivée</b>, puis frais journaliers dès le 31e jour, <b>90 jours maximum</b>",
+  "st5_n": "Si la livraison internationale n'est pas payée sous 90 jours, les articles peuvent être détruits.",
+  "st6_h": "Choisir la livraison = 2e paiement",
+  "st6_p1": "Le prix est fixé selon le poids et la taille après emballage. Vous payez <b>la livraison internationale (plus les options et, dans les pays éligibles, les droits prépayés)</b>.",
+  "st6_p2": "Principaux modes : Japan Post, FedEx, DHL, UPS, Buyee Air Delivery, ECMS, etc. (selon le pays/la région)",
+  "st7_h": "Expédition à l'étranger → réception",
+  "t7_r1": "Expédié le jour ouvré suivant le paiement",
+  "t7_r2h": "Buyee Air Delivery (Taïwan) / Livraison au Japon",
+  "t7_r2": "2 à 3 jours ouvrés après le paiement",
+  "t7_r3": "Expédié chaque lundi, mercredi et vendredi",
+  "st7_n": "Les droits et taxes d'importation non prélevés à l'avance peuvent être facturés à la livraison (selon le pays et le transporteur).",
+  "one_h": "Buyee One : un seul paiement",
+  "one_new": "Depuis sept. 2026",
+  "one_p": "Une nouvelle fonction qui affiche le <b>coût total</b> — prix, livraison, frais et droits/taxes applicables — au moment de l'achat et permet de tout régler en une fois. Livraison et droits sont estimés à l'avance grâce aux données d'expédition et à l'IA.",
+  "one_c_h": "Pays au lancement",
+  "one_c": "États-Unis",
+  "one_s_h": "Boutique au lancement",
+  "one_f": "D'autres pays et boutiques seront ajoutés",
+  "m1_h": "1er (à l'achat)",
+  "m1": "Prix de l'article, livraison au Japon, frais Buyee / forfait, etc.",
+  "m2_h": "2e (après l'arrivée)",
+  "m2": "Livraison internationale, options d'emballage, frais de stockage prolongé, droits prépayés (si éligible)",
+  "m3_h": "À la livraison (le cas échéant)",
+  "m3": "Droits et taxes d'importation facturés localement",
+  "foot_p": "Les frais et les modes de livraison disponibles varient selon le pays et la période. Consultez les guides officiels de Buyee pour les dernières informations :",
+  "lk1": "Frais",
+  "lk2": "Modes de livraison",
+  "lk3": "Regroupement",
+  "lk4": "Pays pris en charge",
+  "foot_src": "Sources : site officiel et FAQ de Buyee, communiqué de tenso Inc. (8 septembre 2026). Informations à jour en novembre 2026.",
+  "cta": "Aller sur Buyee (inscription gratuite) →",
+  "desc": "Ce qu'est Buyee, pourquoi c'est utile hors du Japon, ce que vous payez et comment se déroule une commande, étape par étape.",
+  "intro": "Un guide pour les collectionneurs hors du Japon : ce qu'est Buyee, ses avantages, ce que vous payez et le déroulement d'une commande.",
+  "pay_h": "Ce que vous payez",
+  "chk_h": "À vérifier avant d'acheter",
+  "chk1": "Estimez le total avant d'acheter : prix de l'article, frais Buyee, livraison internationale et droits de douane.",
+  "chk2": "Les prix des enchères montent souvent avant la fin. Fixez à l'avance votre enchère maximale.",
+  "chk3": "Regroupez plusieurs articles dans un seul colis pour réduire les frais de livraison internationale.",
+  "chk4": "Payez la livraison internationale dans les 90 jours ; au-delà, les articles peuvent être détruits.",
+  "cat_h": "Chercher des cartes sur Buyee par catégorie"
+ },
+ "de": {
+  "bx_h": "Was ist Buyee?",
+  "bx_p": "Buyee ist ein Proxy-Einkaufsdienst, den das japanische Unternehmen tenso, inc. seit 2012 betreibt. Buyee kauft in deinem Auftrag in japanischen Onlineshops, auf Flohmärkten und Auktionen, nimmt die Artikel in seinem Lager in Japan an und schickt sie dir ins Ausland.",
+  "bx_why": "Warum das für Käufer außerhalb Japans nützlich ist",
+  "bx_w1": "Viele japanische Verkäufer versenden nur innerhalb Japans. Da Buyee den Artikel in Japan annimmt, kannst du auch diese Angebote kaufen.",
+  "bx_w2": "Die Website gibt es auf Englisch und in weiteren Sprachen – suchen, bieten und Fragen stellen geht ohne Japanischkenntnisse.",
+  "bx_w3": "Du kannst mit PayPal oder internationalen Kreditkarten bezahlen statt mit japanischen Zahlungsmethoden.",
+  "bx_w4": "Du kannst bei japanischen Auktionen mitbieten, die aus dem Ausland direkt schwer zugänglich sind.",
+  "bx_w5": "Du kannst mehrere Käufe in einem Paket bündeln und so internationale Versandkosten sparen.",
+  "bx_note": "Zusätzlich zum Artikelpreis zahlst du Buyee-Gebühren und den internationalen Versand – der Gesamtbetrag liegt also über dem Preis in Japan. Dieser Ratgeber erklärt Ablauf und Zahlungen.",
+  "bx_flow": "So funktioniert es",
+  "bc_here": "Mit Buyee kaufen",
+  "title": "So kaufst du mit Buyee in Japan | JapanMania",
+  "eyebrow": "Proxy-Ratgeber",
+  "h1": "So kaufen Nutzer aus dem Ausland mit Buyee ein",
+  "lead": "Kauf → Lager in Japan → internationaler Versand. Bei Buyee <b>zahlst du in der Regel zweimal</b>: einmal für den Artikel und einmal für den internationalen Versand.",
+  "lg_buy": "Kauf",
+  "lg_pay": "Zahlung",
+  "lg_ship": "Versand",
+  "st1_h": "Registrieren",
+  "st1_p": "Erstelle ein kostenloses Buyee-Konto. Die Website gibt es auf Englisch, Chinesisch und in weiteren Sprachen – Japanischkenntnisse sind nicht nötig.",
+  "st1_who": "Machst du selbst",
+  "st2_h": "Artikel finden",
+  "st2_l1": "In Buyee suchen: JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon u. a.",
+  "st2_l2": "Direkt über den „Buyee-Warenkorb“ auf den offiziellen Websites von Partnershops kaufen",
+  "st2_l3": "Artikel von japanischen Websites per Browser-Erweiterung oder App hinzufügen",
+  "st2_l4": "Die URL eines Artikels einfügen und den Kauf beauftragen (URL-Kauf)",
+  "st3_h": "Gebot oder Bestellung = 1. Zahlung",
+  "st3_p1": "Bei Auktionen gibst du ein Gebot ab, bei Onlineshops und Flohmärkten einen Kaufauftrag. Dabei zahlst du <b>den Artikelpreis (plus Inlandsversand, Buyee-Gebühren usw.)</b>. Bei Auktionen steht der Betrag mit dem Zuschlag fest.",
+  "st3_p2": "Zahlungsarten: PayPal, Kreditkarten (VISA / Mastercard / JCB), Alipay, UnionPay",
+  "st3_who": "Du → Buyee (Buyee bezahlt den japanischen Verkäufer oder Shop in deinem Auftrag)",
+  "st4_h": "Verkäufer schickt an Buyees Lager in Japan",
+  "st4_p": "Japanische Verkäufer und Shops versenden nicht ins Ausland, sondern an <b>Buyees Inlandslager in Japan</b> – es bleibt ein Inlandsgeschäft.",
+  "st4_n": "Bei Flohmärkten und Auktionen hängt die Versanddauer vom Verkäufer ab.",
+  "st5_h": "Ankunft, Lagerung & Verpackungsoptionen",
+  "st5_p": "Bei Ankunft wirst du per E-Mail und auf Meine Seite benachrichtigt. Unter „Paketinfo“ siehst du die Angaben nach dem Wiegen.",
+  "st5_l1": "<b>Paketzusammenlegung</b>: mehrere Artikel in einem Karton bündeln und internationale Versandkosten sparen",
+  "st5_l2": "Optionen wie <b>Schutzverpackung</b> über Meine Seite bestellen",
+  "st5_l3": "Lagerung <b>30 Tage ab Ankunft kostenlos</b>, ab Tag 31 tägliche Gebühren, <b>maximal 90 Tage</b>",
+  "st5_n": "Wird der internationale Versand nicht innerhalb von 90 Tagen bezahlt, können die Artikel entsorgt werden.",
+  "st6_h": "Versandart wählen = 2. Zahlung",
+  "st6_p1": "Der Preis richtet sich nach Gewicht und Größe nach dem Verpacken. Du zahlst <b>den internationalen Versand (plus Optionen und in berechtigten Ländern vorab erhobene Zölle)</b>.",
+  "st6_p2": "Wichtige Versandarten: Japan Post, FedEx, DHL, UPS, Buyee Air Delivery, ECMS usw. (je nach Land/Region)",
+  "st7_h": "Versand ins Ausland → Zustellung",
+  "t7_r1": "Versand am Werktag nach der Zahlung",
+  "t7_r2h": "Buyee Air Delivery (Taiwan) / Inlandsversand",
+  "t7_r2": "2–3 Werktage nach der Zahlung",
+  "t7_r3": "Versand jeden Mo, Mi und Fr",
+  "st7_n": "Nicht vorab erhobene Zölle und Einfuhrsteuern können bei der Zustellung fällig werden (je nach Land und Versanddienst).",
+  "one_h": "Buyee One: nur einmal zahlen",
+  "one_new": "Seit Sept. 2026",
+  "one_p": "Eine neue Funktion, die beim Kauf die <b>Gesamtkosten</b> – Artikelpreis, Versand, Gebühren und anfallende Zölle/Einfuhrsteuern – anzeigt und alles in einer Zahlung abwickelt. Versand und Zölle werden vorab mit Versanddaten und KI geschätzt.",
+  "one_c_h": "Startland",
+  "one_c": "USA",
+  "one_s_h": "Start-Shop",
+  "one_f": "Weitere Länder und Shops folgen",
+  "m1_h": "1. (beim Kauf)",
+  "m1": "Artikelpreis, Inlandsversand in Japan, Buyee-Gebühren / Tarifgebühren usw.",
+  "m2_h": "2. (nach Ankunft im Lager)",
+  "m2": "Internationaler Versand, Verpackungsoptionen, Lagerverlängerung, vorab erhobene Zölle (falls zutreffend)",
+  "m3_h": "Bei Zustellung (ggf.)",
+  "m3": "Vor Ort erhobene Zölle und Einfuhrsteuern",
+  "foot_p": "Gebühren und verfügbare Versandarten ändern sich je nach Land und Zeitpunkt. Aktuelle Informationen findest du in den offiziellen Buyee-Anleitungen:",
+  "lk1": "Gebühren",
+  "lk2": "Versandarten",
+  "lk3": "Paketzusammenlegung",
+  "lk4": "Unterstützte Länder",
+  "foot_src": "Quellen: offizielle Buyee-Website & FAQ, Pressemitteilung der tenso Inc. (8. September 2026). Stand: November 2026.",
+  "cta": "Zu Buyee (kostenlose Anmeldung) →",
+  "desc": "Was Buyee ist, warum es Käufern außerhalb Japans hilft, was du bezahlst und wie eine Bestellung abläuft – Schritt für Schritt.",
+  "intro": "Ein Ratgeber für Sammler außerhalb Japans: was Buyee ist, welche Vorteile es bietet, was du bezahlst und wie eine Bestellung abläuft.",
+  "pay_h": "Was du bezahlst",
+  "chk_h": "Vor dem Kauf prüfen",
+  "chk1": "Schätze vor dem Kauf den Gesamtbetrag: Artikelpreis, Buyee-Gebühren, internationaler Versand und Einfuhrzölle.",
+  "chk2": "Auktionspreise steigen meist kurz vor Ende. Lege dein Höchstgebot vorher fest.",
+  "chk3": "Bündle mehrere Artikel in einem Paket, um internationale Versandkosten zu senken.",
+  "chk4": "Bezahle den internationalen Versand innerhalb von 90 Tagen; länger gelagerte Artikel können entsorgt werden.",
+  "cat_h": "Karten auf Buyee nach Kategorie finden"
+ },
+ "ko": {
+  "bx_h": "Buyee란?",
+  "bx_p": "Buyee는 일본 기업 tenso, inc.가 2012년부터 운영하는 구매대행 서비스입니다. 일본의 온라인 쇼핑몰, 중고 거래, 경매에서 고객을 대신해 상품을 구매하고, 일본 내 Buyee 창고에서 받은 뒤 해외로 보내 줍니다.",
+  "bx_why": "해외 구매자에게 어떤 도움이 될까",
+  "bx_w1": "많은 일본 판매자는 일본 국내로만 배송합니다. Buyee가 일본에서 상품을 받기 때문에 이런 상품도 구매할 수 있습니다.",
+  "bx_w2": "사이트가 영어 등 여러 언어로 제공되어 일본어를 몰라도 검색, 입찰, 문의를 할 수 있습니다.",
+  "bx_w3": "일본 결제 수단 대신 PayPal이나 해외 신용카드로 결제할 수 있습니다.",
+  "bx_w4": "해외에서 직접 참여하기 어려운 일본 경매에 입찰할 수 있습니다.",
+  "bx_w5": "여러 상품을 한 상자로 묶어 보내 국제 배송비를 줄일 수 있습니다.",
+  "bx_note": "상품 가격 외에 Buyee 수수료와 국제 배송비가 들기 때문에 총액은 일본 판매가보다 높아집니다. 이 가이드에서 구매 과정과 결제 방법을 설명합니다.",
+  "bx_flow": "이용 방법",
+  "bc_here": "Buyee 구매 방법",
+  "title": "Buyee로 일본에서 구매하는 방법 | JapanMania",
+  "eyebrow": "구매대행 가이드",
+  "h1": "해외 사용자가 Buyee로 구매하는 흐름",
+  "lead": "구매 → 일본 창고 → 국제 배송. Buyee는 <b>보통 두 번 결제</b>합니다. 한 번은 상품 대금, 한 번은 국제 배송비입니다.",
+  "lg_buy": "구매",
+  "lg_pay": "결제",
+  "lg_ship": "배송",
+  "st1_h": "회원가입",
+  "st1_p": "Buyee에 무료로 가입하세요. 영어, 중국어 등 다국어를 지원하므로 일본어를 몰라도 이용할 수 있습니다.",
+  "st1_who": "직접 진행",
+  "st2_h": "상품 찾기",
+  "st2_l1": "Buyee 내 검색: JDirectItems Auction / Fleamarket / Shopping, 메루카리, 라쿠텐, 라쿠마, Amazon 등",
+  "st2_l2": "제휴 쇼핑몰 공식 사이트의 'Buyee 장바구니'로 바로 구매",
+  "st2_l3": "브라우저 확장 프로그램이나 앱으로 일본 사이트의 상품 추가",
+  "st2_l4": "원하는 상품의 URL을 붙여넣어 구매 요청 (URL 구매)",
+  "st3_h": "입찰·구매 신청 = 1차 결제",
+  "st3_p1": "경매는 입찰, 쇼핑몰·중고 거래는 구매 신청을 합니다. 이때 <b>상품 대금(+일본 국내 배송비, Buyee 수수료 등)</b>을 결제합니다. 경매는 낙찰 후 금액이 확정됩니다.",
+  "st3_p2": "결제 수단: PayPal, 신용카드(VISA / Mastercard / JCB), Alipay, 은련(UnionPay)",
+  "st3_who": "고객 → Buyee (Buyee가 일본 판매자·쇼핑몰에 대신 결제)",
+  "st4_h": "판매자 → Buyee 일본 국내 창고로 발송",
+  "st4_p": "일본 판매자·쇼핑몰은 해외가 아닌 <b>Buyee의 일본 국내 창고</b>로 발송합니다 (국내 거래로 완료).",
+  "st4_n": "중고 거래·경매는 판매자에 따라 발송까지 걸리는 기간이 다릅니다.",
+  "st5_h": "창고 도착·보관·포장 옵션",
+  "st5_p": "상품이 도착하면 이메일과 마이페이지로 알려 드립니다. '짐 정보'에서 계량 후 내용을 확인할 수 있습니다.",
+  "st5_l1": "<b>합포장</b>: 여러 상품을 한 상자로 묶어 국제 배송비 절약",
+  "st5_l2": "<b>보호 포장</b> 등의 옵션도 마이페이지에서 신청",
+  "st5_l3": "보관은 <b>도착 후 30일간 무료</b>, 31일째부터 일할 연장 요금, <b>최대 90일</b>",
+  "st5_n": "90일 이내에 국제 배송비를 결제하지 않으면 상품이 폐기될 수 있습니다.",
+  "st6_h": "배송 방법 선택 = 2차 결제",
+  "st6_p1": "포장 후 무게와 크기로 금액이 확정됩니다. <b>국제 배송비(+옵션 요금, 대상 국가는 관세 사전 징수)</b>를 결제합니다.",
+  "st6_p2": "주요 배송 방법: 일본우편, FedEx, DHL, UPS, Buyee Air Delivery, ECMS 등 (국가·지역에 따라 다름)",
+  "st7_h": "해외 발송 → 수령",
+  "t7_r1h": "일본우편 / FedEx / DHL / UPS / Buyee Air Delivery",
+  "t7_r1": "결제 다음 영업일에 발송",
+  "t7_r2h": "Buyee Air Delivery (대만) / 일본 국내 배송",
+  "t7_r2": "결제 후 2~3영업일",
+  "t7_r3": "매주 월·수·금 발송",
+  "st7_n": "사전 징수되지 않은 관세·수입세는 수령 시 현지에서 청구될 수 있습니다 (국가·배송사에 따라 다름).",
+  "one_h": "Buyee One: 한 번에 결제 완료",
+  "one_new": "2026년 9월~",
+  "one_p": "구매 시점에 '상품 대금·배송비·수수료·해당 관세/수입세'를 포함한 <b>결제 총액</b>을 확인하고 한 번에 결제할 수 있는 새 기능입니다. 배송 실적 데이터와 AI로 배송비와 관세를 미리 예측합니다.",
+  "one_c_h": "시작 대상 국가",
+  "one_c": "미국",
+  "one_s_h": "시작 대상 스토어",
+  "one_f": "대상 국가·스토어를 순차 확대 예정",
+  "m1_h": "1차 (구매 시)",
+  "m1": "상품 대금, 일본 국내 배송비, Buyee 수수료·플랜 요금 등",
+  "m2_h": "2차 (창고 도착 후)",
+  "m2": "국제 배송비, 포장 옵션, 보관 연장료, 사전 징수 관세(해당 시)",
+  "m3_h": "수령 시 (경우에 따라)",
+  "m3": "현지에서 청구되는 관세·수입세",
+  "foot_p": "수수료 금액과 이용 가능한 배송 방법은 국가와 시기에 따라 달라지므로, 최신 정보는 공식 가이드에서 확인하세요:",
+  "lk1": "이용 요금",
+  "lk2": "배송 방법",
+  "lk3": "합포장",
+  "lk4": "지원 국가",
+  "foot_src": "출처: Buyee 공식 사이트·FAQ, tenso 주식회사 보도자료(2026년 9월 8일). 2026년 11월 기준 정보.",
+  "cta": "Buyee로 이동 (무료 가입) →",
+  "desc": "Buyee란 무엇인지, 해외 구매자에게 어떤 도움이 되는지, 어떤 비용을 내는지, 주문이 어떻게 진행되는지 단계별로 설명합니다.",
+  "intro": "일본 밖의 컬렉터를 위한 가이드: Buyee란 무엇인지, 어떤 장점이 있는지, 어떤 비용을 내는지, 주문은 어떻게 진행되는지 정리했습니다.",
+  "pay_h": "내야 하는 비용",
+  "chk_h": "구매 전 확인할 점",
+  "chk1": "구매 전에 상품 가격, Buyee 수수료, 국제 배송비, 수입 관세를 포함한 총액을 계산해 보세요.",
+  "chk2": "경매 가격은 보통 종료 직전에 오릅니다. 최고 입찰가를 미리 정해 두세요.",
+  "chk3": "여러 상품을 한 상자로 묶으면 국제 배송비를 줄일 수 있습니다.",
+  "chk4": "국제 배송비는 90일 이내에 결제하세요. 기간을 넘긴 상품은 처분될 수 있습니다.",
+  "cat_h": "Buyee에서 카테고리별로 카드 찾기"
+ },
+ "th": {
+  "bx_h": "Buyee คืออะไร?",
+  "bx_p": "Buyee เป็นบริการรับซื้อสินค้าแทน (พร็อกซี) ที่บริษัทญี่ปุ่น tenso, inc. ดำเนินการมาตั้งแต่ปี 2012 โดยจะซื้อสินค้าจากร้านค้าออนไลน์ ตลาดมือสอง และการประมูลในญี่ปุ่นแทนคุณ รับสินค้าที่คลังสินค้าในญี่ปุ่น แล้วจัดส่งไปให้คุณที่ต่างประเทศ",
+  "bx_why": "มีประโยชน์อย่างไรกับผู้ซื้อนอกญี่ปุ่น",
+  "bx_w1": "ผู้ขายชาวญี่ปุ่นจำนวนมากจัดส่งเฉพาะภายในญี่ปุ่น เนื่องจาก Buyee รับสินค้าในญี่ปุ่น คุณจึงซื้อสินค้าเหล่านี้ได้ด้วย",
+  "bx_w2": "เว็บไซต์มีภาษาอังกฤษและภาษาอื่นๆ จึงค้นหา ประมูล และสอบถามได้โดยไม่ต้องอ่านภาษาญี่ปุ่น",
+  "bx_w3": "ชำระเงินด้วย PayPal หรือบัตรเครดิตต่างประเทศได้ ไม่ต้องใช้วิธีชำระเงินของญี่ปุ่น",
+  "bx_w4": "ประมูลสินค้าในการประมูลของญี่ปุ่นได้ ซึ่งเข้าร่วมโดยตรงจากต่างประเทศได้ยาก",
+  "bx_w5": "รวมสินค้าหลายชิ้นไว้ในกล่องเดียวเพื่อประหยัดค่าจัดส่งระหว่างประเทศได้",
+  "bx_note": "นอกจากราคาสินค้าแล้ว ยังมีค่าธรรมเนียมของ Buyee และค่าจัดส่งระหว่างประเทศ ยอดรวมจึงสูงกว่าราคาในญี่ปุ่น คู่มือนี้อธิบายขั้นตอนและการชำระเงิน",
+  "bx_flow": "ขั้นตอนการใช้งาน",
+  "bc_here": "วิธีซื้อผ่าน Buyee",
+  "title": "วิธีซื้อสินค้าจากญี่ปุ่นผ่าน Buyee | JapanMania",
+  "eyebrow": "คู่มือตัวแทนสั่งซื้อ",
+  "h1": "ขั้นตอนการซื้อผ่าน Buyee สำหรับผู้ใช้ต่างประเทศ",
+  "lead": "ซื้อสินค้า → คลังสินค้าในญี่ปุ่น → จัดส่งระหว่างประเทศ จุดเด่นของ Buyee คือ<b>โดยปกติจะชำระเงิน 2 ครั้ง</b> คือค่าสินค้าและค่าจัดส่งระหว่างประเทศแยกกัน",
+  "lg_buy": "ซื้อ",
+  "lg_pay": "ชำระเงิน",
+  "lg_ship": "จัดส่ง",
+  "st1_h": "สมัครสมาชิก",
+  "st1_p": "สมัครสมาชิก Buyee ได้ฟรี รองรับหลายภาษา เช่น อังกฤษ จีน จึงใช้งานได้แม้อ่านภาษาญี่ปุ่นไม่ออก",
+  "st1_who": "คุณดำเนินการเอง",
+  "st2_h": "ค้นหาสินค้า",
+  "st2_l1": "ค้นหาใน Buyee: JDirectItems Auction / Fleamarket / Shopping, Mercari, Rakuten, Rakuma, Amazon ฯลฯ",
+  "st2_l2": "ซื้อโดยตรงผ่าน “ตะกร้า Buyee” บนเว็บไซต์ทางการของร้านค้าพันธมิตร",
+  "st2_l3": "เพิ่มสินค้าจากเว็บไซต์ญี่ปุ่นด้วยส่วนขยายเบราว์เซอร์หรือแอป",
+  "st2_l4": "วาง URL ของสินค้าที่ต้องการเพื่อขอให้สั่งซื้อ (สั่งซื้อด้วย URL)",
+  "st3_h": "ประมูล/ขอสั่งซื้อ = ชำระครั้งที่ 1",
+  "st3_p1": "สินค้าประมูลให้ลงประมูล ส่วนร้านค้าออนไลน์และตลาดมือสองให้ส่งคำขอสั่งซื้อ ในขั้นตอนนี้คุณจะชำระ<b>ค่าสินค้า (+ค่าส่งในญี่ปุ่น ค่าธรรมเนียม Buyee ฯลฯ)</b> สำหรับการประมูล ยอดเงินจะยืนยันเมื่อชนะประมูล",
+  "st3_p2": "ช่องทางชำระเงิน: PayPal, บัตรเครดิต (VISA / Mastercard / JCB), Alipay, UnionPay",
+  "st3_who": "คุณ → Buyee (Buyee ชำระเงินให้ผู้ขายหรือร้านค้าในญี่ปุ่นแทนคุณ)",
+  "st4_h": "ผู้ขาย → ส่งไปยังคลังของ Buyee ในญี่ปุ่น",
+  "st4_p": "ผู้ขายและร้านค้าญี่ปุ่นไม่ได้ส่งไปต่างประเทศ แต่ส่งไปยัง<b>คลังสินค้าของ Buyee ภายในญี่ปุ่น</b> (เป็นการซื้อขายภายในประเทศ)",
+  "st4_n": "สำหรับตลาดมือสองและการประมูล ระยะเวลาจนถึงการจัดส่งแตกต่างกันไปตามผู้ขาย",
+  "st5_h": "สินค้าถึงคลัง การเก็บรักษา และตัวเลือกการแพ็ก",
+  "st5_p": "เมื่อสินค้าถึงคลัง จะมีแจ้งเตือนทางอีเมลและหน้าของฉัน ตรวจสอบรายละเอียดหลังชั่งน้ำหนักได้ที่ “ข้อมูลพัสดุ”",
+  "st5_l1": "<b>รวมพัสดุ</b>: รวมสินค้าหลายชิ้นเป็นกล่องเดียวเพื่อประหยัดค่าจัดส่งระหว่างประเทศ",
+  "st5_l2": "สั่งตัวเลือกอย่าง<b>แพ็กแบบป้องกัน</b>ได้จากหน้าของฉัน",
+  "st5_l3": "เก็บรักษา<b>ฟรี 30 วันนับจากวันที่สินค้าถึง</b> ตั้งแต่วันที่ 31 คิดค่าธรรมเนียมรายวัน <b>สูงสุด 90 วัน</b>",
+  "st5_n": "หากไม่ชำระค่าจัดส่งระหว่างประเทศภายใน 90 วัน สินค้าอาจถูกกำจัดทิ้ง",
+  "st6_h": "เลือกวิธีจัดส่ง = ชำระครั้งที่ 2",
+  "st6_p1": "ยอดเงินจะยืนยันตามน้ำหนักและขนาดหลังแพ็ก คุณจะชำระ<b>ค่าจัดส่งระหว่างประเทศ (+ค่าตัวเลือก และภาษีที่เก็บล่วงหน้าในประเทศที่เข้าเงื่อนไข)</b>",
+  "st6_p2": "วิธีจัดส่งหลัก: ไปรษณีย์ญี่ปุ่น, FedEx, DHL, UPS, Buyee Air Delivery, ECMS ฯลฯ (แตกต่างตามประเทศ/ภูมิภาค)",
+  "st7_h": "จัดส่งไปต่างประเทศ → รับสินค้า",
+  "t7_r1h": "ไปรษณีย์ญี่ปุ่น / FedEx / DHL / UPS / Buyee Air Delivery",
+  "t7_r1": "จัดส่งในวันทำการถัดจากวันชำระเงิน",
+  "t7_r2h": "Buyee Air Delivery (ไต้หวัน) / จัดส่งในญี่ปุ่น",
+  "t7_r2": "2–3 วันทำการหลังชำระเงิน",
+  "t7_r3": "จัดส่งทุกวันจันทร์ พุธ และศุกร์",
+  "st7_n": "อากรและภาษีนำเข้าที่ไม่ได้เก็บล่วงหน้าอาจถูกเรียกเก็บตอนรับสินค้า (ขึ้นอยู่กับประเทศและบริษัทขนส่ง)",
+  "one_h": "Buyee One: ชำระครั้งเดียวจบ",
+  "one_new": "ตั้งแต่ ก.ย. 2026",
+  "one_p": "ฟีเจอร์ใหม่ที่แสดง<b>ยอดชำระรวม</b> ทั้งค่าสินค้า ค่าจัดส่ง ค่าธรรมเนียม และอากร/ภาษีนำเข้าที่เกี่ยวข้อง ตั้งแต่ตอนซื้อ และชำระทั้งหมดได้ในครั้งเดียว โดยใช้ข้อมูลการจัดส่งและ AI ประเมินค่าจัดส่งและภาษีล่วงหน้า",
+  "one_c_h": "ประเทศที่เริ่มให้บริการ",
+  "one_c": "สหรัฐอเมริกา",
+  "one_s_h": "ร้านค้าที่เริ่มให้บริการ",
+  "one_f": "จะขยายประเทศและร้านค้าเพิ่มเติมตามลำดับ",
+  "m1_h": "ครั้งที่ 1 (ตอนซื้อ)",
+  "m1": "ค่าสินค้า ค่าส่งในญี่ปุ่น ค่าธรรมเนียม Buyee/ค่าแพ็กเกจ ฯลฯ",
+  "m2_h": "ครั้งที่ 2 (หลังถึงคลัง)",
+  "m2": "ค่าจัดส่งระหว่างประเทศ ตัวเลือกการแพ็ก ค่าเก็บรักษาเพิ่ม ภาษีที่เก็บล่วงหน้า (ถ้ามี)",
+  "m3_h": "ตอนรับสินค้า (บางกรณี)",
+  "m3": "อากรและภาษีนำเข้าที่เรียกเก็บในประเทศปลายทาง",
+  "foot_p": "ค่าธรรมเนียมและวิธีจัดส่งที่ใช้ได้แตกต่างกันตามประเทศและช่วงเวลา โปรดตรวจสอบข้อมูลล่าสุดในคู่มือทางการของ Buyee:",
+  "lk1": "ค่าธรรมเนียม",
+  "lk2": "วิธีจัดส่ง",
+  "lk3": "รวมพัสดุ",
+  "lk4": "ประเทศที่รองรับ",
+  "foot_src": "แหล่งข้อมูล: เว็บไซต์ทางการและ FAQ ของ Buyee, ข่าวประชาสัมพันธ์ของ tenso Inc. (8 กันยายน 2026) ข้อมูล ณ พฤศจิกายน 2026",
+  "cta": "ไปที่ Buyee (สมัครฟรี) →",
+  "desc": "Buyee คืออะไร มีประโยชน์อย่างไรกับผู้ซื้อนอกญี่ปุ่น ต้องจ่ายอะไรบ้าง และขั้นตอนการสั่งซื้อทีละขั้น",
+  "intro": "คู่มือสำหรับนักสะสมนอกญี่ปุ่น: Buyee คืออะไร มีข้อดีอย่างไร ต้องจ่ายอะไรบ้าง และขั้นตอนการสั่งซื้อเป็นอย่างไร",
+  "pay_h": "ค่าใช้จ่ายที่ต้องจ่าย",
+  "chk_h": "สิ่งที่ควรตรวจสอบก่อนซื้อ",
+  "chk1": "ประเมินยอดรวมก่อนซื้อ ทั้งราคาสินค้า ค่าธรรมเนียม Buyee ค่าจัดส่งระหว่างประเทศ และภาษีนำเข้า",
+  "chk2": "ราคาประมูลมักสูงขึ้นก่อนปิดประมูล ควรกำหนดราคาสูงสุดที่จะประมูลไว้ล่วงหน้า",
+  "chk3": "รวมสินค้าหลายชิ้นไว้ในพัสดุเดียวเพื่อลดค่าจัดส่งระหว่างประเทศ",
+  "chk4": "ชำระค่าจัดส่งระหว่างประเทศภายใน 90 วัน สินค้าที่เก็บไว้นานกว่านั้นอาจถูกกำจัด",
+  "cat_h": "ค้นหาการ์ดบน Buyee ตามหมวดหมู่"
+ }
+};</script>
+  <script src="/site.js"></script>
 </body>
 </html>

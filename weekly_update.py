@@ -98,8 +98,8 @@ def page_head(title, desc, canonical, extra_head=""):
   <header class="bg-dark text-white py-2 px-3 d-flex justify-content-between align-items-center">
     <a href="/" class="fw-bold fs-6 text-white text-decoration-none">JapanMania</a>
     <div class="d-flex align-items-center gap-2">
-      <a href="/buyee-flow.html" class="text-white text-decoration-none small fw-bold border border-secondary rounded px-2 py-1" data-i18n="f_guide">Buying Guide</a>
-      <small class="text-secondary d-none d-md-inline" data-i18n="tagline">Weekly Report & Proxy Guide</small>
+      <a href="/buyee-flow" class="text-white text-decoration-none small fw-bold border border-secondary rounded px-2 py-1" data-i18n="f_guide">Buying Guide</a>
+      <small class="text-secondary d-none d-md-inline" data-i18n="tagline">Market Comparisons & Proxy Guide</small>
       <select id="langSelect" class="form-select form-select-sm w-auto bg-secondary text-white border-0" onchange="changeLanguage(this.value)" aria-label="Language">
         <option value="en">English</option>
         <option value="zh-TW">繁體中文</option>
@@ -117,12 +117,12 @@ def page_head(title, desc, canonical, extra_head=""):
       <div class="nav-row d-flex gap-3 py-1">
         <a href="/" data-i18n="nav_home">Home</a>
         <a href="/weekly/" class="active" data-i18n="nav_wk">Weekly Report</a>
-        <a href="/buyee-flow.html" data-i18n="f_guide">Buying Guide</a>
+        <a href="/buyee-flow" data-i18n="f_guide">Buying Guide</a>
       </div>
       <div class="nav-row d-flex gap-3 py-1">
-        <a href="/pokemon.html" data-i18n="nav_pk">Pokémon</a>
-        <a href="/one-piece.html">ONE PIECE</a>
-        <a href="/dragon-ball.html" data-i18n="nav_db">Dragon Ball</a>
+        <a href="/pokemon" data-i18n="nav_pk">Pokémon</a>
+        <a href="/one-piece">ONE PIECE</a>
+        <a href="/dragon-ball" data-i18n="nav_db">Dragon Ball</a>
       </div>
     </div>
   </nav>
@@ -133,15 +133,15 @@ PAGE_FOOT = """
   <footer class="bg-dark text-secondary py-4 mt-auto extra-small">
     <div class="container text-center max-width-800">
       <div class="d-flex flex-wrap justify-content-center gap-3 mb-3">
-        <a href="/buyee-flow.html" class="text-secondary text-decoration-none" data-i18n="f_guide">Buying Guide</a>
-        <a href="/about.html" class="text-secondary text-decoration-none" data-i18n="f_about">About Us</a>
-        <a href="/privacy.html" class="text-secondary text-decoration-none" data-i18n="f_privacy">Privacy Policy</a>
-        <a href="/contact.html" class="text-secondary text-decoration-none" data-i18n="f_contact">Contact</a>
+        <a href="/buyee-flow" class="text-secondary text-decoration-none" data-i18n="f_guide">Buying Guide</a>
+        <a href="/about" class="text-secondary text-decoration-none" data-i18n="f_about">About Us</a>
+        <a href="/privacy" class="text-secondary text-decoration-none" data-i18n="f_privacy">Privacy Policy</a>
+        <a href="/contact" class="text-secondary text-decoration-none" data-i18n="f_contact">Contact</a>
         <a href="#" id="cookieSettings" class="text-secondary text-decoration-none" data-i18n="f_cookie">Cookie Settings</a>
       </div>
       <p class="mb-2 text-white-50">© 2026 JapanMania. All rights reserved.</p>
       <p class="text-muted" style="font-size: 0.65rem; max-width: 600px; margin: 0 auto;">
-        This site is an independent information guide. We are not affiliated with or endorsed by Buyee, card publishers or any marketplace. Weekly reports summarize publicly available information and may change after publication.
+        This site is an independent information and price comparison guide. We are not affiliated with or endorsed by Buyee, card publishers or any marketplace. Weekly reports summarize publicly available information and may change after publication.
       </p>
     </div>
   </footer>
@@ -193,9 +193,9 @@ def build_index(weeks):
         items.append(
             f'      <article class="week-card{cls} bg-white border rounded p-3 mb-3">\n'
             f'        <div class="extra-small text-muted mb-1">{label}<time datetime="{d.isoformat()}">{d.strftime("%b %-d, %Y")}</time></div>\n'
-            f'        <h2 class="fs-6 fw-bold mb-2"><a href="/weekly/{p.name}" class="text-dark">{html.escape(title)}</a></h2>\n'
+            f'        <h2 class="fs-6 fw-bold mb-2"><a href="/weekly/{p.stem}" class="text-dark">{html.escape(title)}</a></h2>\n'
             f'        <p class="small text-muted mb-2">{html.escape(desc)}</p>\n'
-            f'        <a href="/weekly/{p.name}" class="extra-small fw-bold text-danger text-decoration-none">Read the full report →</a>\n'
+            f'        <a href="/weekly/{p.stem}" class="extra-small fw-bold text-danger text-decoration-none">Read the full report →</a>\n'
             f'      </article>'
         )
     if not items:
@@ -222,7 +222,7 @@ def page_url(p: Path) -> str:
         return f"{SITE_URL}/"
     if rel.endswith("/index.html"):
         return f"{SITE_URL}/{rel[:-len('index.html')]}"
-    return f"{SITE_URL}/{rel}"
+    return f"{SITE_URL}/{rel[:-5] if rel.endswith('.html') else rel}"
 
 
 def build_sitemap(weeks):
@@ -244,7 +244,7 @@ def build_sitemap(weeks):
     latest = weeks[0][0].isoformat() if weeks else None
     entries.append(entry(f"{SITE_URL}/weekly/", latest))
     for d, p in weeks:
-        entries.append(entry(f"{SITE_URL}/weekly/{p.name}", d.isoformat()))
+        entries.append(entry(f"{SITE_URL}/weekly/{p.stem}", d.isoformat()))
 
     return ('<?xml version="1.0" encoding="UTF-8"?>\n'
             '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
