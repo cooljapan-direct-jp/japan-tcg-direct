@@ -5,6 +5,7 @@ weekly_update.py  -  JapanMania 週次レポートの自動更新
 やること:
   1. weekly/ の YYYY-MM-DD-*.html を集める
   2. KEEP_DAYS より古い週を削除し、vercel.json にリダイレクト(301 → /weekly/)を追加
+     (KEEP_DAYS = None のあいだは削除しない。今は全号を残す設定)
   3. weekly/index.html(一覧ページ)をサイトと同じデザインで作り直す
   4. sitemap.xml をサイト内の全HTMLから丸ごと作り直す(無ければ新規作成)
 
@@ -25,7 +26,8 @@ import sys
 from pathlib import Path
 
 SITE_URL = "https://japanmania.store"
-KEEP_DAYS = 35          # これより古い週は削除(約1か月+余裕1週)
+KEEP_DAYS = None        # None = 全号を残す(AdSense申請に向けて当面は削除しない)。
+                        # 削除を再開するときは日数を入れる(例: 35 → 約1か月+余裕1週)
 WEEKLY_DIR = Path("weekly")
 SITEMAP = Path("sitemap.xml")
 VERCEL_JSON = Path("vercel.json")
@@ -209,7 +211,7 @@ def build_index(weeks):
     <p class="small text-muted mb-2">Information about Japanese card releases is scattered across official sites, shops and news outlets. Once a week, we pull it together into one page so you can see where things stand: what is official, what is only reported, and what is still unclear.</p>
     <p class="small mb-4"><a href="/buyee-flow" class="text-danger fw-bold text-decoration-none">First time buying from Japan? See how it works →</a></p>
 {chr(10).join(items)}
-    <p class="extra-small text-muted mt-4">Reports from the last few weeks are kept here. Older reports are retired as their information goes out of date.</p>
+    <p class="extra-small text-muted mt-4">Past reports are kept here as an archive. Each report reflects the information available on its date, so check the latest issue for current details.</p>
   </main>
 """
     return page_head("Weekly TCG Report from Japan | JapanMania", desc, f"{SITE_URL}/weekly/") + body + PAGE_FOOT
@@ -272,8 +274,11 @@ def main():
 
     today = dt.date.today()
     all_weeks = collect()
-    old = [(d, p) for d, p in all_weeks if (today - d).days > KEEP_DAYS]
-    keep = [(d, p) for d, p in all_weeks if (today - d).days <= KEEP_DAYS]
+    if KEEP_DAYS is None:
+        old, keep = [], all_weeks
+    else:
+        old = [(d, p) for d, p in all_weeks if (today - d).days > KEEP_DAYS]
+        keep = [(d, p) for d, p in all_weeks if (today - d).days <= KEEP_DAYS]
 
     print(f"残す週: {len(keep)}")
     for d, p in keep:
