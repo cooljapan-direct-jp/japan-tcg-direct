@@ -206,7 +206,8 @@ def build_index(weeks):
     body = f"""
   <main class="container max-width-800 py-4">
     <h1 class="fw-bold fs-3 mb-2">Weekly TCG Report from Japan</h1>
-    <p class="small text-muted mb-4">Information about Japanese card releases is scattered across official sites, shops and news outlets. Once a week, we pull it together into one page so you can see where things stand: what is official, what is only reported, and what is still unclear.</p>
+    <p class="small text-muted mb-2">Information about Japanese card releases is scattered across official sites, shops and news outlets. Once a week, we pull it together into one page so you can see where things stand: what is official, what is only reported, and what is still unclear.</p>
+    <p class="small mb-4"><a href="/buyee-flow" class="text-danger fw-bold text-decoration-none">First time buying from Japan? See how it works →</a></p>
 {chr(10).join(items)}
     <p class="extra-small text-muted mt-4">Reports from the last few weeks are kept here. Older reports are retired as their information goes out of date.</p>
   </main>
