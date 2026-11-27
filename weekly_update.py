@@ -194,7 +194,7 @@ def build_index(weeks):
         label = '<span class="badge bg-danger me-2">Latest</span>' if i == 0 else ""
         items.append(
             f'      <article class="week-card{cls} bg-white border rounded p-3 mb-3">\n'
-            f'        <div class="extra-small text-muted mb-1">{label}<time datetime="{d.isoformat()}">{d.strftime("%b %-d, %Y")}</time></div>\n'
+            f'        <div class="extra-small text-muted mb-1">{label}<time datetime="{d.isoformat()}">{d.strftime("%b")} {d.day}, {d.year}</time></div>\n'
             f'        <h2 class="fs-6 fw-bold mb-2"><a href="/weekly/{p.stem}" class="text-dark">{html.escape(title)}</a></h2>\n'
             f'        <p class="small text-muted mb-2">{html.escape(desc)}</p>\n'
             f'        <a href="/weekly/{p.stem}" class="extra-small fw-bold text-danger text-decoration-none">Read the full report →</a>\n'
